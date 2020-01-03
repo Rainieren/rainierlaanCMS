@@ -1,0 +1,122 @@
+.sidebar {
+    background-color: #ffffff;
+    position: absolute;
+    height: 100vh;
+    width: 230px;
+    padding: 30px;
+}
+.sidebar .sidebar-item.title {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #cbcbcb;
+}
+
+.sidebar .sidebar-item {
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
+    align-content: center;
+}
+
+.sidebar .sidebar-item a {
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.sub-text {
+    color: #8a8a8a;
+}
+
+.sidebar .sidebar-item:hover {
+    transition: .3s all;
+    margin-left: 5px;
+}
+
+.sidebar .sidebar-item:hover a {
+    text-decoration: none;
+    transition: .3s all;
+}
+
+.dashboard-container {
+    margin: 0 40px 40px 270px;
+}
+
+.card {
+    border: 1px solid #e6e6e6;
+    border-radius: 0px;
+}
+
+.handle {
+    cursor: pointer;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #FF9D45;
+    background-color: #FF9D45;
+}
+.custom-control-input:focus {
+    outline: none;
+}
+/*
+    Main color: #FF9D45
+    Secondary color: #FFA95E
+    Secondary color-alt: #B3631E
+    Teritairy color: #0C95B3
+    Teritairy color alt: #45DEFF
+*/
+
+.color-primary {
+    color: #FF9D45;
+}
+
+
+.primary-background {
+
+}
+
+.sidebar-active {
+    transition: .3s all;
+    margin-left: .9rem;
+    position: relative;
+}
+.sidebar-active:before {
+    width: .5rem;
+    height: .5rem;
+    left: -.9rem;
+    border-radius: 50%;
+    position: absolute;
+    content: "";
+    background-color: #FF9D45;
+}
+
+.message {
+    color: black;
+}
+
+.btn.btn-primary {
+    background-color: #FF9D45;
+    border: 0;
+    border-radius: 0;
+}
+
+.btn.btn-primary:active {
+    background-color: #FF9D45;
+    border: 0;
+    border-radius: 0;
+}
+
+.btn-primary-alt {
+    background-color: #0C95B3;
+    border: 0;
+    color: #ffffff;
+    border-radius: 0;
+}
+
+.navbar {
+    height: 80px;
+}
+
+
+
