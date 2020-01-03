@@ -32,7 +32,7 @@
             <li class="sidebar-item"><a href="{{ route('roles') }}"  class="sidebar-link {{ Route::currentRouteNamed('roles') ? 'sidebar-active' : '' }}">{{ __('Roles') }}</a></li>
             <li class="sidebar-item"><a href="{{ route('messages') }}"  class="sidebar-link {{ Route::currentRouteNamed('messages') ? 'sidebar-active' : '' }}">{{ __('Messages') }} </a></li>
             <li class="sidebar-item title">{{ __('Other') }}</li>
-            <li class="sidebar-item"><a href="{{ route('preferences') }}">{{ __('Preferences') }}</a></li>
+            <li class="sidebar-item"><a href="{{ route('preferences') }}" class="sidebar-link  {{ Route::currentRouteNamed('preferences') ? 'sidebar-active' : '' }}">{{ __('Preferences') }}</a></li>
         </ul>
     </nav>
 

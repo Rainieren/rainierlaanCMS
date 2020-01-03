@@ -38,6 +38,10 @@ class LayoutController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => ['required', 'string'],
+            'content' => ['required', 'integer'],
+        ]);
         // Make name camelcase
         $filename = Str::camel($request->name) . ".blade.php";
         $file = fopen(resource_path('views/layouts/layouts/' . $filename), 'w');

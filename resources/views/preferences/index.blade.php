@@ -31,8 +31,15 @@
                     </div>
                     <div class="form-group col-3 d-flex justify-content-end align-items-center">
                         <select name="language" id="language" class="form-control">
-                            <option value="nl" {{ ( Auth::user()->language == 'nl') ? 'selected' : '' }}>{{ __('Dutch') }}</option>
-                            <option value="en" {{ ( Auth::user()->language == 'en') ? 'selected' : '' }}>{{ __('English') }}</option>
+                            <option value="nl" {{ ( Auth::user()->language == 'nl') ? 'selected' : '' }}>
+                                {{ __('Dutch') }}
+                            </option>
+                            <option value="en" {{ ( Auth::user()->language == 'en') ? 'selected' : '' }}>
+                                {{ __('English') }}
+                            </option>
+                            <option value="de" {{ ( Auth::user()->language == 'de') ? 'selected' : '' }}>
+                                {{ __('Deutch') }}
+                            </option>
                         </select>
 
                     </div>
@@ -63,10 +70,13 @@
                 type: 'PATCH',
                 data: {"language": $(this).children("option:selected").val()},
                 success: function(data) {
+
                     $('.saved-message').fadeIn();
                     setTimeout(function() {
                         $('.saved-message').fadeOut();
+                        location.reload();
                     }, 1000);
+
                 }
             })
         });

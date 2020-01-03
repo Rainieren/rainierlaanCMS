@@ -13,11 +13,21 @@
                     @csrf
                     <div class="form-group">
                         <label for="name">{{ __('Name') }}</label>
-                        <input type="text" class="form-control" name="name">
+                        <input type="text" class="form-control  @error('name') is-invalid @enderror"  value="{{ old('name') }}" name="name">
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="content" class="content">{{ __('Content') }}</label>
-                        <textarea name="content" id="" class="form-control" cols="30" rows="10"></textarea>
+                        <textarea name="content" id="" class="form-control  @error('content') is-invalid @enderror" cols="30" rows="10">{{ old('content') }}</textarea>
+                        @error('content')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">{{ __('Create layout') }}</button>
