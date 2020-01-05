@@ -114,6 +114,25 @@
     border-radius: 0;
 }
 
+.user-profile {
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.profile-link {
+    color: black;
+}
+.profile-link:hover {
+    color: #161616;
+    text-decoration: none;
+}
+
+.profile-image {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .btn-primary-alt {
     background-color: #0C95B3;
     border: 0;

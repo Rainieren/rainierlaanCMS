@@ -34,6 +34,12 @@
             <li class="sidebar-item title">{{ __('Other') }}</li>
             <li class="sidebar-item"><a href="{{ route('preferences') }}" class="sidebar-link  {{ Route::currentRouteNamed('preferences') ? 'sidebar-active' : '' }}">{{ __('Preferences') }}</a></li>
         </ul>
+
+        <div class="user-profile">
+            <a class="profile-link d-flex align-items-center" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
+                <img class="profile-image" src="{{ asset('/images/en_flag.png') }}" width="23" height="23"><span class="ml-2">{{ Auth::user()->firstname }}</span>
+            </a>
+        </div>
     </nav>
 
     <div class="dashboard-container">

@@ -31,6 +31,7 @@ Route::delete('/dashboard/block/{identifier}/delete', 'BlockController@destroy')
 Route::patch('/dashboard/block/{identifier}/store', 'BlockController@update')->name('update_block');
 
 Route::get('/dashboard/users', 'UserController@index')->name('users');
+Route::get('/dashboard/user/{id}', 'UserController@show')->name('profile');
 
 Route::get('/dashboard/roles', 'RoleController@index')->name('roles');
 Route::get('/dashboard/role/create', 'RoleController@create')->name('create_role');
