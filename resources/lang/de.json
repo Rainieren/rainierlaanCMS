@@ -76,6 +76,9 @@
     "Your inbox does not contain any messages.": "Ihr Posteingang enthält keine Nachrichten.",
     "Send a response back": "Senden Sie eine Antwort zurück",
     "Messages": "Mitteilungen",
-    "New messages": "Neue Nachrichten"
+    "New messages": "Neue Nachrichten",
+    "Title": "Title",
+    "Message": "Nachricht",
+    "No messages": "Keine Nachrichten"
 
 }

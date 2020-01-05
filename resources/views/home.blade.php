@@ -18,7 +18,11 @@
             <div class="card p-4">
                 <div class="card-body">
                     <h5 class="card-title">{{ __('New messages') }}</h5>
-                    <h1>{{ count($messages) }}</h1>
+                    @if(count(Auth::user()->unreadNotifications) == 0)
+                        <h1>{{ __('No messages') }}</h1>
+                    @else
+                        <h1>{{ count(Auth::user()->unreadNotifications) }}</h1>
+                    @endif
                 </div>
             </div>
         </div>

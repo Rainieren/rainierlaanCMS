@@ -21,7 +21,6 @@ class MessagesTableSeeder extends Seeder
                 'title' => $faker->realText(30),
                 'email' => $faker->email,
                 'message' => $faker->realText(),
-                'read' => 0,
                 'created_at' => $faker->dateTime,
                 'updated_at' => $faker->dateTime,
             ]);

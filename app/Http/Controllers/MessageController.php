@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Notifications\newMessage;
+use App\Page;
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -37,7 +41,26 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $message = Message::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'email' => $request->email,
+            'title' => $request->title,
+            'message' => $request->message,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        $user = User::find(1);
+        // Let the user know a new message has been created.
+        $user->notify(new newMessage);
+
+
+        return back();
+
+
+
     }
 
     /**
@@ -88,11 +111,4 @@ class MessageController extends Controller
     /**
      * @param $id
      */
-    public function changeState(Request $request, $id)
-    {
-        $message = Message::find($id);
-
-        $message->read = $request->state;
-        $message->save;
-    }
 }

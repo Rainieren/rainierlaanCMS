@@ -3,6 +3,6 @@
 
 @section('content')
     @foreach($blocks->sortBy('order') as $block)
-        {!! $block->content !!}
+        {{  Blade::compileString($block->content) }}
     @endforeach
 @endsection

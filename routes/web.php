@@ -55,7 +55,7 @@ Route::get('/dashboard/preferences', 'PreferencesController@index')->name('prefe
 Route::patch('/dashboard/user/{id}/language', 'PreferencesController@changeLanguage')->name('change_language');
 
 Route::get('/dashboard/messages', 'MessageController@index')->name('messages');
-Route::post('/dashboard/message/{id}/state', 'MessageController@changeState')->name('message_state');
+Route::post('/dashboard/message/create', 'MessageController@store')->name('create_message');
 
 
 

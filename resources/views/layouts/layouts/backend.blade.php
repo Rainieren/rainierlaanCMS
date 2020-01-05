@@ -10,6 +10,11 @@
 
     <script src="{{ asset('js/app.js') }}"></script>
 
+<script src="{{ asset('js/jquery-ui.js') }}"></script>
+<script src="{{ asset('js/Sortable.js') }}"></script>
+<script src="{{ asset('js/jquery-sortable.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -30,14 +35,14 @@
             <li class="sidebar-item title">{{ __('System') }}</li>
             <li class="sidebar-item"><a href="{{ route('users') }}"  class="sidebar-link {{ Route::currentRouteNamed('users') ? 'sidebar-active' : '' }}">{{ __('Users') }}</a></li>
             <li class="sidebar-item"><a href="{{ route('roles') }}"  class="sidebar-link {{ Route::currentRouteNamed('roles') ? 'sidebar-active' : '' }}">{{ __('Roles') }}</a></li>
-            <li class="sidebar-item"><a href="{{ route('messages') }}"  class="sidebar-link {{ Route::currentRouteNamed('messages') ? 'sidebar-active' : '' }}">{{ __('Messages') }} </a></li>
+            <li class="sidebar-item"><a href="{{ route('messages') }}"  class="sidebar-link {{ Route::currentRouteNamed('messages') ? 'sidebar-active' : '' }}">{{ __('Messages') }} </a> <span class="badge badge-pill badge-danger">{{ count(Auth::user()->unreadNotifications) }}</span></li>
             <li class="sidebar-item title">{{ __('Other') }}</li>
             <li class="sidebar-item"><a href="{{ route('preferences') }}" class="sidebar-link  {{ Route::currentRouteNamed('preferences') ? 'sidebar-active' : '' }}">{{ __('Preferences') }}</a></li>
         </ul>
 
         <div class="user-profile">
-            <a class="profile-link d-flex align-items-center" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
-                <img class="profile-image" src="{{ asset('/images/en_flag.png') }}" width="23" height="23"><span class="ml-2">{{ Auth::user()->firstname }}</span>
+            <a class="profile-link" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
+                {{ Auth::user()->firstname }}
             </a>
         </div>
     </nav>
@@ -49,10 +54,6 @@
     </div>
 </div>
 
-<script src="{{ asset('js/jquery-ui.js') }}"></script>
-<script src="{{ asset('js/Sortable.js') }}"></script>
-<script src="{{ asset('js/jquery-sortable.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 </html>

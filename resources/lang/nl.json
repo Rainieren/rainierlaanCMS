@@ -76,6 +76,9 @@
     "Your inbox does not contain any messages.": "Je postvak heeft nog geen berichten.",
     "Send a response back": "Verstuur een reactie terug",
     "Messages": "Berichten",
-    "New messages": "Nieuwe berichten"
+    "New messages": "Nieuwe berichten",
+    "Title": "Titel",
+    "Message": "Bericht",
+    "No messages": "Geen berichten"
 
 }

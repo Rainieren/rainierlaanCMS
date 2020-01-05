@@ -11,7 +11,13 @@
     color: #cbcbcb;
 }
 
+.sidebar .sidebar-item.title:hover {
+    transition: none;
+    margin: 0;
+}
+
 .sidebar .sidebar-item {
+    position: relative;
     padding: 10px;
     text-decoration: none;
     display: flex;
@@ -22,6 +28,12 @@
     color: black;
     display: flex;
     align-items: center;
+}
+
+.badge.badge-pill {
+    line-height: 15px;
+    position: absolute;
+    right: 0;
 }
 
 .sub-text {
