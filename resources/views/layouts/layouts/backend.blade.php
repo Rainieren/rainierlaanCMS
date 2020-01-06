@@ -42,6 +42,7 @@
             </li>
             <li class="sidebar-item title">{{ __('Other') }}</li>
             <li class="sidebar-item"><a href="{{ route('preferences') }}" class="sidebar-link  {{ Route::currentRouteNamed('preferences') ? 'sidebar-active' : '' }}">{{ __('Preferences') }}</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link" id="slideout">Slideout test <i class="fal fa-chevron-circle-right slide-out-arrow"></i></a></li>
         </ul>
 
         <div class="user-profile">
@@ -56,6 +57,15 @@
           @yield('content')
         </div>
     </div>
+</div>
+
+<div class="slide-out shadow" id="slide-out">
+    <nav class="sidebar-slideout">
+        <ul class="list-unstyled">
+            <li class="sidebar-item title">{{ __('System') }}</li>
+            <li class="sidebar-item"><a href="" class="sidebar-link">Register requests</a></li>
+        </ul>
+    </nav>
 </div>
 
 

@@ -42,7 +42,10 @@
                     <h5 class="card-title">Todo list</h5>
                     <ul class="">
                         <li>Zorg ervoor dat de hoofdpagina (route is /) ook uit de database geladen word. i.p.v de welcome view.</li>
-                        <li>Een leuke toevoeging is dat je de kleur en thema kan aanpassen. Dark theme, White theme, accent color</li>
+                        <li>Administrator moet eerst een verzoek van account aanmaken goedkeuren voordat deze ook gebruikt kan worden.</li>
+                        <li>Berichten moeten kunnen worden verwijderd.</li>
+                        <li>Rollen moeten kunnen worden verwijderd en worden aangepast.</li>
+                        <li>Bij het bewerken van een rol moet je kunnen aangeven welke dingen de persoon met de rollen kan</li>
                     </ul>
                 </div>
             </div>

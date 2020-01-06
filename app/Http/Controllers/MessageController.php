@@ -53,9 +53,12 @@ class MessageController extends Controller
             'updated_at' => Carbon::now()
         ]);
 
-        $user = User::find(1);
+        $users = User::all();
+
         // Let the user know a new message has been created.
-        $user->notify(new newMessage);
+        foreach($users as $user) {
+            $user->notify(new newMessage);
+        }
 
         return back();
 

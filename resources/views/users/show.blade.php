@@ -10,6 +10,7 @@
                             <img class="profile-image" src="{{ asset('/images/en_flag.png') }}" width="75" height="75">
                         </a>
                     </div>
+                    <a href="{{ route('logout') }}" class="btn btn-primary">Log out</a>
                     <div class="col-md-10">
                         <h3>{{ $user->firstname }} {{ $user->lastname }}</h3>
                         <p class="sub-text m-0">{{ $user->role->name }}</p>
