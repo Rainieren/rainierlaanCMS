@@ -8,41 +8,42 @@
             </div>
         </div>
 
-        <div class="inbox row my-4">
-            <div class="col-md-4">
-                <div class="messages">
-                    <form action="{{ route('create_message') }}" method="POST">
-                        @csrf
-                        <div class="form-grouo row">
-                            <div class="form-group col-6">
-                                <label for="firstname">{{ __('Firstname') }}</label>
-                                <input type="text" name="firstname" class="form-control" id="firstname">
-                            </div>
-                            <div class="form-group col-6">
-                                <label for="lastname">{{ __('Lastname') }}</label>
-                                <input type="text" name="lastname" class="form-control" id="lastname">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">{{ __('Email') }}</label>
-                            <input type="email" name="email" class="form-control" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="title">{{ __('Title') }}</label>
-                            <input type="text" name="title" class="form-control" id="title">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">{{ __('Message') }}</label>
-                            <textarea name="message" id="message" class="form-control" cols="30" rows="10"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">{{ __('Send form') }}</button>
-                        </div>
-                    </form>
+        <div class="row my-5">
+            <div class="col-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    @foreach($messages as $message)
+                        <a class="nav-link message my-2 " id="v-pills-message-{{ $message->id }}" data-toggle="pill" href="#v-pills-{{ $message->id }}" role="tab" aria-controls="v-pills-{{ $message->id }}" aria-selected="true">
+                            <h5 class="m-0">{{ $message->firstname }} {{ $message->lastname }}</h5>
+                            <p class="m-0">{{ $message->title }}</p>
+                            <p class="sub-text m-0">{{ Str::limit($message->message, $length = 40, $end = '...') }}</p>
+                        </a>
+                    @endforeach
                 </div>
             </div>
-            <div class="col-md-8">
-
+            <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    @foreach($messages as $message)
+                    <div class="tab-pane fade" id="v-pills-{{ $message->id }}" role="tabpanel" aria-labelledby="v-pills-message-{{ $message->id }}">
+                        <div class="message-header row">
+                            <div class="col-8">
+                                <h4 class="m-0">{{ $message->firstname }} {{ $message->lastname }}</h4>
+                                <p class="m-0">{{ $message->title }}</p>
+                                <p class="m-0 sub-text">{{ __('From:') }} {{$message->email}}</p>
+                            </div>
+                            <div class="col-4 text-right">
+                                <p class="sub-text m-0">{{ $message->created_at->toFormattedDateString() }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="message-content">
+                            <p>{{ $message->message }}</p>
+                            <div class="form-group my-4">
+                                <a href="mailto:{{ $message->email}}?subject={{ $message->title }} " class="btn btn-primary">{{ __('Send message back') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

@@ -58,7 +58,7 @@ Route::get('/dashboard/messages', 'MessageController@index')->name('messages');
 Route::post('/dashboard/message/create', 'MessageController@store')->name('create_message');
 
 
-
+Route::post('/dashboard/notifications/read', 'NotificationController@store')->name('read_notifications');
 
 
 Route::get('/{url}', 'PageController@show')->name('show_page')->where('url', '([A-Za-z0-9\-\/]+)');;

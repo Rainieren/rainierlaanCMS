@@ -35,7 +35,11 @@
             <li class="sidebar-item title">{{ __('System') }}</li>
             <li class="sidebar-item"><a href="{{ route('users') }}"  class="sidebar-link {{ Route::currentRouteNamed('users') ? 'sidebar-active' : '' }}">{{ __('Users') }}</a></li>
             <li class="sidebar-item"><a href="{{ route('roles') }}"  class="sidebar-link {{ Route::currentRouteNamed('roles') ? 'sidebar-active' : '' }}">{{ __('Roles') }}</a></li>
-            <li class="sidebar-item"><a href="{{ route('messages') }}"  class="sidebar-link {{ Route::currentRouteNamed('messages') ? 'sidebar-active' : '' }}">{{ __('Messages') }} </a> <span class="badge badge-pill badge-danger">{{ count(Auth::user()->unreadNotifications) }}</span></li>
+            <li class="sidebar-item"><a href="#"  class="sidebar-link {{ Route::currentRouteNamed('messages') ? 'sidebar-active' : '' }}" id="messages-link">{{ __('Messages') }} </a>
+                @if(count(Auth::user()->unreadNotifications) != 0)
+                    <span class="badge badge-pill badge-danger">{{ count(Auth::user()->unreadNotifications) }}</span>
+                @endif
+            </li>
             <li class="sidebar-item title">{{ __('Other') }}</li>
             <li class="sidebar-item"><a href="{{ route('preferences') }}" class="sidebar-link  {{ Route::currentRouteNamed('preferences') ? 'sidebar-active' : '' }}">{{ __('Preferences') }}</a></li>
         </ul>
@@ -56,4 +60,22 @@
 
 
 </body>
+
+<script>
+        $('#messages-link').on('click', function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: '{{ route('read_notifications') }}',
+                type: 'POST',
+                data: [],
+                success: function(data){
+                    window.location.href = "{{ route('messages') }}";
+                }
+            })
+        });
+</script>
 </html>

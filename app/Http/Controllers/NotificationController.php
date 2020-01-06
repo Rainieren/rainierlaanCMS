@@ -2,15 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Message;
-use App\Notifications\newMessage;
-use App\Page;
-use App\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class MessageController extends Controller
+class NotificationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +14,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::orderBy('created_at', 'desc')->get();
-
-        return view('messages.index', compact('messages'));
+        //
     }
 
     /**
@@ -38,27 +31,15 @@ class MessageController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
 
-        $message = Message::create([
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'email' => $request->email,
-            'title' => $request->title,
-            'message' => $request->message,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
-        ]);
-
-        $user = User::find(1);
-        // Let the user know a new message has been created.
-        $user->notify(new newMessage);
-
-        return back();
-
+        foreach ($user->unreadNotifications as $notification) {
+            $notification->markAsRead();
+        }
     }
 
     /**
@@ -105,8 +86,4 @@ class MessageController extends Controller
     {
         //
     }
-
-    /**
-     * @param $id
-     */
 }

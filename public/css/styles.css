@@ -107,6 +107,12 @@
     color: black;
 }
 
+.nav-pills .nav-link.message.active {
+    color: white;
+    background-color: #186aff;
+    border-radius: 0;
+}
+
 .read-dot {
     height: 10px;
     width: 10px;
