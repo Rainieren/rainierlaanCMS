@@ -2,17 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\MessageSend;
-use App\Message;
-use App\Notifications\newMessage;
-use App\Page;
 use App\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 
-class MessageController extends Controller
+class RegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,9 +14,9 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::orderBy('created_at', 'desc')->get();
+        $users = User::where('is_request', 1)->get();
 
-        return view('messages.index', compact('messages'));
+        return view('registers.show', compact('users'));
     }
 
     /**
@@ -40,34 +33,11 @@ class MessageController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-
-        $message = Message::create([
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'email' => $request->email,
-            'title' => $request->title,
-            'message' => $request->message,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
-        ]);
-
-        $message = Message::find($message->id);
-
-        $users = User::where('role_id', 1)->get();
-
-        // Let the user with role_id know a new message has been created.
-        foreach($users as $user) {
-            $user->notify(new newMessage);
-        }
-
-        // Send a confirmation to the person submitting the form
-        Mail::to($request->email)->send(new MessageSend($message));
-
-        return back();
+        //
     }
 
     /**
@@ -114,8 +84,4 @@ class MessageController extends Controller
     {
         //
     }
-
-    /**
-     * @param $id
-     */
 }

@@ -82,6 +82,9 @@
     "Message": "Bericht",
     "No messages": "Geen berichten",
     "Send message back": "Stuur een bericht terug",
-    "From:": "Van:"
+    "From:": "Van:",
+    "Register requests": "Registreer verzoeken",
+    "Requested on": "Aangevraagd op",
+    "No requests": "Geen verzoeken"
 
 }

@@ -23,7 +23,7 @@ $(document).ready(function(){
     });
 
     $('#slideout').on('click', function() {
-        $('#slide-out').toggle("slide", { direction: "left" }, 250);
+        $('#slide-out').toggle("slide", { direction: "left" }, 350);
     });
 
 

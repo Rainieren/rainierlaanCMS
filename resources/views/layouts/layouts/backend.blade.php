@@ -36,8 +36,13 @@
             <li class="sidebar-item"><a href="{{ route('users') }}"  class="sidebar-link {{ Route::currentRouteNamed('users') ? 'sidebar-active' : '' }}">{{ __('Users') }}</a></li>
             <li class="sidebar-item"><a href="{{ route('roles') }}"  class="sidebar-link {{ Route::currentRouteNamed('roles') ? 'sidebar-active' : '' }}">{{ __('Roles') }}</a></li>
             <li class="sidebar-item"><a href="#"  class="sidebar-link {{ Route::currentRouteNamed('messages') ? 'sidebar-active' : '' }}" id="messages-link">{{ __('Messages') }} </a>
-                @if(count(Auth::user()->unreadNotifications) != 0)
-                    <span class="badge badge-pill badge-danger">{{ count(Auth::user()->unreadNotifications) }}</span>
+                @if(Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\newMessage'])->count() != 0)
+                    <span class="badge badge-pill badge-danger">{{ Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\newMessage'])->count() }}</span>
+                @endif
+            </li>
+            <li class="sidebar-item"><a href="{{ route('register_requests') }}" class="sidebar-link">{{ __('Register requests') }}</a>
+                @if(Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() != 0)
+                    <span class="badge badge-pill badge-danger">{{ Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() }}</span>
                 @endif
             </li>
             <li class="sidebar-item title">{{ __('Other') }}</li>
@@ -63,7 +68,7 @@
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
             <li class="sidebar-item title">{{ __('System') }}</li>
-            <li class="sidebar-item"><a href="" class="sidebar-link">Register requests</a></li>
+
         </ul>
     </nav>
 </div>

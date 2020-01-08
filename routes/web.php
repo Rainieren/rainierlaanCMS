@@ -60,6 +60,9 @@ Route::group(['middleware' => 'App\Http\Middleware\RoleAllowedMiddleware'], func
 // All routes related to messages
     Route::get('/dashboard/messages', 'MessageController@index')->name('messages');
 
+//    Register requests
+    Route::get('/dashboard/register/requests', 'RegisterController@index')->name('register_requests');
+
     Route::post('/dashboard/notifications/read', 'NotificationController@store')->name('read_notifications');
 });
 

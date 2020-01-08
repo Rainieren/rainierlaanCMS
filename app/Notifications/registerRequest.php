@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class newMessage extends Notification
+class registerRequest extends Notification
 {
     use Queueable;
 
@@ -41,12 +41,12 @@ class newMessage extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Hey you!')
-            ->subject('You received a new message')
-            ->line('Somebody has left a message in your inbox. Click on the button below to see the message')
-            ->action('See message', url('/dashboard/messages'))
-            ->line('Thank you for using our application!');
-
+                    ->subject('Register request confirmation')
+                    ->greeting('Hey!')
+                    ->line('You made a register request on our website. This request is currently being looked at. A reply can be expected within 1-2 Business days.')
+                    ->line('You have made the request with the following credentials:')
+                    ->line('Within a couple of days you will receive an update about this request. When accepted, you can use the credentials above to log into our system')
+                    ->line('Thank you for using our application!');
     }
 
     /**
@@ -58,7 +58,7 @@ class newMessage extends Notification
     public function toArray($notifiable)
     {
         return [
-            "message" => "A new message has been created"
+            //
         ];
     }
 }
