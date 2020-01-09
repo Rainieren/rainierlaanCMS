@@ -26,7 +26,7 @@ class RolesTableSeeder extends Seeder
         ]);
 
         DB::table('roles')->insert([
-            'name' => 'User',
+            'name' => 'Visitor',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

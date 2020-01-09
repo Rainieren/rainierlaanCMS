@@ -48,16 +48,35 @@
                     </div>
                 </form>
 
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>{{ __('Notifications') }}</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-6">
                 <form method="POST" action="" class="form-row my-3">
                     <div class="form-group col-9">
-                        <h4 class="mb-0">{{ __('Notifications') }}</h4>
-                        <p class="m-0 sub-text">{{ __('Turn notifications on or off') }}</p>
+                        <h4 class="mb-0">{{ __('Mail notifications') }}</h4>
+                        <p class="m-0 sub-text">{{ __('Receive notifications such as register request or messagas via email') }}</p>
                     </div>
                     <div class="form-group col-3 d-flex justify-content-end align-items-center">
                         <input type="checkbox" class="form-control">
                     </div>
                 </form>
-
+                <form method="POST" action="" class="form-row my-3">
+                    <div class="form-group col-9">
+                        <h4 class="mb-0">{{ __('System notifications') }}</h4>
+                        <p class="m-0 sub-text">{{ __('Receive notifications such as register request or messagas via the system') }}</p>
+                    </div>
+                    <div class="form-group col-3 d-flex justify-content-end align-items-center">
+                        <input type="checkbox" class="form-control">
+                    </div>
+                </form>
             </div>
         </div>
     </div>

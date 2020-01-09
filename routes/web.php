@@ -40,6 +40,9 @@ Route::group(['middleware' => 'App\Http\Middleware\RoleAllowedMiddleware'], func
     Route::get('/dashboard/roles', 'RoleController@index')->name('roles');
     Route::get('/dashboard/role/create', 'RoleController@create')->name('create_role');
     Route::post('/dashboard/role/store', 'RoleController@store')->name('store_role');
+    Route::delete('/dashboard/role/{name}/delete', 'RoleController@destroy')->name('delete_role');
+    Route::get('/dashboard/role/{name}/edit', "RoleController@edit")->name('edit_role');
+    Route::patch('/dashboard/role/{name}/store', 'RoleController@update')->name('update_role');
 // All routes related to layouts
     Route::get('/dashboard/layouts', 'LayoutController@index')->name('layouts');
     Route::get('/dashboard/layout/create', 'LayoutController@create')->name('create_layout');

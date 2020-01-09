@@ -60,11 +60,13 @@ class RoleController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
-        //
+        $role = Role::where('name', $id)->firstOrFail();
+
+        return view('roles.edit', compact('role'));
     }
 
     /**
@@ -72,11 +74,17 @@ class RoleController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
-        //
+        $role = Role::where('name', $id)->firstOrFail();
+
+        $role->name = $request->name;
+
+        $role->save();
+
+        return redirect('dashboard/roles');
     }
 
     /**
@@ -87,6 +95,10 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $role = Role::where('name', $id)->firstOrFail();
+
+        $role->delete();
+
+        return back();
     }
 }
