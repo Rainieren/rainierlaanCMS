@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Message;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -14,11 +15,11 @@ class newMessage extends Notification
     /**
      * Create a new notification instance.
      *
-     * @return void
+     * @param Message $message
      */
-    public function __construct()
+    public function __construct(Message $message)
     {
-        //
+        $this->message = $message;
     }
 
     /**
@@ -41,11 +42,9 @@ class newMessage extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->greeting('Hey you!')
-            ->subject('You received a new message')
-            ->line('Somebody has left a message in your inbox. Click on the button below to see the message')
-            ->action('See message', url('/dashboard/messages'))
-            ->line('Thank you for using our application!');
+            ->from('info@rainierlaan.nl')
+            ->subject('A new message has been received')
+            ->view('emails.messageReceived', ['wholeMessage' => $this->message]);
 
     }
 

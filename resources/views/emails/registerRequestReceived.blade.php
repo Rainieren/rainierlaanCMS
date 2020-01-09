@@ -1,0 +1,3 @@
+Ontvangen
+
+{{ $user }}

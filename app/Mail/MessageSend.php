@@ -31,6 +31,6 @@ class MessageSend extends Mailable
      */
     public function build()
     {
-        return $this->from('info@rainierlaan.nl')->view('emails.newMessage')->with(['body' => $this->message->message]);
+        return $this->from('info@rainierlaan.nl')->view('emails.messageSend')->with(['body' => $this->message->message]);
     }
 }

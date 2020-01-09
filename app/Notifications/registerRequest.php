@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -14,11 +15,11 @@ class registerRequest extends Notification
     /**
      * Create a new notification instance.
      *
-     * @return void
+     * @param User $user
      */
-    public function __construct()
+    public function __construct(User $user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -40,13 +41,9 @@ class registerRequest extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-                    ->subject('Register request confirmation')
-                    ->greeting('Hey!')
-                    ->line('You made a register request on our website. This request is currently being looked at. A reply can be expected within 1-2 Business days.')
-                    ->line('You have made the request with the following credentials:')
-                    ->line('Within a couple of days you will receive an update about this request. When accepted, you can use the credentials above to log into our system')
-                    ->line('Thank you for using our application!');
+        return (new MailMessage)->from('info@rainierlaan.nl')
+                                ->subject('A new register request has been made')
+                                ->view('emails.registerRequestReceived', ['user' => $this->user]);
     }
 
     /**

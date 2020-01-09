@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\MessageSend;
+use App\Mail\RegisterRequestSend;
 use App\Notifications\newMessage;
 use App\Notifications\registerRequest;
 use App\Providers\RouteServiceProvider;
@@ -10,6 +12,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -70,17 +73,23 @@ class RegisterController extends Controller
     {
         $users = User::where('id', 1)->get();
 
-        foreach($users as $user) {
-            $user->notify(new registerRequest);
-        }
 
-        return User::create([
+
+        $user = User::create([
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
             'email' => $data['email'],
             'role_id' => 3,
             'password' => Hash::make($data['password']),
         ]);
+
+        foreach($users as $admin) {
+            $admin->notify(new registerRequest($user));
+        }
+
+        Mail::to($user->email)->send(new RegisterRequestSend($user));
+
+        return $user;
     }
 
 

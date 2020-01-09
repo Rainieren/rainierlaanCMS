@@ -61,7 +61,7 @@ class MessageController extends Controller
 
         // Let the user with role_id know a new message has been created.
         foreach($users as $user) {
-            $user->notify(new newMessage);
+            $user->notify(new newMessage($message));
         }
 
         // Send a confirmation to the person submitting the form
