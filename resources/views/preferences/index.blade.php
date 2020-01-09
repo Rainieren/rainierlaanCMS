@@ -79,6 +79,37 @@
                 </form>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>{{ __('Exports') }}</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-6">
+                <form method="POST" action="" class="form-row my-3">
+                    <div class="form-group col-8">
+                        <h4 class="mb-0">{{ __('Export Users') }}</h4>
+                        <p class="m-0 sub-text">{{ __('Receive a list of all users in the system as PDF or CSV') }}</p>
+                    </div>
+                    <div class="form-group col-4">
+                        <button class="btn btn-primary">Export PDF</button>
+                        <button class="btn btn-info">Export CSV</button>
+                    </div>
+                </form>
+                <form method="POST" action="" class="form-row my-3">
+                    <div class="form-group col-8">
+                        <h4 class="mb-0">{{ __('Export Messages') }}</h4>
+                        <p class="m-0 sub-text">{{ __('Receive a list of all messages posted in the system') }}</p>
+                    </div>
+                    <div class="form-group col-4">
+                        <button class="btn btn-primary">Export PDF</button>
+                        <button class="btn btn-info">Export CSV</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script>
