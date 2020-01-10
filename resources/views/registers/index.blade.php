@@ -37,8 +37,26 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->created_at->toDayDateTimeString() }}</td>
                                 <td>
-                                    <a href="" class="btn btn-success btn-sm">{{ __('Accept') }}</a>
-                                    <a href="" class="btn btn-danger btn-sm">{{ __('Decline') }}</a>
+                                    <a href="{{ route('accept_request', ['id' => $user->id]) }}" class="btn btn-success btn-sm"
+                                        onclick="event.preventDefault(); document.getElementById('patch-form{{$user->id}}').submit();">
+                                        {{ __('Accept') }}
+                                        <form id="patch-form{{$user->id}}" action="{{ route('accept_request', ['id' => $user->id]) }}"
+                                              method="POST"
+                                              class="d-none">
+                                            {{ csrf_field() }}
+                                            {{ method_field('PATCH') }}
+                                        </form>
+                                    </a>
+                                    <a href="{{ route('decline_request', ['id' => $user->id]) }}" class="btn btn-danger btn-sm"
+                                       onclick="event.preventDefault(); document.getElementById('delete-form{{$user->id}}').submit();">
+                                        {{ __('Decline') }}
+                                        <form id="delete-form{{$user->id}}" action="{{ route('decline_request', ['id' => $user->id]) }}"
+                                              method="POST"
+                                              class="d-none">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                        </form>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
