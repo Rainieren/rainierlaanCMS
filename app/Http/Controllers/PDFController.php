@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class PDFController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,11 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        $users = User::where('is_request', 1)->get();
+        $users = User::all();
 
-        return view('registers.index', compact('users'));
+        $pdf = PDF::loadView('pdfs.users', ['users' => $users]);
+
+        return $pdf->download('users.pdf');
     }
 
     /**

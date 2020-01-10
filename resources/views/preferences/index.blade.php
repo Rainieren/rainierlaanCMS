@@ -94,20 +94,20 @@
                         <p class="m-0 sub-text">{{ __('Receive a list of all users in the system as PDF or CSV') }}</p>
                     </div>
                     <div class="form-group col-4">
-                        <button class="btn btn-primary">Export PDF</button>
+                        <a href="{{ route('user_to_pdf') }}" class="btn btn-primary">Export PDF</a>
                         <button class="btn btn-info">Export CSV</button>
                     </div>
                 </form>
-                <form method="POST" action="" class="form-row my-3">
+                <div class="row my-3">
                     <div class="form-group col-8">
                         <h4 class="mb-0">{{ __('Export Messages') }}</h4>
                         <p class="m-0 sub-text">{{ __('Receive a list of all messages posted in the system') }}</p>
                     </div>
                     <div class="form-group col-4">
-                        <button class="btn btn-primary">Export PDF</button>
+                        <a href="#" class="btn btn-primary">Export PDF</a>
                         <button class="btn btn-info">Export CSV</button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>

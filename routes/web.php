@@ -66,6 +66,9 @@ Route::group(['middleware' => 'App\Http\Middleware\RoleAllowedMiddleware'], func
 //    Register requests
     Route::get('/dashboard/register/requests', 'RegisterController@index')->name('register_requests');
 
+//    PDFs
+    Route::get('/dashboard/users/pdf', 'PDFController@index')->name('user_to_pdf');
+
     Route::post('/dashboard/notifications/read', 'NotificationController@store')->name('read_notifications');
 });
 

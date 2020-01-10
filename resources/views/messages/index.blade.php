@@ -7,7 +7,13 @@
                 <h3>{{ __('Messages') }}</h3>
             </div>
         </div>
-
+        @if(count($messages) == 0)
+            <div class="row my-5">
+                <div class="col-md-12 text-center">
+                    <p>{{ __('Your inbox is empty. Come back another time') }}</p>
+                </div>
+            </div>
+        @else
         <div class="row my-5">
             <div class="col-3">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -46,5 +52,6 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
 @endsection

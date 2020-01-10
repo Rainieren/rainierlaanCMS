@@ -39,21 +39,5 @@
             </div>
         </div>
     </div>
-    <div class="row my-5">
-        <div class="col-md-8">
-            <div class="card p-4">
-                <div class="card-body">
-                    <h5 class="card-title">Todo list</h5>
-                    <ul class="">
-                        <li>Zorg ervoor dat de hoofdpagina (route is /) ook uit de database geladen word. i.p.v de welcome view.</li>
-                        <li>Administrator moet eerst een verzoek van account aanmaken goedkeuren voordat deze ook gebruikt kan worden. Zodra verozek is goedgekeurd dan krijgt de persoon een nmail met daarin een link. twee knoppen, groen en rood, rod is verwijderen en groen accepteren</li>
-                        <li>Berichten moeten kunnen worden verwijderd.</li>
-                        <li>Rollen moeten kunnen worden verwijderd en worden aangepast.</li>
-                        <li>Bij het bewerken van een rol moet je kunnen aangeven welke dingen de persoon met de rollen kan</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection

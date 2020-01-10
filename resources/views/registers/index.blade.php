@@ -7,6 +7,13 @@
                 <h3>{{ __('Register requests') }}</h3>
             </div>
         </div>
+        @if(count($users) == 0)
+            <div class="row my-5">
+                <div class="col-md-12 text-center">
+                    <p>{{ __('There are no register request at this time. Please come back later.') }}</p>
+                </div>
+            </div>
+        @else
         <div class="row my-5">
             <div class="col-md-12">
                 <div class="request">
@@ -40,5 +47,6 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
 @endsection
