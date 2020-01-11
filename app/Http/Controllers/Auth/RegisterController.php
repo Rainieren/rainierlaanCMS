@@ -14,6 +14,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -73,13 +74,12 @@ class RegisterController extends Controller
     {
         $users = User::where('id', 1)->get();
 
-
-
         $user = User::create([
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
             'email' => $data['email'],
             'role_id' => 3,
+            'activated' => 0,
             'password' => Hash::make($data['password']),
         ]);
 
