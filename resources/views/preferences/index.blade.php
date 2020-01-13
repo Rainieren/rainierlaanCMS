@@ -53,35 +53,6 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h3>{{ __('Notifications') }}</h3>
-                <hr>
-            </div>
-        </div>
-        <div class="row my-3">
-            <div class="col-md-6">
-                <form method="POST" action="" class="form-row my-3">
-                    <div class="form-group col-9">
-                        <h4 class="mb-0">{{ __('Mail notifications') }}</h4>
-                        <p class="m-0 sub-text">{{ __('Receive notifications such as register request or messagas via email') }}</p>
-                    </div>
-                    <div class="form-group col-3 d-flex justify-content-end align-items-center">
-                        <input type="checkbox" class="form-control">
-                    </div>
-                </form>
-                <form method="POST" action="" class="form-row my-3">
-                    <div class="form-group col-9">
-                        <h4 class="mb-0">{{ __('System notifications') }}</h4>
-                        <p class="m-0 sub-text">{{ __('Receive notifications such as register request or messagas via the system') }}</p>
-                    </div>
-                    <div class="form-group col-3 d-flex justify-content-end align-items-center">
-                        <input type="checkbox" class="form-control">
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
                 <h3>{{ __('Exports') }}</h3>
                 <hr>
             </div>
@@ -93,21 +64,10 @@
                         <h4 class="mb-0">{{ __('Export Users') }}</h4>
                         <p class="m-0 sub-text">{{ __('Receive a list of all users in the system as PDF or CSV') }}</p>
                     </div>
-                    <div class="form-group col-4">
-                        <a href="{{ route('user_to_pdf') }}" class="btn btn-primary">Export PDF</a>
-                        <button class="btn btn-info">Export CSV</button>
+                    <div class="form-group col-4 text-right">
+                        <a href="{{ route('user_to_pdf') }}" class="btn btn-primary">{{ __('Export to PDF') }}</a>
                     </div>
                 </form>
-                <div class="row my-3">
-                    <div class="form-group col-8">
-                        <h4 class="mb-0">{{ __('Export Messages') }}</h4>
-                        <p class="m-0 sub-text">{{ __('Receive a list of all messages posted in the system') }}</p>
-                    </div>
-                    <div class="form-group col-4">
-                        <a href="#" class="btn btn-primary">Export PDF</a>
-                        <button class="btn btn-info">Export CSV</button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

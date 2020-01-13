@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+    let items = ['content', 'system', 'account', 'other'];
+
     $('.showpassword').on('click', function() {
         if($('#password').attr('type') === "password") {
             $('#password').attr('type', 'text');
@@ -13,8 +16,8 @@ $(document).ready(function(){
         $('#sub-page-select').toggle();
     });
 
-    var $url = $('#url');
-    var $name = $('#name');
+    let $url = $('#url');
+    let $name = $('#name');
 
     $("#name").keyup(function() {
         $name.val().replace(/[^a-z]/g,'');
@@ -22,33 +25,54 @@ $(document).ready(function(){
 
     });
 
+    function checkIfOthersActive(item, list, type)
+    {
+        if(type === "slide")
+        {
+            for (i = 0; i < list.length; i++) {
+                if($(item + list[i]).hasClass('slideout-active')) {
+                    $(item + list[i]).hide("slide", { direction: "left"}, 250);
+                    $(item + list[i]).removeClass('slideout-active');
+                }
+            }
+        } else {
+            for (i = 0; i < list.length; i++) {
+                if($(item + list[i]).hasClass('slideout-active')) {
+                    $(item + list[i]).hide("slide", { direction: "left"}, 250);
+                    $(item + list[i]).removeClass('slideout-active');
+                    $('.slide-out-overlay').fadeOut();
+                }
+            }
+        }
+
+    }
+
     $('.slide-out').on('click', function() {
         let data = 'slideout-item';
         if($(this).data(data)) {
             let item = $('.slide-out-' + $(this).data(data));
+
             if(item.hasClass('slideout-active')) {
                 item.hide("slide", { direction: "left" }, 250);
                 item.removeClass('slideout-active');
-                $('.slide-out-overlay').fadeOut()
-            } else {
+                $('.slide-out-overlay').fadeOut();
+                return
+            }
+            checkIfOthersActive(".slide-out-", items, "slide");
+
+            if(!item.hasClass('slideout-active')) {
                 item.show("slide", { direction: "left" }, 250);
                 item.addClass('slideout-active');
                 $('.slide-out-overlay').fadeIn()
+
             }
+
         }
     });
 
     $('.slide-out-overlay').on('click', function () {
-        let items = ['content', 'system', 'account', 'other'];
         let item = '.slide-out-';
-        for (i = 0; i < items.length; i++) {
-            if($(item + items[i]).hasClass('slideout-active')) {
-                $(item + items[i]).hide("slide", { direction: "left"}, 250);
-                $(item + items[i]).removeClass('slideout-active');
-                $('.slide-out-overlay').fadeOut();
-
-            }
-        }
+        checkIfOthersActive(item, items, "overlay");
     });
 });
 

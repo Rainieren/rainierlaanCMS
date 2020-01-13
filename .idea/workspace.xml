@@ -2,22 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64e4f1e7-9313-438d-b689-89f70e325ab3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/app.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/base/_mixins.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/base/typography.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/base/variables.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/components/_navbar.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/theme.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/notifications/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LayoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LayoutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/newMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/newMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/registerRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/registerRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/nl.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/nl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/theme.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/theme.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pdfs/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdfs/users.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/preferences/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/preferences/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,11 +189,13 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/sass" />
+      <recent name="$PROJECT_DIR$/resources/sass/components" />
+      <recent name="$PROJECT_DIR$/resources/views/layouts/layouts" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/layouts/layouts" />
     </key>
   </component>
   <component name="RunManager">
@@ -251,6 +262,9 @@
       <workItem from="1578679244281" duration="39000" />
       <workItem from="1578748571547" duration="1997000" />
       <workItem from="1578751528412" duration="6059000" />
+      <workItem from="1578765018887" duration="95000" />
+      <workItem from="1578828619784" duration="3957000" />
+      <workItem from="1578941890374" duration="7730000" />
     </task>
     <servers />
   </component>
@@ -261,19 +275,23 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="496" y="197" key="#File_Watchers" timestamp="1578828884970">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="496" y="197" key="#File_Watchers/0.23.1792.1017@0.23.1792.1017" timestamp="1578828884970" />
     <state x="732" y="196" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577548056323">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="732" y="196" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.63.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1577548056323" />
     <state x="732" y="196" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1577534184560" />
-    <state x="603" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578761761737">
+    <state x="603" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578829400183">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="603" y="331" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1578761761737" />
-    <state x="683" y="243" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1578762040102">
+    <state x="603" y="331" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1578829400183" />
+    <state x="683" y="243" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1578828768243">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="683" y="243" key="#com.intellij.ide.macro.MacrosDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1578762040102" />
+    <state x="683" y="243" key="#com.intellij.ide.macro.MacrosDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1578828768243" />
     <state x="584" y="266" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578225513873">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -282,6 +300,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="658" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1577996166271" />
+    <state x="634" y="285" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578828651095">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="634" y="285" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1578828651095" />
     <state x="634" y="293" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578561590794">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -292,10 +314,10 @@
     </state>
     <state x="517" y="189" key="#phpunit.xml/-1920.63.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1577640617966" />
     <state x="517" y="189" key="#phpunit.xml/0.23.1792.1017@0.23.1792.1017" timestamp="1578763379581" />
-    <state x="469" y="310" width="852" height="656" key="EditFileWatcherDialog" timestamp="1578762646209">
+    <state x="469" y="310" width="852" height="690" key="EditFileWatcherDialog" timestamp="1578828784298">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="469" y="310" width="852" height="656" key="EditFileWatcherDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1578762646209" />
+    <state x="469" y="310" width="852" height="690" key="EditFileWatcherDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1578828784298" />
     <state width="1204" height="258" key="GridCell.Tab.0.bottom" timestamp="1578225896217">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>

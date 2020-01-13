@@ -71,7 +71,9 @@ Route::group(['middleware' => 'App\Http\Middleware\RoleAllowedMiddleware'], func
 //    PDFs
     Route::get('/dashboard/users/pdf', 'PDFController@index')->name('user_to_pdf');
 
+    Route::get('/dashboard/notifications', 'NotificationController@index')->name('notifications');
     Route::post('/dashboard/notifications/read', 'NotificationController@store')->name('read_notifications');
+    Route::delete('/dashboard/notification/{id}/delete', 'NotificationController@destroy')->name('delete_notification');
 });
 
 

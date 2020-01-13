@@ -50,7 +50,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+        $user = User::where('user_token', $id)->firstOrFail();
 
         return view('users.show', compact('user'));
     }

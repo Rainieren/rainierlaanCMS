@@ -85,6 +85,13 @@
     "From:": "Van:",
     "Register requests": "Registreer verzoeken",
     "Requested on": "Aangevraagd op",
-    "No requests": "Geen verzoeken"
+    "No requests": "Geen verzoeken",
+    "Requested by": "Aangevraagd door",
+    "Date created": "Datum aangemaakt",
+    "Amount of users": "Aantal gebruikers",
+    "Exports": "Exporteren",
+    "Export Users": "Exporteer gebruikers",
+    "Receive a list of all users in the system as PDF or CSV": "Ontvang een lijst met alle gebruikers in het systeem als PDF of CSV bestand",
+    "Export to PDF": "Exporteren naar PDF"
 
 }

@@ -21,17 +21,44 @@
 </div>
 <div class="sub-header">
     <div class="creator-info">
-        <p  class="mar-0" style="color: #0052CC">Gemaakt door:</p>
+        <p  class="mar-0" style="color: #0052CC">{{ __('Requested by') }}</p>
         <p class="mar-0">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</p>
     </div>
     <div class="created-info">
-        <p  class="mar-0" style="color: #0052CC">Datum aangemaakt:</p>
+        <p  class="mar-0" style="color: #0052CC">{{ __('Date created') }}</p>
         <p class="mar-0">{{ date("Y/m/d") }}</p>
     </div>
     <div class="total-users">
-        <p  class="mar-0" style="color: #0052CC">Aantal gebruikers:</p>
+        <p  class="mar-0 font-weight-bold" style="color: #0052CC">{{ __('Amount of users') }}</p>
         <h2 class="mar-0">{{ count($users) }}</h2>
     </div>
+</div>
+
+<div class="user-list">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">{{ __('ID') }}</th>
+            <th scope="col">{{ __('Firstname') }}</th>
+            <th scope="col">{{ __('Lastname') }}</th>
+            <th scope="col">{{ __('Email') }}</th>
+            <th scope="col">{{ __('Role') }}</th>
+            <th scope="col">{{ __('Created at') }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($users as $user)
+        <tr>
+            <th scope="row">{{ $user->id }}</th>
+            <td>{{ $user->firstname }}</td>
+            <td>{{ $user->lastname }}</td>
+            <td>{{ $user->email }}</td>
+            <td>{{ $user->role->name }}</td>
+            <td>{{ $user->created_at->toFormattedDateString() }}</td>
+        </tr>
+        @endforeach
+        </tbody>
+    </table>
 </div>
 
 </body>
@@ -80,6 +107,12 @@
     .sub-header .total-users {
         width: 50%;
         float: left;
+    }
+
+    .user-list {
+        width: 100%;
+        position: absolute;
+        top: 280px;
     }
 </style>
 </html>

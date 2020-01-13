@@ -4,17 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Notifications\DatabaseNotification as Notification;
 
 class NotificationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+
+        return view('notifications.index', compact('user'));
     }
 
     /**
@@ -84,6 +87,7 @@ class NotificationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $notification = Notification::where('id', $id)->firstOrFail();
+        $notification->delete;
     }
 }

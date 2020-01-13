@@ -30,10 +30,10 @@
             <div class="card p-4">
                 <div class="card-body">
                     <h5 class="card-title">{{ __('Register requests') }}</h5>
-                    @if($count = Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() == 0)
+                    @if(Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() == 0)
                         <h1>{{ __('No requests') }}</h1>
                     @else
-                        <h1>{{ $count }}</h1>
+                        <h1>{{ Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() }}</h1>
                     @endif
                 </div>
             </div>
