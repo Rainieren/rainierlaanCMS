@@ -25,6 +25,8 @@ $(document).ready(function(){
 
     });
 
+
+
     function checkIfOthersActive(item, list, type)
     {
         if(type === "slide")
@@ -44,7 +46,6 @@ $(document).ready(function(){
                 }
             }
         }
-
     }
 
     $('.slide-out').on('click', function() {
@@ -55,7 +56,7 @@ $(document).ready(function(){
             if(item.hasClass('slideout-active')) {
                 item.hide("slide", { direction: "left" }, 250);
                 item.removeClass('slideout-active');
-                $('.slide-out-overlay').fadeOut();
+                $('.slide-out-overlay').fadeOut().removeClass('overlay-active');
                 return
             }
             checkIfOthersActive(".slide-out-", items, "slide");
@@ -63,7 +64,7 @@ $(document).ready(function(){
             if(!item.hasClass('slideout-active')) {
                 item.show("slide", { direction: "left" }, 250);
                 item.addClass('slideout-active');
-                $('.slide-out-overlay').fadeIn()
+                $('.slide-out-overlay').fadeIn().addClass('overlay-active')
 
             }
 
@@ -73,6 +74,7 @@ $(document).ready(function(){
     $('.slide-out-overlay').on('click', function () {
         let item = '.slide-out-';
         checkIfOthersActive(item, items, "overlay");
+
     });
 });
 

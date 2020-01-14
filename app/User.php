@@ -56,4 +56,12 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Preference::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
+    }
 }

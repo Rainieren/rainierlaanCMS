@@ -103,6 +103,18 @@
             <li class="sidebar-item"><a href="{{ route('profile', ['id' => Auth::user()->user_token]) }}" class="sidebar-link {{ Route::currentRouteNamed('profile') ? 'sidebar-active' : '' }}">
                     <div class="sidebar-icon"><i class="far fa-user"></i></div>{{ __('Profile') }}</a>
             </li>
+            <li class="sidebar-item"><a href="" class="sidebar-link">
+                    <div class="sidebar-icon"><i class="far fa-download"></i></div>{{ __('My downloads') }}</a>
+            </li>
+            <li class="sidebar-item"><a href="{{ route('addresses', ['token' => Auth::user()->user_token]) }}" class="sidebar-link {{ Route::currentRouteNamed('addresses') ? 'sidebar-active' : '' }}">
+                    <div class="sidebar-icon"><i class="far fa-home-lg-alt"></i></div>{{ __('Addresses') }}</a>
+            </li>
+            <li class="sidebar-item"><a href="" class="sidebar-link">
+                    <div class="sidebar-icon"><i class="far fa-file-invoice-dollar"></i></div>{{ __('Billing history') }}</a>
+            </li>
+            <li class="sidebar-item"><a href="" class="sidebar-link">
+                    <div class="sidebar-icon"><i class="far fa-credit-card"></i></div>{{ __('Payment methods') }}</a>
+            </li>
         </ul>
     </nav>
 </div>
