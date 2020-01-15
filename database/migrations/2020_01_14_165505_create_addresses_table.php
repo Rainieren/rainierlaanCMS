@@ -15,6 +15,7 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('token');
             $table->integer('user_id');
             $table->string('street_name');
             $table->string('house_number');
@@ -23,6 +24,7 @@ class CreateAddressesTable extends Migration
             $table->integer('country_id');
             $table->string('state');
             $table->string('phone');
+            $table->boolean('is_billing');
             $table->timestamps();
         });
     }

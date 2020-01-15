@@ -118,6 +118,10 @@
     color: #0052CC;
 }
 
+.color-black {
+    color: #000000;
+}
+
 
 .primary-background {
 
@@ -239,6 +243,11 @@
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #0052CC;
+}
+
+.active-border {
+    border: 2px solid #0052CC;
+    border-radius: 5px;
 }
 
 

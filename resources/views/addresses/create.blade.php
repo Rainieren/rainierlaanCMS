@@ -4,7 +4,7 @@
     <div class="container-fluid pt-5">
         <div class="row">
             <div class="col-md-6">
-                <h3>{{ __('Add a new address') }}</h3>
+                <h3>{{ __('Create new address') }}</h3>
             </div>
         </div>
         <div class="row my-5">
@@ -14,42 +14,78 @@
                     <div class="form-group row">
                         <div class="col-8">
                             <label for="street">Streetname</label>
-                            <input type="text" name="street" class="form-control">
+                            <input type="text" name="street" class="form-control  @error('street') is-invalid @enderror">
+                            @error('street')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="col-4">
                             <label for="number">Number</label>
-                            <input type="text" name="number" class="form-control">
+                            <input type="text" name="number" class="form-control @error('number') is-invalid @enderror">
+                            @error('number')
+                            <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="city">City</label>
-                        <input type="text" class="form-control" name="city">
+                        <input type="text" class="form-control @error('city') is-invalid @enderror" name="city">
+                        @error('city')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="form-group row">
                         <div class="col-8">
                             <label for="state">State/Province</label>
-                            <input type="text" class="form-control" name="state">
+                            <input type="text" class="form-control @error('state') is-invalid @enderror" name="state">
+                            @error('state')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                         <div class="col-4">
                             <label for="postal_code">Postalcode</label>
-                            <input type="text" class="form-control" name="postal_code">
+                            <input type="text" class="form-control @error('postal_code') is-invalid @enderror" name="postal_code">
+                            @error('postal_code')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="country">{{ __('Country') }}</label>
-                        <select name="country" id="country" class="form-control">
+                        <select name="country" id="country" class="form-control @error('country') is-invalid @enderror">
+                            <option value="">{{ __('Choose a country...') }}</option>
                             @foreach($countries as $country)
                                 <option value="{{ $country->id}}">{{ $country->name }}</option>
                             @endforeach
                         </select>
+                        @error('country')
+                        <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="phone">Phonenumber</label>
-                        <input type="text" class="form-control" name="phone">
+                        <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone">
+                        @error('phone')
+                        <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" value="1" name="is_billing" id="defaultCheck1" >
                             <label class="form-check-label" for="defaultCheck1">
                                {{ __('Use as my default billing address') }}
                             </label>

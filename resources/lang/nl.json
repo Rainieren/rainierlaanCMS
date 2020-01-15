@@ -92,6 +92,21 @@
     "Exports": "Exporteren",
     "Export Users": "Exporteer gebruikers",
     "Receive a list of all users in the system as PDF or CSV": "Ontvang een lijst met alle gebruikers in het systeem als PDF of CSV bestand",
-    "Export to PDF": "Exporteren naar PDF"
+    "Export to PDF": "Exporteren naar PDF",
+    "Add address": "Adres toevoegen",
+    "Address book": "Adresboek",
+    "My downloads": "Mijn downloads",
+    "Billing history": "Factuurgeschiedenis",
+    "Payment methods": "Betaalmethoden",
+    "Update address": "Adres wijzigen",
+    "Streetname": "Straatnaam",
+    "Number": "Nummer",
+    "City": "Stad",
+    "State/Province": "Staat/Provincie",
+    "Country": "Land",
+    "Phonenumber": "Telefoonnummer",
+    "Postalcode": "Postcode",
+    "Save address": "Address opslaan",
+    "Use as my default billing address": "Gebruiken als mijn standaard factuur adres"
 
 }

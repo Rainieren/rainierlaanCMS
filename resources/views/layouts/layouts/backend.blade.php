@@ -107,7 +107,7 @@
                     <div class="sidebar-icon"><i class="far fa-download"></i></div>{{ __('My downloads') }}</a>
             </li>
             <li class="sidebar-item"><a href="{{ route('addresses', ['token' => Auth::user()->user_token]) }}" class="sidebar-link {{ Route::currentRouteNamed('addresses') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon"><i class="far fa-home-lg-alt"></i></div>{{ __('Addresses') }}</a>
+                    <div class="sidebar-icon"><i class="far fa-home-lg-alt"></i></div>{{ __('Address book') }}</a>
             </li>
             <li class="sidebar-item"><a href="" class="sidebar-link">
                     <div class="sidebar-icon"><i class="far fa-file-invoice-dollar"></i></div>{{ __('Billing history') }}</a>
