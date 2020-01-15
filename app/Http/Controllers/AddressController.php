@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Address;
+use App\Country;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,18 +29,33 @@ class AddressController extends Controller
      */
     public function create()
     {
-        //
+        $user = Auth::user();
+        $countries = Country::all();
+
+        return view('addresses.create', compact('user', 'countries'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $address = Address::create([
+            'user_id' => $user->id,
+            'street_name' => $request->street,
+            'house_number' => $request->number,
+            'postal_code' => $request->postal_code,
+            'state' => $request->state,
+            'city' => $request->city,
+            'country_id' => $request->country,
+            'phone' => $request->phone,
+        ]);
+
+        return redirect('/dashboard/user/' . $user->user_token . '/addresses');
     }
 
     /**

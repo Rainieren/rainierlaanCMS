@@ -6,17 +6,21 @@
             <div class="col-md-6">
                 <h3>{{ __('Address book') }}</h3>
             </div>
+            <div class="col-md-6 text-right">
+                <a href="{{ route('create_address') }}" class="btn btn-primary">{{ __('Add address') }}</a>
+            </div>
         </div>
         <div class="row my-5">
             @foreach($addresses as $address)
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card shadow-sm">
                         <div class="card-body row">
                             <div class="col-md-8">
-                                <h4>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h4>
+                                <h4>{{ $address->user->firstname }} {{ $address->user->lastname }}</h4>
                                 <p class="m-0">{{ $address->street_name }} {{ $address->house_number }}</p>
                                 <p class="m-0">{{ $address->postal_code }} {{ $address->city }}, {{ $address->state }}</p>
                                 <p class="m-0">{{ $address->country->name }}</p>
+                                <p class="m-0">{{ $address->phone }}</p>
                             </div>
                             <div class="col-md-4">
                                 <a href=""><i class="far fa-paint-brush fa-lg"></i></a>

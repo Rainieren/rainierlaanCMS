@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64e4f1e7-9313-438d-b689-89f70e325ab3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Address.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Country.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Download.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AddressController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/State.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_14_165343_create_downloads_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_14_165505_create_addresses_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_14_165819_create_countries_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_14_165831_create_states_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/CountriesTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/text" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/addresses/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/addresses/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Address.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AddressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AddressController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/addresses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addresses/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/layouts/portal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layouts/portal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -260,7 +248,8 @@
       <workItem from="1578828619784" duration="3957000" />
       <workItem from="1578941890374" duration="7730000" />
       <workItem from="1579010703088" duration="4817000" />
-      <workItem from="1579022383871" duration="1858000" />
+      <workItem from="1579022383871" duration="1893000" />
+      <workItem from="1579095612504" duration="1949000" />
     </task>
     <servers />
   </component>

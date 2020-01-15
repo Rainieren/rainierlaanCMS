@@ -78,6 +78,10 @@ Route::group(['middleware' => 'App\Http\Middleware\RoleAllowedMiddleware'], func
 
 //    Addresses
     Route::get('/dashboard/user/{token}/addresses', 'AddressController@index')->name('addresses');
+    Route::get('/dashboard/address/create', 'AddressController@create')->name('create_address');
+    Route::post('/dashboard/address/store', 'AddressController@store')->name('store_address');
+    Route::get('/dashboard/address/{token}/edit', 'AddressController@edit')->name('edit_address');
+    Route::delete('/dashboard/address/{token}/delete', 'AddressController@destroy')->name('delete_address');
 });
 
 
