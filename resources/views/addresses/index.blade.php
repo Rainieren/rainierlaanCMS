@@ -10,7 +10,7 @@
         <div class="row my-5">
             @foreach($addresses as $address)
                 <div class="col-md-6 my-3">
-                    <div class="card shadow-sm {{ ($address->is_billing == 1) ? 'active-border' : '' }}">
+                    <div class="card shadow-sm {{ ($address->is_billing == 1) ? 'active-border' : '' }}" style="height: 100%">
                         <div class="card-body row">
                             <div class="col-md-8">
                                 <h4>{{ $address->user->firstname }} {{ $address->user->lastname }}</h4>
@@ -42,7 +42,7 @@
                 </div>
             @endforeach
             <div class="col-md-6 my-3">
-                <a href="{{ route('create_address') }}">
+                <a class="add_address" href="{{ route('create_address') }}">
                     <div class="card shadow-sm py-4">
                         <div class="card-body text-center color-black">
                             <i class="far fa-plus" style="font-size: 42px"></i>

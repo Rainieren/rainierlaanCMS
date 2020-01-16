@@ -64,4 +64,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Address::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function downloads()
+    {
+        return $this->hasMany(Download::class);
+    }
 }

@@ -141,6 +141,16 @@
     content: "";
     background-color: #0052CC;
 }
+.add_address:hover {
+    text-decoration: none;
+}
+.add_address .card {
+    transition: .3s all;
+}
+.add_address .card:hover {
+    transition: .3s all;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
 
 .message {
     color: black;

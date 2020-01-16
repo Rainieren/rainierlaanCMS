@@ -2,16 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64e4f1e7-9313-438d-b689-89f70e325ab3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/addresses/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DownloadController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckIfRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/downloads/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Address.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AddressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AddressController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_14_165505_create_addresses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_14_165505_create_addresses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Download.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Download.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PDFController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_14_165343_create_downloads_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_14_165343_create_downloads_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/nl.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/nl.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/addresses/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addresses/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/addresses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addresses/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/roles/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/roles/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,9 +180,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -255,6 +266,9 @@
       <workItem from="1579022383871" duration="1893000" />
       <workItem from="1579095612504" duration="2496000" />
       <workItem from="1579119376442" duration="5916000" />
+      <workItem from="1579168165826" duration="4393000" />
+      <workItem from="1579204625415" duration="212000" />
+      <workItem from="1579205636463" duration="2317000" />
     </task>
     <servers />
   </component>
@@ -324,19 +338,19 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="1204" height="258" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1578225896216" />
-    <state x="397" y="170" key="SettingsEditor" timestamp="1579022373532">
+    <state x="758" y="103" key="SettingsEditor" timestamp="1579205655115">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="397" y="170" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1579022373532" />
+    <state x="758" y="103" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1579205655115" />
     <state x="771" y="272" width="276" height="518" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1577548070936">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="771" y="272" width="276" height="518" key="com.intellij.database.view.ui.DbObjectDialog/-1920.63.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1577548070936" />
     <state x="771" y="272" key="com.intellij.database.view.ui.DbObjectDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1577534209813" />
-    <state x="544" y="143" width="858" height="777" key="find.popup" timestamp="1579021696965">
+    <state x="544" y="143" width="858" height="777" key="find.popup" timestamp="1579171045811">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="544" y="143" width="858" height="777" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1579021696965" />
+    <state x="544" y="143" width="858" height="777" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1579171045811" />
     <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1579021032205">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>

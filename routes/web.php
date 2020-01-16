@@ -35,7 +35,9 @@ Route::group(['middleware' => 'App\Http\Middleware\RoleAllowedMiddleware'], func
     Route::patch('/dashboard/block/{identifier}/store', 'BlockController@update')->name('update_block');
 // All routes related to users
     Route::get('/dashboard/users', 'UserController@index')->name('users');
-    Route::get('/dashboard/user/{id}', 'UserController@show')->name('profile');
+    Route::get('/dashboard/user/{token}', 'UserController@show')->name('profile');
+    Route::get('/dashboard/user/create', 'UserController@create')->name('create_user');
+
 // All routes related to roles
     Route::get('/dashboard/roles', 'RoleController@index')->name('roles');
     Route::get('/dashboard/role/create', 'RoleController@create')->name('create_role');
@@ -83,6 +85,9 @@ Route::group(['middleware' => 'App\Http\Middleware\RoleAllowedMiddleware'], func
     Route::get('/dashboard/address/{token}/edit', 'AddressController@edit')->name('edit_address');
     Route::patch('/dashboard/address/{token}/update', 'AddressController@update')->name('update_address');
     Route::delete('/dashboard/address/{token}/delete', 'AddressController@destroy')->name('delete_address');
+
+    // Downloads
+    Route::get('/dashboard/user/{token}/downloads', 'DownloadController@index')->name('downloads');
 });
 
 

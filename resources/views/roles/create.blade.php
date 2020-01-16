@@ -12,8 +12,13 @@
                 <form action="{{ route('store_role') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input name="name" type="text" class="form-control" placeholder="Role name">
+                        <label for="name">{{ __('Name') }}</label>
+                        <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Role name">
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary">Add Role</button>

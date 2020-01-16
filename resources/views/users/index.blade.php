@@ -7,7 +7,7 @@
                 <h3>{{ __('Users') }}</h3>
             </div>
             <div class="col-md-6 text-right">
-                <a href="{{ route('create_block') }}" class="btn btn-primary">{{ __('Create user') }}</a>
+                <a href="{{ route('create_user') }}" class="btn btn-primary">{{ __('Create user') }}</a>
             </div>
         </div>
         @if(count($users) == 0)

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Download;
 use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PDFController extends Controller
 {
@@ -18,6 +20,11 @@ class PDFController extends Controller
         $users = User::all();
 
         $pdf = PDF::loadView('pdfs.users', ['users' => $users]);
+
+        $download = Download::create([
+            'user_id' => Auth::user()->id,
+            'filename' => 'users.pdf'
+        ]);
 
         return $pdf->download('users.pdf');
     }

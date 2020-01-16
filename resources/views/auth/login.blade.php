@@ -72,6 +72,9 @@
                             <small>©<?php echo date("Y"); ?> All Rights Reserved.</small>
                         </div>
                     </form>
+                    @isset($note)
+                        {{ $note }}
+                    @endisset
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
                     @csrf
                     <div class="form-group row">
                         <div class="col-8">
-                            <label for="street">Streetname</label>
+                            <label for="street">{{ __('Streetname') }}</label>
                             <input type="text" name="street" class="form-control  @error('street') is-invalid @enderror">
                             @error('street')
                                 <span class="invalid-feedback" role="alert">
@@ -22,7 +22,7 @@
                             @enderror
                         </div>
                         <div class="col-4">
-                            <label for="number">Number</label>
+                            <label for="number">{{ __('Number') }}</label>
                             <input type="text" name="number" class="form-control @error('number') is-invalid @enderror">
                             @error('number')
                             <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="city">City</label>
+                        <label for="city">{{ __('City') }}</label>
                         <input type="text" class="form-control @error('city') is-invalid @enderror" name="city">
                         @error('city')
                             <span class="invalid-feedback" role="alert">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-8">
-                            <label for="state">State/Province</label>
+                            <label for="state">{{ __('State/Province') }}</label>
                             <input type="text" class="form-control @error('state') is-invalid @enderror" name="state">
                             @error('state')
                             <span class="invalid-feedback" role="alert">
@@ -51,7 +51,7 @@
                             @enderror
                         </div>
                         <div class="col-4">
-                            <label for="postal_code">Postalcode</label>
+                            <label for="postal_code">{{ __('Postalcode') }}</label>
                             <input type="text" class="form-control @error('postal_code') is-invalid @enderror" name="postal_code">
                             @error('postal_code')
                             <span class="invalid-feedback" role="alert">
@@ -75,7 +75,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phonenumber</label>
+                        <label for="phone">{{ __('Phonenumber') }}</label>
                         <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone">
                         @error('phone')
                         <span class="invalid-feedback" role="alert">

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use Carbon\Carbon;
+use App\Download;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class UserController extends Controller
+class DownloadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,19 +14,19 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('role')->paginate(15);
+        $downloads = Download::all();
 
-        return view('users.index', compact('users'));
+        return view('downloads.index', compact('downloads'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('users.create');
+        //
     }
 
     /**
@@ -50,9 +48,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::where('user_token', $id)->firstOrFail();
-
-        return view('users.show', compact('user'));
+        //
     }
 
     /**

@@ -106,7 +106,11 @@
     "Country": "Land",
     "Phonenumber": "Telefoonnummer",
     "Postalcode": "Postcode",
-    "Save address": "Address opslaan",
-    "Use as my default billing address": "Gebruiken als mijn standaard factuur adres"
+    "Save address": "Adres opslaan",
+    "Use as my default billing address": "Gebruiken als mijn standaard factuur adres",
+    "Choose a country...": "Kies een land...",
+    "Unread": "Ongelezen",
+    "Read": "Gelezen",
+    "Your inbox is empty. Come back another time": "Je inbox is leeg. Kom op een later moment terug."
 
 }

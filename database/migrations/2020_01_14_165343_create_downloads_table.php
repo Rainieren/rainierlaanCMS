@@ -16,7 +16,7 @@ class CreateDownloadsTable extends Migration
         Schema::create('downloads', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->string('type');
+            $table->string('filename');
             $table->timestamps();
         });
     }

@@ -6,7 +6,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Dashboard</title>
 
     <script src="{{ asset('js/app.js') }}"></script>
 
@@ -100,10 +100,10 @@
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
             <li class="sidebar-item title">{{ __('Account') }}</li>
-            <li class="sidebar-item"><a href="{{ route('profile', ['id' => Auth::user()->user_token]) }}" class="sidebar-link {{ Route::currentRouteNamed('profile') ? 'sidebar-active' : '' }}">
+            <li class="sidebar-item"><a href="{{ route('profile', ['token' => Auth::user()->user_token]) }}" class="sidebar-link {{ Route::currentRouteNamed('profile') ? 'sidebar-active' : '' }}">
                     <div class="sidebar-icon"><i class="far fa-user"></i></div>{{ __('Profile') }}</a>
             </li>
-            <li class="sidebar-item"><a href="" class="sidebar-link">
+            <li class="sidebar-item"><a href="{{ route('downloads', ['token' => Auth::user()->user_token]) }}" class="sidebar-link {{ Route::currentRouteNamed('downloads') ? 'sidebar-active' : '' }}">
                     <div class="sidebar-icon"><i class="far fa-download"></i></div>{{ __('My downloads') }}</a>
             </li>
             <li class="sidebar-item"><a href="{{ route('addresses', ['token' => Auth::user()->user_token]) }}" class="sidebar-link {{ Route::currentRouteNamed('addresses') ? 'sidebar-active' : '' }}">
