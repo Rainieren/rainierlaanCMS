@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64e4f1e7-9313-438d-b689-89f70e325ab3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DownloadController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckIfRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/downloads/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Download.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Download.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PDFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PDFController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_14_165343_create_downloads_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_14_165343_create_downloads_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/nl.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/nl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addresses/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addresses/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/addresses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addresses/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/roles/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/roles/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,9 +164,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -269,6 +252,8 @@
       <workItem from="1579168165826" duration="4393000" />
       <workItem from="1579204625415" duration="212000" />
       <workItem from="1579205636463" duration="2317000" />
+      <workItem from="1579294669839" duration="343000" />
+      <workItem from="1579295100354" duration="42000" />
     </task>
     <servers />
   </component>
@@ -279,10 +264,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="496" y="197" key="#File_Watchers" timestamp="1578828884970">
+    <state x="496" y="197" key="#File_Watchers" timestamp="1579294707335">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="496" y="197" key="#File_Watchers/0.23.1792.1017@0.23.1792.1017" timestamp="1578828884970" />
+    <state x="496" y="197" key="#File_Watchers/0.23.1792.1017@0.23.1792.1017" timestamp="1579294707335" />
     <state x="732" y="196" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577548056323">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -338,10 +323,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="1204" height="258" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1578225896216" />
-    <state x="758" y="103" key="SettingsEditor" timestamp="1579205655115">
+    <state x="758" y="103" key="SettingsEditor" timestamp="1579295010494">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="758" y="103" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1579205655115" />
+    <state x="758" y="103" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1579295010494" />
     <state x="771" y="272" width="276" height="518" key="com.intellij.database.view.ui.DbObjectDialog" timestamp="1577548070936">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
