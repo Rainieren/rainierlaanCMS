@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Address;
+use App\Role;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -59,11 +61,15 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
-        //
+        $user = User::where('user_token', $id)->firstOrFail();
+        $address = Address::where('is_billing', 1)->first();
+        $roles = Role::all();
+
+        return view('users.edit', compact('user', 'address', 'roles'));
     }
 
     /**

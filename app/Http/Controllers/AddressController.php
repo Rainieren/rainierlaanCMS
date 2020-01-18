@@ -13,7 +13,7 @@ class AddressController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
@@ -26,7 +26,7 @@ class AddressController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -59,7 +59,7 @@ class AddressController extends Controller
         $addresses = Address::all();
 
         $billing = 0;
-        if($request->is_billing) {
+        if($request->is_billing == 1) {
             $billing = $request->is_billing;
             foreach($addresses as $address) {
                 if($address->is_billing == 1) {
@@ -123,7 +123,7 @@ class AddressController extends Controller
         $user = Auth::user();
 
         $billing = 0;
-        if($request->is_billing) {
+        if($request->is_billing == 1) {
             $billing = $request->is_billing;
             foreach($addresses as $item) {
                 if($item->is_billing == 1) {

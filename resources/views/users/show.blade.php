@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="col-md-6 text-right">
-                <a href="" class="btn btn-primary"><i class="far fa-edit"></i> {{ __('Edit') }}</a>
+                <a href="{{ route('edit_user', ['token' => $user->user_token]) }}" class="btn btn-primary"><i class="far fa-edit"></i> {{ __('Edit') }}</a>
             </div>
         </div>
     </div>

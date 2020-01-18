@@ -37,6 +37,7 @@ Route::group(['middleware' => 'App\Http\Middleware\RoleAllowedMiddleware'], func
     Route::get('/dashboard/users', 'UserController@index')->name('users');
     Route::get('/dashboard/user/{token}', 'UserController@show')->name('profile');
     Route::get('/dashboard/user/create', 'UserController@create')->name('create_user');
+    Route::get('/dashboard/user/{token}/edit', 'UserController@edit')->name('edit_user');
 
 // All routes related to roles
     Route::get('/dashboard/roles', 'RoleController@index')->name('roles');
