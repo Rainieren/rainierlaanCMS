@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    let items = ['content', 'system', 'account', 'other'];
+    let items = ['content', 'system', 'account', 'packages','other'];
 
     $('.showpassword').on('click', function() {
         if($('#password').attr('type') === "password") {

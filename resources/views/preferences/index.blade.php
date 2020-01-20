@@ -10,18 +10,18 @@
         </div>
         <div class="row my-3">
             <div class="col-md-6">
-                <form action="" class="form-row my-3">
-                    <div class="form-group col-9">
-                        <h4 class="mb-0">{{ __('Theme') }}</h4>
-                        <p class="m-0 sub-text">{{ __('Change look of the dashboard') }}</p>
-                    </div>
-                    <div class="form-group col-3 d-flex justify-content-end align-items-center">
-                        <select name="theme" id="theme" class="form-control">
-                            <option value="0">{{ __('Light Theme') }}</option>
-                            <option value="1">{{ __('Dark Theme') }}</option>
-                        </select>
-                    </div>
-                </form>
+{{--                <form action="" class="form-row my-3">--}}
+{{--                    <div class="form-group col-9">--}}
+{{--                        <h4 class="mb-0">{{ __('Theme') }}</h4>--}}
+{{--                        <p class="m-0 sub-text">{{ __('Change look of the dashboard') }}</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="form-group col-3 d-flex justify-content-end align-items-center">--}}
+{{--                        <select name="theme" id="theme" class="form-control">--}}
+{{--                            <option value="0">{{ __('Light Theme') }}</option>--}}
+{{--                            <option value="1">{{ __('Dark Theme') }}</option>--}}
+{{--                        </select>--}}
+{{--                    </div>--}}
+{{--                </form>--}}
                 <form method="POST" action="{{ route('change_language',['id' => Auth::user()->id]) }}" class="form-row my-3">
                     {{ csrf_field() }}
                     {{ method_field('PATCH') }}

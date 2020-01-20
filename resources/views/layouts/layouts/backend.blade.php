@@ -8,13 +8,6 @@
 
     <title>Dashboard</title>
 
-    <script src="{{ asset('js/app.js') }}"></script>
-
-<script src="{{ asset('js/jquery-ui.js') }}"></script>
-<script src="{{ asset('js/Sortable.js') }}"></script>
-<script src="{{ asset('js/jquery-sortable.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
-
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -39,6 +32,8 @@
                 <div class="sidebar-icon"><i class="far fa-cog"></i></div>{{ __('System') }}<i class="far fa-chevron-right" style="position:absolute; right: 0;"></i></a></li>
         <li class="sidebar-item"><a href="#" class="sidebar-link slide-out" data-slideout-item="account">
                 <div class="sidebar-icon"><i class="far fa-user"></i></div> {{ __('Account') }}<i class="far fa-chevron-right" style="position:absolute; right: 0;"></i></a></li>
+        <li class="sidebar-item"><a href="#" class="sidebar-link slide-out" data-slideout-item="packages">
+                <div class="sidebar-icon"><i class="far fa-box-alt"></i></div> {{ __('Packages') }}<i class="far fa-chevron-right" style="position:absolute; right: 0;"></i></a></li>
         <li class="sidebar-item"><a href="#" class="sidebar-link slide-out" data-slideout-item="other">
                 <div class="sidebar-icon"><i class="far fa-wrench"></i></div>{{ __('Other') }}<i class="far fa-chevron-right" style="position:absolute; right: 0;"></i></a></li>
         <li class="sidebar-item">
@@ -48,13 +43,6 @@
                     <span class="badge badge-danger" style="position:absolute; right: 0;">{{ Auth::user()->unreadNotifications->count() }}</span>
                 @endif
             </a>
-        </li>
-    </ul>
-
-    <ul class="list-unstyled mt-auto mb-0">
-
-        <li class="sidebar-item">
-            <img src="https://s3.amazonaws.com/static.digg.com/images/0d220736ec91419682471c71dfc8a439_407c1382cbc6d6213971e53f30091ec1_1_original.jpeg" width="25" height="25" style="object-fit: cover; border-radius: 25px">
         </li>
     </ul>
 </nav>
@@ -110,10 +98,27 @@
                     <div class="sidebar-icon"><i class="far fa-home-lg-alt"></i></div>{{ __('Address book') }}</a>
             </li>
             <li class="sidebar-item"><a href="" class="sidebar-link">
+                    <div class="sidebar-icon"><i class="far fa-tags"></i></div>{{ __('Subscriptions') }}</a>
+            </li>
+            <li class="sidebar-item"><a href="" class="sidebar-link">
                     <div class="sidebar-icon"><i class="far fa-file-invoice-dollar"></i></div>{{ __('Billing history') }}</a>
             </li>
             <li class="sidebar-item"><a href="" class="sidebar-link">
                     <div class="sidebar-icon"><i class="far fa-credit-card"></i></div>{{ __('Payment methods') }}</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="slide-out-block shadow slide-out-packages" id="slide-out">
+    <nav class="sidebar-slideout">
+        <ul class="list-unstyled">
+            <li class="sidebar-item title">{{ __('Packages') }}</li>
+            <li class="sidebar-item"><a href="" class="sidebar-link">
+                    <div class="sidebar-icon"><i class="far fa-boxes-alt"></i></div>{{ __('Browse packages') }}</a>
+            </li>
+            <li class="sidebar-item"><a href="" class="sidebar-link">
+                    <div class="sidebar-icon"><i class="far fa-box-check"></i></div>{{ __('Installed packages') }}</a>
             </li>
         </ul>
     </nav>
@@ -131,6 +136,13 @@
 
 <div class="slide-out-overlay"></div>
 </body>
+
+    <script src="{{ asset('js/app.js') }}"></script>
+
+<script src="{{ asset('js/jquery-ui.js') }}"></script>
+<script src="{{ asset('js/Sortable.js') }}"></script>
+<script src="{{ asset('js/jquery-sortable.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 
 <script>
 

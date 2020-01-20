@@ -9,7 +9,7 @@
         </div>
         <div class="row my-5">
             <div class="col-md-6">
-                @foreach($downloads as $download)
+                @forelse($downloads as $download)
                     <div class="card shadow-sm mb-3">
                         <div class="card-body row">
                             <div class="col-2 d-flex justify-content-center align-items-center">
@@ -24,7 +24,9 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <p class="">{{ __('You haven\'t downloaded anything yet. Download something and it will display here.') }}</p>
+                @endforelse
             </div>
         </div>
     </div>

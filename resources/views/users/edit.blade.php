@@ -6,13 +6,14 @@
             <form action="" style="display: contents">
             <div class="col-md-7">
                 <div class="row">
-                    <div class="col-md-3">
-                        <img class="profile-image shadow-lg" src="{{ asset('/images/en_flag.png') }}" width="125" height="125" style="border: 3px solid #0052CC">
-                    </div>
                     <div class="col-md-9">
                         <h3>{{ $user->firstname }} {{ $user->lastname }}</h3>
-                        <p class="m-0 sub-text">{{ $address->city }}, {{ $address->country->name }}</p>
-                         {!! $user->activated === 1 ? "<small class=\"text-success\"><i class=\"far fa-check \"></i> Activated</small>" : "<small class=\"text-danger\"><i class=\"far fa-times\"></i> Not activated</small>" !!}
+                        @if($address)
+                            <p class="m-0 sub-text">{{ $address->city }}, {{ $address->country->name }}</p>
+                        @else
+                            <p class="m-0 sub-text">{{ __('No address yet') }}</p>
+                        @endif
+                         {!! $user->activated === 1 ? "<small class=\"text-success\"><i class=\"far fa-check \"></i> Account activated</small>" : "<small class=\"text-danger\"><i class=\"far fa-times\"></i> Account not activated</small>" !!}
                     </div>
                 </div>
             </div>
@@ -43,6 +44,7 @@
                         </div>
                         @endif
                     </div>
+                    @if($address)
                     <div class="form-group row my-5">
                         <div class="col-5">
                             <label for="email">{{ __('Location') }}</label>
@@ -50,6 +52,7 @@
                             <small class="sub-text">Change this by going to Account > Address book and click on the pencil to edit</small>
                         </div>
                     </div>
+                    @endif
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">{{ __('Save changes') }}</button>
                     </div>
