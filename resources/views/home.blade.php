@@ -18,36 +18,23 @@
             <div class="card p-4">
                 <div class="card-body">
                     <h5 class="card-title">{{ __('New messages') }}</h5>
-                    <h1>{{ count($messages) }}</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <div class="card p-4">
-                <div class="card-body">
-                    <h5 class="card-title">Most visited page</h5>
-                    <h1>Homepage</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row my-5">
-        <div class="col-md-8">
-            <div class="card p-4">
-                <div class="card-body">
-                    <h5 class="card-title">Todo list</h5>
-                    <ul class="">
-                        <li>Zorg ervoor dat de hoofdpagina (route is /) ook uit de database geladen word. i.p.v de welcome view.</li>
-                        <li>Een leuke toevoeging is dat je de kleur en thema kan aanpassen. Dark theme, White theme, accent color</li>
-                    </ul>
+                    @if($count = Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\newMessage'])->count() == 0)
+                        <h1>{{ __('No messages') }}</h1>
+                    @else
+                        <h1>{{ $count }}</h1>
+                    @endif
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card p-4">
                 <div class="card-body">
-                    <h5 class="card-title">Number of blocks</h5>
-                    <h1>10</h1>
+                    <h5 class="card-title">{{ __('Register requests') }}</h5>
+                    @if(Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() == 0)
+                        <h1>{{ __('No requests') }}</h1>
+                    @else
+                        <h1>{{ Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() }}</h1>
+                    @endif
                 </div>
             </div>
         </div>

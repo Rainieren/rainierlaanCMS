@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class PreferencesController extends Controller
 {
@@ -86,11 +88,10 @@ class PreferencesController extends Controller
 
     public function changeLanguage(Request $request, $id)
     {
-        $user = User::findOrFail($id);
-
-        $user->language = $request->get('language');
-        $user->save();
-
-        App::setLocale($request->language);
+       if(Auth()->check()) {
+           Auth::user()->language = $request->get('language');
+           Auth::user()->save();
+       }
+//        Session::put('applocale', $request->get('language'));
     }
 }

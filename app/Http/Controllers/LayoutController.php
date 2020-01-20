@@ -38,6 +38,10 @@ class LayoutController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => ['required', 'string'],
+            'content' => ['required', 'integer'],
+        ]);
         // Make name camelcase
         $filename = Str::camel($request->name) . ".blade.php";
         $file = fopen(resource_path('views/layouts/layouts/' . $filename), 'w');
@@ -89,6 +93,7 @@ class LayoutController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $layout = Layout::find($request->id);
         $file = resource_path('views/layouts/layouts/' . $layout->filename);
         file_put_contents($file, $request->content, FILE_IGNORE_NEW_LINES);
@@ -100,8 +105,11 @@ class LayoutController extends Controller
         $layout->content = $request->content;
 
         $layout->save();
-
-        return redirect('/dashboard/layouts');
+        if($request->edit == "edit") {
+            return redirect('/dashboard/layouts');
+        } else {
+            return back();
+        }
     }
 
     /**

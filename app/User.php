@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -20,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'role_id', 'firstname', 'lastname', 'email', 'password', 'language'
+        'role_id', 'firstname', 'lastname', 'email', 'password', 'language', 'activated', 'user_token'
     ];
 
     /**
@@ -55,5 +56,32 @@ class User extends Authenticatable
     public function preference()
     {
         return $this->belongsTo(Preference::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function downloads()
+    {
+        return $this->hasMany(Download::class);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        if(Auth::check())
+            return(Auth::user()->role_id == 1);
+
+        return false;
     }
 }

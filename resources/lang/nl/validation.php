@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'required' => ':attribute is verplicht.',
+    'required' => 'Dit veld is verplicht!',
 ];

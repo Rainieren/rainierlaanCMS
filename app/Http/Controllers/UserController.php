@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Address;
+use App\Role;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,11 +26,11 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -49,18 +52,24 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::where('user_token', $id)->firstOrFail();
+
+        return view('users.show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
-        //
+        $user = User::where('user_token', $id)->firstOrFail();
+        $address = Address::where('is_billing', 1)->first();
+        $roles = Role::all();
+
+        return view('users.edit', compact('user', 'address', 'roles'));
     }
 
     /**

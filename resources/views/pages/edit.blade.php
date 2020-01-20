@@ -31,7 +31,7 @@
                         <select name="layout" id="" class="form-control">
                             <option value="" selected>{{ __('Default') }}</option>
                             <?php
-                            $dir = "../resources/views/layouts";
+                            $dir = "../resources/views/layouts/layouts";
                             $list = scandir($dir,1);
                             $newlist = array_splice($list, -2);
 
@@ -54,7 +54,7 @@
                     <div class="form-group">
                         <h3>{{ __('This page has') }} {{ count($blocks) }} {{ __('blocks.') }}</h3>
                         <p>{{ __('To rearrange the order of the blocks as they appear on the page, simply drag and drop them in the desired order.') }}</p>
-                        <div class="block-order-list" >
+                        <div class="block-order-list">
                             @foreach($blocks->sortBy('order') as $block)
                                 <div class="list-group-item" data-id="{{ $block->id }}"><i class="far fa-arrows handle mr-3"></i> {{$block->name}}</div>
                             @endforeach

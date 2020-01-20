@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MessageSend;
 use App\Message;
+use App\Notifications\newMessage;
+use App\Page;
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class MessageController extends Controller
 {
@@ -14,7 +21,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::all();
+        $messages = Message::orderBy('created_at', 'desc')->get();
 
         return view('messages.index', compact('messages'));
     }
@@ -33,11 +40,34 @@ class MessageController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+
+        $message = Message::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'email' => $request->email,
+            'title' => $request->title,
+            'message' => $request->message,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        $message = Message::find($message->id);
+
+        $users = User::where('role_id', 1)->get();
+
+        // Let the user with role_id know a new message has been created.
+        foreach($users as $user) {
+            $user->notify(new newMessage($message));
+        }
+
+        // Send a confirmation to the person submitting the form
+        Mail::to($request->email)->send(new MessageSend($message));
+
+        return back();
     }
 
     /**
@@ -88,11 +118,4 @@ class MessageController extends Controller
     /**
      * @param $id
      */
-    public function changeState(Request $request, $id)
-    {
-        $message = Message::find($id);
-
-        $message->read = $request->state;
-        $message->save;
-    }
 }

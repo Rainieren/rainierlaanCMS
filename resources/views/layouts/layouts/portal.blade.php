@@ -13,7 +13,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
 </head>
-<body style="background-color: #FF9D45 !important;">
+<body style="background-color: #0052CC !important;">
 
     <main class="" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
         @yield('content')

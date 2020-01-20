@@ -7,7 +7,7 @@
                 <h3>{{ __('Users') }}</h3>
             </div>
             <div class="col-md-6 text-right">
-                <a href="{{ route('create_block') }}" class="btn btn-primary">{{ __('Create user') }}</a>
+                <a href="{{ route('create_user') }}" class="btn btn-primary">{{ __('Create user') }}</a>
             </div>
         </div>
         @if(count($users) == 0)
@@ -26,6 +26,7 @@
                             <th scope="col">{{ __('Firstname') }}</th>
                             <th scope="col">{{ __('Lastname') }}</th>
                             <th scope="col">{{ __('Role') }}</th>
+                            <th scope="col">{{ __('Is request') }}</th>
                             <th scope="col">{{ __('Created at') }}</th>
                             <th scope="col">{{ __('Updated at') }}</th>
                             <th scope="col">{{ __('Action') }}</th>
@@ -38,6 +39,7 @@
                                 <td>{{ $user->firstname }}</td>
                                 <td>{{ $user->lastname }}</td>
                                 <td>{{ $user->role->name }}</td>
+                                <td>{{ $user->is_request }}</td>
                                 <td>{{ $user->created_at->toFormattedDateString() }}</td>
                                 <td>{{ $user->updated_at->toFormattedDateString() }}</td>
                                 <td>

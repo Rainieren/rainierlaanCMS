@@ -3,11 +3,18 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\MessageSend;
+use App\Mail\RegisterRequestSend;
+use App\Notifications\newMessage;
+use App\Notifications\registerRequest;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -21,7 +28,7 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
+    use Notifiable;
     use RegistersUsers;
 
     /**
@@ -50,7 +57,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'firstname' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -64,10 +72,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $users = User::where('id', 1)->get();
+
+        $user = User::create([
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
+            'role_id' => 3,
+            'activated' => 0,
+            'user_token' => Str::random(32),
             'password' => Hash::make($data['password']),
         ]);
+
+        foreach($users as $admin) {
+            $admin->notify(new registerRequest($user));
+        }
+
+        Mail::to($user->email)->send(new RegisterRequestSend($user));
+
+        return $user;
     }
+
+
 }

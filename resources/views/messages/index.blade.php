@@ -7,62 +7,51 @@
                 <h3>{{ __('Messages') }}</h3>
             </div>
         </div>
-
-        <div class="inbox row my-4">
-            <div class="col-md-4">
-                <div class="messages">
+        @if(count($messages) == 0)
+            <div class="row my-5">
+                <div class="col-md-12 text-center">
+                    <p>{{ __('Your inbox is empty. Come back another time') }}</p>
+                </div>
+            </div>
+        @else
+        <div class="row my-5">
+            <div class="col-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     @foreach($messages as $message)
-                        <form method="POST" action="{{ route('message_state', ['id' => $message->id]) }}">
-                            {{ csrf_field() }}
-                            {{ method_field('PATCH') }}
-                            <a href="#" id="message" class="message p-4 row">
-                                <input type="hidden" id="message_id" value="{{ $message->id }}">
-                                <div class="col-md-8">
-                                    <h5 class="m-0 message-title">{{ $message->title }}</h5>
-                                    <p class="m-0 message-short-text">{{ Str::limit($message->message, 40, $end='...') }}</p>
-                                    <small class="message-author">Door: {{ $message->firstname }}</small>
-                                </div>
-                                <div class="col-md-4 text-right">
-                                    <small class="message-date">{{ $message->created_at->toFormattedDateString() }}</small>
-                                </div>
-                            </a>
-                            <hr>
-                        </form>
-
+                        <a class="nav-link message my-2 " id="v-pills-message-{{ $message->id }}" data-toggle="pill" href="#v-pills-{{ $message->id }}" role="tab" aria-controls="v-pills-{{ $message->id }}" aria-selected="true">
+                            <h5 class="m-0">{{ $message->firstname }} {{ $message->lastname }}</h5>
+                            <p class="m-0">{{ $message->title }}</p>
+                            <p class="sub-text m-0">{{ Str::limit($message->message, $length = 40, $end = '...') }}</p>
+                        </a>
                     @endforeach
                 </div>
             </div>
-            <div class="col-md-8">
-
-                <div class="message-full px-5">
-                    <div class="message-header">
-                        <h3>Titel bericht</h3>
+            <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    @foreach($messages as $message)
+                    <div class="tab-pane fade" id="v-pills-{{ $message->id }}" role="tabpanel" aria-labelledby="v-pills-message-{{ $message->id }}">
+                        <div class="message-header row">
+                            <div class="col-8">
+                                <h4 class="m-0">{{ $message->firstname }} {{ $message->lastname }}</h4>
+                                <p class="m-0">{{ $message->title }}</p>
+                                <p class="m-0 sub-text">{{ __('From:') }} {{$message->email}}</p>
+                            </div>
+                            <div class="col-4 text-right">
+                                <p class="sub-text m-0">{{ $message->created_at->toFormattedDateString() }}</p>
+                            </div>
+                        </div>
                         <hr>
-                        <p class="sub-text m-0">Van: Henk jan, email@email.com</p>
-                        <hr>
+                        <div class="message-content">
+                            <p>{{ $message->message }}</p>
+                            <div class="form-group my-4">
+                                <a href="mailto:{{ $message->email}}?subject={{ $message->title }} " class="btn btn-primary">{{ __('Send message back') }}</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="message-content my-5">
-                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A blanditiis dolore fugit hic ipsum magnam, minus nostrum temporibus voluptatum. Ab id, laboriosam libero nulla pariatur praesentium quaerat sunt suscipit veniam.</p>
-                    </div>
-                    <button class="btn btn-primary">{{ __('Send a response back') }}</button>
+                    @endforeach
                 </div>
-
             </div>
         </div>
+        @endif
     </div>
-
-    <script>
-        $('#message').on('click', function() {
-            $iden = $('#message_id').val();
-            $.ajax({
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                url: '/dashboard/message/' + $iden + '/state',
-                type: 'PATCH',
-                data: {"state": 1},
-                success: function(data) {
-                    alert("Hey het werkt");
-                }
-            });
-        });
-    </script>
 @endsection

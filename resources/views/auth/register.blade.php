@@ -1,11 +1,16 @@
-@extends('layouts.layouts.app')
+@extends('layouts.layouts.portal')
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-md-6">
             <div class="card shadow">
-                <div class="card-header text-center">{{ __('Register') }}</div>
+                <div class="card-header text-center p-4">
+                    <h2>{{ __('Submit a register request') }}</h2>
+                    <p class="sub-text">{{ __('To have access to our system you will have to submit a register request. A response can be expected with 1-2 days.') }}</p>
+
+                </div>
+
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -42,6 +47,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="reason">Reason</label>
+                            <textarea name="reason" class="form-control" id="reason" cols="30" rows="10" placeholder="Why would you want access to our system?"></textarea>
+                        </div>
+
+                        <div class="form-group">
                             <label for="password" class="">{{ __('Password') }}</label>
                             <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
@@ -59,7 +69,7 @@
 
                         <div class="form-group mb-0">
                             <button type="submit" class="btn btn-primary btn-block">
-                                {{ __('Register') }}
+                                {{ __('Send request') }}
                             </button>
                         </div>
                     </form>

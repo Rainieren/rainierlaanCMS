@@ -25,7 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $messages = Message::where('read', 0)->get();
-        return view('home', compact('messages'));
+        return view('home');
     }
 }

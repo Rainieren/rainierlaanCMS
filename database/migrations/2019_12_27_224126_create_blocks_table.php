@@ -17,7 +17,7 @@ class CreateBlocksTable extends Migration
             $table->bigIncrements('id');
             $table->integer('page_id');
             $table->string('name');
-            $table->string('identifier');
+            $table->string('identifier')->unique();
             $table->boolean('status');
             $table->longText('content');
             $table->integer('order');

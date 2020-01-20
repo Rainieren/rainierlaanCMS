@@ -10,18 +10,18 @@
         </div>
         <div class="row my-3">
             <div class="col-md-6">
-                <form action="" class="form-row my-3">
-                    <div class="form-group col-9">
-                        <h4 class="mb-0">{{ __('Theme') }}</h4>
-                        <p class="m-0 sub-text">{{ __('Change look of the dashboard') }}</p>
-                    </div>
-                    <div class="form-group col-3 d-flex justify-content-end align-items-center">
-                        <select name="theme" id="theme" class="form-control">
-                            <option value="0">{{ __('Light Theme') }}</option>
-                            <option value="1">{{ __('Dark Theme') }}</option>
-                        </select>
-                    </div>
-                </form>
+{{--                <form action="" class="form-row my-3">--}}
+{{--                    <div class="form-group col-9">--}}
+{{--                        <h4 class="mb-0">{{ __('Theme') }}</h4>--}}
+{{--                        <p class="m-0 sub-text">{{ __('Change look of the dashboard') }}</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="form-group col-3 d-flex justify-content-end align-items-center">--}}
+{{--                        <select name="theme" id="theme" class="form-control">--}}
+{{--                            <option value="0">{{ __('Light Theme') }}</option>--}}
+{{--                            <option value="1">{{ __('Dark Theme') }}</option>--}}
+{{--                        </select>--}}
+{{--                    </div>--}}
+{{--                </form>--}}
                 <form method="POST" action="{{ route('change_language',['id' => Auth::user()->id]) }}" class="form-row my-3">
                     {{ csrf_field() }}
                     {{ method_field('PATCH') }}
@@ -31,8 +31,15 @@
                     </div>
                     <div class="form-group col-3 d-flex justify-content-end align-items-center">
                         <select name="language" id="language" class="form-control">
-                            <option value="nl" {{ ( Auth::user()->language == 'nl') ? 'selected' : '' }}>{{ __('Dutch') }}</option>
-                            <option value="en" {{ ( Auth::user()->language == 'en') ? 'selected' : '' }}>{{ __('English') }}</option>
+                            <option value="nl" {{ ( Auth::user()->language == 'nl') ? 'selected' : '' }}>
+                                {{ __('Dutch') }}
+                            </option>
+                            <option value="en" {{ ( Auth::user()->language == 'en') ? 'selected' : '' }}>
+                                {{ __('English') }}
+                            </option>
+                            <option value="de" {{ ( Auth::user()->language == 'de') ? 'selected' : '' }}>
+                                {{ __('Deutch') }}
+                            </option>
                         </select>
 
                     </div>
@@ -41,16 +48,26 @@
                     </div>
                 </form>
 
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>{{ __('Exports') }}</h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-6">
                 <form method="POST" action="" class="form-row my-3">
-                    <div class="form-group col-9">
-                        <h4 class="mb-0">{{ __('Notifications') }}</h4>
-                        <p class="m-0 sub-text">{{ __('Turn notifications on or off') }}</p>
+                    <div class="form-group col-8">
+                        <h4 class="mb-0">{{ __('Export Users') }}</h4>
+                        <p class="m-0 sub-text">{{ __('Receive a list of all users in the system as PDF or CSV') }}</p>
                     </div>
-                    <div class="form-group col-3 d-flex justify-content-end align-items-center">
-                        <input type="checkbox" class="form-control">
+                    <div class="form-group col-4 text-right">
+                        <a href="{{ route('user_to_pdf') }}" class="btn btn-primary">{{ __('Export to PDF') }}</a>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
@@ -63,10 +80,13 @@
                 type: 'PATCH',
                 data: {"language": $(this).children("option:selected").val()},
                 success: function(data) {
+
                     $('.saved-message').fadeIn();
                     setTimeout(function() {
                         $('.saved-message').fadeOut();
+                        location.reload();
                     }, 1000);
+
                 }
             })
         });

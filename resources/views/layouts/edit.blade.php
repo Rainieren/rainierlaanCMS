@@ -21,7 +21,8 @@
                         <textarea name="content" id="" class="form-control" cols="50" rows="20">{{ $layout->content }}</textarea>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">{{ __('Edit layout') }}</button>
+                        <button type="submit" class="btn btn-primary" name="edit" value="edit">{{ __('Edit layout') }}</button>
+                        <button type="submit" class="btn btn-link" name="edit" value="continue">Save and continue editing</button>
                     </div>
                 </form>
             </div>
