@@ -2,8 +2,8 @@ $(document).ready(function(){
 
     let items = ['content', 'system', 'account', 'packages','other'];
 
-    $('.fadeInUp').addClass('animated fadeInUp');
-    $('.fadeInRight').addClass('animated fadeInRight');
+    $('.fadeInUp').addClass('animated fadeInUp delay-05s');
+    $('.fadeInRight').addClass('animated fadeInRight delay-05s');
 
     $('.showpassword').on('click', function() {
         if($('#password').attr('type') === "password") {
@@ -27,8 +27,6 @@ $(document).ready(function(){
         $url.val(this.value.toLowerCase().replace(/\s+/g, "-"));
 
     });
-
-
 
     function checkIfOthersActive(item, list, type)
     {

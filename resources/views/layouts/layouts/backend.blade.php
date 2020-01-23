@@ -20,28 +20,62 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
 </head>
 <body style="background: #ffffff">
 
 <nav class="sidebar">
+    <div class="logo-header mt-3 mb-4">
+        <h4>rainierlaanCMS</h4>
+    </div>
     <ul class="list-unstyled">
         <li class="sidebar-item title">{{ __('Information') }}</li>
         <li class="sidebar-item"><a href="{{ route('home') }}" class="sidebar-link {{ Route::currentRouteNamed('home') ? 'sidebar-active' : '' }}">
-                <div class="sidebar-icon">
-                    <i class="far fa-tachometer-alt-slowest"></i>
-                </div>{{ __('Dashboard') }}</a>
+            <div class="sidebar-icon">
+                <i class="far fa-tachometer-alt-slowest"></i>
+            </div>{{ __('Dashboard') }}</a>
         </li>
         <li class="sidebar-item title">{{ __('System') }}</li>
-        <li class="sidebar-item"><a href="#" class="sidebar-link slide-out" data-slideout-item="content">
-                <div class="sidebar-icon"><i class="far fa-layer-group"></i></div>{{ __('Content') }}<i class="far fa-chevron-right" style="position:absolute; right: 0;"></i></a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-link slide-out" data-slideout-item="system">
-                <div class="sidebar-icon"><i class="far fa-cog"></i></div>{{ __('System') }}<i class="far fa-chevron-right" style="position:absolute; right: 0;"></i></a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-link slide-out" data-slideout-item="account">
-                <div class="sidebar-icon"><i class="far fa-user"></i></div> {{ __('Account') }}<i class="far fa-chevron-right" style="position:absolute; right: 0;"></i></a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-link slide-out" data-slideout-item="packages">
-                <div class="sidebar-icon"><i class="far fa-box-alt"></i></div> {{ __('Packages') }}<i class="far fa-chevron-right" style="position:absolute; right: 0;"></i></a></li>
-        <li class="sidebar-item"><a href="#" class="sidebar-link slide-out" data-slideout-item="other">
-                <div class="sidebar-icon"><i class="far fa-wrench"></i></div>{{ __('Other') }}<i class="far fa-chevron-right" style="position:absolute; right: 0;"></i></a></li>
+        <li class="sidebar-item">
+            <a href="#" class="sidebar-link slide-out" data-slideout-item="content">
+                <div class="sidebar-icon">
+                    <i class="far fa-layer-group"></i>
+                </div>{{ __('Content') }}
+                <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="#" class="sidebar-link slide-out" data-slideout-item="system">
+                <div class="sidebar-icon">
+                    <i class="far fa-cog"></i>
+                </div>{{ __('System') }}
+                <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="#" class="sidebar-link slide-out" data-slideout-item="account">
+                <div class="sidebar-icon">
+                    <i class="far fa-user"></i>
+                </div> {{ __('Account') }}
+                <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="#" class="sidebar-link slide-out" data-slideout-item="packages">
+                <div class="sidebar-icon">
+                    <i class="far fa-box-alt"></i>
+                </div> {{ __('Packages') }}
+                <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="#" class="sidebar-link slide-out" data-slideout-item="other">
+                <div class="sidebar-icon">
+                    <i class="far fa-wrench"></i>
+                </div>{{ __('Other') }}
+                <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
+            </a>
+        </li>
         <li class="sidebar-item">
             <a href="{{ route('notifications') }}">
                 <div class="sidebar-icon"><i class="far fa-bell"></i></div>{{ __('Notifications') }}
@@ -49,6 +83,18 @@
                     <span class="badge badge-danger" style="position:absolute; right: 0;">{{ Auth::user()->unreadNotifications->count() }}</span>
                 @endif
             </a>
+        </li>
+    </ul>
+    <ul class="list-unstyled sidebar-bottom mt-auto">
+        <li class="sidebar-item">
+            <a href="{{ route('logout') }}" class="sidebar-link text-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <div class="sidebar-icon">
+                    <i class="fas fa-power-off"></i>
+                </div>{{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </li>
     </ul>
 </nav>

@@ -1,0 +1,37 @@
+@import "../base/variables"
+
+.sidebar
+    background-color: $color_white
+    position: fixed
+    height: 100%
+    width: 230px
+    padding: 30px
+    z-index: 3
+    display: flex
+    flex-direction: column
+    .sidebar-item
+        position: relative
+        padding: 10px
+        text-decoration: none
+        display: flex
+        align-content: center
+        transition: .3s all
+        &:hover
+            transition: .3s all
+            margin-left: 5px
+        .title
+            text-transform: uppercase
+            font-size: 12px
+            color: $sidebar_title_color
+            &:hover
+                transition: none
+                margin: 0
+        .sidebar-icon
+            width: 25px
+            height: 25px
+            display: flex
+            align-items: center
+            justify-content: center
+            margin-right: 5px
+
+
