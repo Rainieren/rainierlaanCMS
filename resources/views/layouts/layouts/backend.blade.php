@@ -6,7 +6,13 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dashboard</title>
+    <title>Rainierlaan | CMS</title>
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    <script src="{{ asset('js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('js/Sortable.js') }}"></script>
+    <script src="{{ asset('js/jquery-sortable.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -88,23 +94,11 @@
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
             <li class="sidebar-item title">{{ __('Account') }}</li>
-            <li class="sidebar-item"><a href="{{ route('profile', ['token' => Auth::user()->user_token]) }}" class="sidebar-link {{ Route::currentRouteNamed('profile') ? 'sidebar-active' : '' }}">
+            <li class="sidebar-item"><a href="{{ route('profile', ['token' => Auth::user()->token]) }}" class="sidebar-link {{ Route::currentRouteNamed('profile') ? 'sidebar-active' : '' }}">
                     <div class="sidebar-icon"><i class="far fa-user"></i></div>{{ __('Profile') }}</a>
             </li>
-            <li class="sidebar-item"><a href="{{ route('downloads', ['token' => Auth::user()->user_token]) }}" class="sidebar-link {{ Route::currentRouteNamed('downloads') ? 'sidebar-active' : '' }}">
+            <li class="sidebar-item"><a href="{{ route('downloads', ['token' => Auth::user()->token]) }}" class="sidebar-link {{ Route::currentRouteNamed('downloads') ? 'sidebar-active' : '' }}">
                     <div class="sidebar-icon"><i class="far fa-download"></i></div>{{ __('My downloads') }}</a>
-            </li>
-            <li class="sidebar-item"><a href="{{ route('addresses', ['token' => Auth::user()->user_token]) }}" class="sidebar-link {{ Route::currentRouteNamed('addresses') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon"><i class="far fa-home-lg-alt"></i></div>{{ __('Address book') }}</a>
-            </li>
-            <li class="sidebar-item"><a href="" class="sidebar-link">
-                    <div class="sidebar-icon"><i class="far fa-tags"></i></div>{{ __('Subscriptions') }}</a>
-            </li>
-            <li class="sidebar-item"><a href="" class="sidebar-link">
-                    <div class="sidebar-icon"><i class="far fa-file-invoice-dollar"></i></div>{{ __('Billing history') }}</a>
-            </li>
-            <li class="sidebar-item"><a href="" class="sidebar-link">
-                    <div class="sidebar-icon"><i class="far fa-credit-card"></i></div>{{ __('Payment methods') }}</a>
             </li>
         </ul>
     </nav>
@@ -136,14 +130,6 @@
 
 <div class="slide-out-overlay"></div>
 </body>
-
-    <script src="{{ asset('js/app.js') }}"></script>
-
-<script src="{{ asset('js/jquery-ui.js') }}"></script>
-<script src="{{ asset('js/Sortable.js') }}"></script>
-<script src="{{ asset('js/jquery-sortable.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
-
 <script>
 
 </script>

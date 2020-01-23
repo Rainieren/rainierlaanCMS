@@ -12,10 +12,12 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
 </head>
-<body style="background-color: #0052CC !important;">
+<body style="overflow: hidden">
 
-    <main class="" style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <main class="" style="">
         @yield('content')
     </main>
 

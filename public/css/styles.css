@@ -176,7 +176,7 @@
 .btn.btn-primary {
     background-color: #0052CC;
     border: 0;
-    border-radius: 7px;
+    border-radius: 25px;
 }
 
 .btn.btn-info {
@@ -260,5 +260,18 @@
     border-radius: 5px;
 }
 
+.custom-card {
+    background: rgb(246, 245, 250);
+    border-radius: 15px;
+    border: 0;;
+}
+
+.br-5 {
+    border-radius: 3rem;
+}
+
+.login-info {
+    color: white;
+}
 
 

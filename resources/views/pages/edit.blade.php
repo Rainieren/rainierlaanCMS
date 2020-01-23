@@ -59,6 +59,7 @@
                                 <div class="list-group-item" data-id="{{ $block->id }}"><i class="far fa-arrows handle mr-3"></i> {{$block->name}}</div>
                             @endforeach
                         </div>
+                        <input type="text" value="{{ $page->url }}" hidden id="page-url">
                     </div>
                     <small class="saved-message text-success" style="display: none">The order has been saved!</small>
                 @endif
@@ -66,37 +67,6 @@
 
         </div>
     </div>
-
-    <script>
-        $('.block-order-list').sortable({
-            animation: 150,
-            handle: '.handle',
-            store: {
-                set: function (sortable) {
-                    let order = {};
-                    $('.list-group-item').each(function() {
-                        order[$(this).data('id')] = $(this).index();
-                    });
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
-                    $.ajax({
-                        url: '{{ route('change_order', ['url', $page->url]) }}',
-                        type: 'POST',
-                        data: {order: order},
-                        success: function(data){
-                            $('.saved-message').fadeIn();
-                            setTimeout(function() {
-                                $('.saved-message').fadeOut();
-                            }, 1000);
-                        }
-                    })
-                }
-            }
-        });
-    </script>
 @endsection
 
 

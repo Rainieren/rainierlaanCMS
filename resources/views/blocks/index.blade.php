@@ -38,7 +38,7 @@
                             <td>{{ $block->id }}</td>
                             <td>{{ $block->name }}</td>
                             <td>{{ $block->identifier }}</td>
-                            <td>{{ $block->page->name }}</td>
+                            <td><a href="{{ route('pages') }}">{{ $block->page->name }}</a></td>
                             <td>
                                 @if($block->status == 0)
                                     {{ __('Disabled') }}

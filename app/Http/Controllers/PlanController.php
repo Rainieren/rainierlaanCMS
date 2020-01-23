@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 
-class PreferencesController extends Controller
+class PlanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +13,7 @@ class PreferencesController extends Controller
      */
     public function index()
     {
-
-        return view('preferences/index');
+        //
     }
 
     /**
@@ -85,14 +80,5 @@ class PreferencesController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function changeLanguage(Request $request, $id)
-    {
-       if(Auth()->check()) {
-           Auth::user()->language = $request->get('language');
-           Auth::user()->save();
-       }
-//        Session::put('applocale', $request->get('language'));
     }
 }

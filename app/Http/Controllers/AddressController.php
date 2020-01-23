@@ -46,16 +46,6 @@ class AddressController extends Controller
     {
         $user = Auth::user();
 
-        $validatedData = $request->validate([
-            'street' => ['required', 'string'],
-            'number' => ['required', 'string'],
-            'city' => ['required', 'string'],
-            'state' => ['required', 'string'],
-            'postal_code' => ['required', 'string'],
-            'country' => ['required', 'string'],
-            'phone' => ['required', 'string']
-        ]);
-
         $addresses = Address::all();
 
         $billing = 0;
@@ -82,7 +72,7 @@ class AddressController extends Controller
             'is_billing' => $billing
         ]);
 
-        return redirect('/dashboard/user/' . $user->user_token . '/addresses');
+        return redirect('/dashboard/user/' . $user->token . '/addresses');
     }
 
     /**
@@ -123,6 +113,7 @@ class AddressController extends Controller
         $user = Auth::user();
 
         $billing = 0;
+
         if($request->is_billing == 1) {
             $billing = $request->is_billing;
             foreach($addresses as $item) {
@@ -145,7 +136,7 @@ class AddressController extends Controller
 
         $address->save();
 
-        return redirect('/dashboard/user/' . $user->user_token . '/addresses');
+        return redirect('/dashboard/user/' . $user->token . '/addresses');
     }
 
     /**

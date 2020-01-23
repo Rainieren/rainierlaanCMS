@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'role_id' => 1,
-            'user_token' => Str::random(32),
+            'token' => Str::random(32),
             'firstname' => 'Rainier',
             'lastname' => 'Laan',
             'email' => 'rainier.laan@home.nl',

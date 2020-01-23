@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Block;
+use App\Http\Requests\CreateBlock;
+use App\Http\Requests\ValidateBlock;
 use App\Page;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -11,20 +13,6 @@ use Illuminate\Support\Facades\Validator;
 class BlockController extends Controller
 {
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'page_id' => ['required', 'integer'],
-            'content' => ['required', 'string'],
-        ]);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -56,14 +44,8 @@ class BlockController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(ValidateBlock $request)
     {
-        $validatedData = $request->validate([
-            'name' => ['required', 'string'],
-            'page' => ['required', 'integer'],
-            'content' => ['required', 'string'],
-        ]);
-
         $identifier = str_replace(' ', '_', strtolower($request->name));
         $blocks = Block::where('page_id', $request->page)->get();
 
@@ -119,7 +101,7 @@ class BlockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, $id)
+    public function update(ValidateBlock $request, $id)
     {
         $identifier = str_replace(' ', '_', strtolower($request->name));
 

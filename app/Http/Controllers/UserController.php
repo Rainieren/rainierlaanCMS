@@ -52,7 +52,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::where('user_token', $id)->firstOrFail();
+        $user = User::where('token', $id)->firstOrFail();
 
         return view('users.show', compact('user'));
     }
@@ -65,7 +65,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::where('user_token', $id)->firstOrFail();
+        $user = User::where('token', $id)->firstOrFail();
         $address = Address::where('is_billing', 1)->first();
         $roles = Role::all();
 

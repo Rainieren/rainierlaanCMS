@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Block;
+use App\Http\Requests\ValidatePage;
 use App\Layout;
 use App\Page;
 use Carbon\Carbon;
@@ -15,7 +16,7 @@ class PageController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
@@ -27,12 +28,13 @@ class PageController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
         $pages = Page::all();
         $layouts = Layout::all();
+
         return view('pages.create', compact('pages', 'layouts'));
     }
 
@@ -42,14 +44,8 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(ValidatePage $request)
     {
-        $validatedData = $request->validate([
-            'name' => ['required', 'string'],
-            'layout' => ['required', 'integer'],
-            'sub_page' => ['required', 'integer'],
-        ]);
-
         $identifier = str_replace(' ', '_', strtolower($request->name));
 
         if ($request->sub_page == 0) {
@@ -58,7 +54,6 @@ class PageController extends Controller
             $parent_page = Page::find($request->sub_page);
             $url = $parent_page->url . '/' . Str::slug($request->name);
         }
-
 
         $page = Page::create([
             'name' => $request->name,
@@ -125,7 +120,6 @@ class PageController extends Controller
     public function destroy($id)
     {
         $page = Page::where('url', $id)->firstOrFail();
-        $page = Page::find($page->id);
         $page->blocks()->delete();
         $page->delete();
 
@@ -133,8 +127,8 @@ class PageController extends Controller
     }
 
     /**
-     * @param $data
-     * @return
+     * @param Request $request
+     * @return void
      */
     public function changeOrder(Request $request)
     {

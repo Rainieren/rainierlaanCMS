@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidateRole;
 use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -36,11 +37,8 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(ValidateRole $request)
     {
-        $validatedData = $request->validate([
-            'name' => ['required', 'string'],
-        ]);
         $role = new Role;
         $role->name = $request->name;
         $role->save();
@@ -79,7 +77,7 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, $id)
+    public function update(ValidateRole $request, $id)
     {
         $role = Role::where('name', $id)->firstOrFail();
 

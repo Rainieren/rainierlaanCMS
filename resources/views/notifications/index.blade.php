@@ -64,22 +64,6 @@
     </div>
 
     <script>
-        $('#v-pills-home-tab').on('click', function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: '{{ route('read_notifications') }}',
-                type: 'POST',
-                data: [],
-                success: function(data){
-
-                }
-            })
-        });
-
         $('#delete-notification').on('click', function() {
             $.ajaxSetup({
                 headers: {

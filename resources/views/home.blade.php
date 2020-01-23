@@ -15,7 +15,7 @@
     </div>
     <div class="row my-5">
         <div class="col-md-4">
-            <div class="card p-4">
+            <div class="card p-4 custom-card">
                 <div class="card-body">
                     <h5 class="card-title">{{ __('New messages') }}</h5>
                     @if($count = Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\newMessage'])->count() == 0)
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card p-4">
+            <div class="card p-4 custom-card">
                 <div class="card-body">
                     <h5 class="card-title">{{ __('Register requests') }}</h5>
                     @if(Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() == 0)

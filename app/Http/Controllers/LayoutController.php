@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidateLayout;
 use App\Layout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -36,12 +37,8 @@ class LayoutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(ValidateLayout $request)
     {
-        $validatedData = $request->validate([
-            'name' => ['required', 'string'],
-            'content' => ['required', 'integer'],
-        ]);
         // Make name camelcase
         $filename = Str::camel($request->name) . ".blade.php";
         $file = fopen(resource_path('views/layouts/layouts/' . $filename), 'w');
@@ -91,7 +88,7 @@ class LayoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, $id)
+    public function update(ValidateLayout $request, $id)
     {
 
         $layout = Layout::find($request->id);
