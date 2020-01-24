@@ -2,19 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64e4f1e7-9313-438d-b689-89f70e325ab3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/VisitorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Visitors.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_24_130137_create_visitors_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/base/_helpers.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/components/_badges.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/components/_buttons.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/components/_forms.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sidebar.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/base/typography.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/base/typography.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/base/variables.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/base/variables.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_navbar.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_navbar.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_sidebar.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sidebar.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/theme.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/theme.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/blocks/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blocks/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/downloads/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/downloads/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/messages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/messages/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/notifications/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/notifications/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/preferences/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/preferences/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/registers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/registers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/roles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/roles/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,13 +206,13 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/sass" />
       <recent name="$PROJECT_DIR$/resources/sass/components" />
       <recent name="$PROJECT_DIR$/resources/views/layouts/layouts" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -281,6 +302,7 @@
       <workItem from="1579776928898" duration="3653000" />
       <workItem from="1579805649613" duration="1185000" />
       <workItem from="1579807033724" duration="3889000" />
+      <workItem from="1579858328774" duration="12336000" />
     </task>
     <servers />
   </component>
@@ -360,10 +382,10 @@
     </state>
     <state x="771" y="272" width="276" height="518" key="com.intellij.database.view.ui.DbObjectDialog/-1920.63.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1577548070936" />
     <state x="771" y="272" key="com.intellij.database.view.ui.DbObjectDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1577534209813" />
-    <state x="544" y="143" width="858" height="777" key="find.popup" timestamp="1579810611237">
+    <state x="544" y="143" width="858" height="777" key="find.popup" timestamp="1579860941757">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="544" y="143" width="858" height="777" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1579810611237" />
+    <state x="544" y="143" width="858" height="777" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1579860941757" />
     <state x="777" y="181" width="1226" height="1022" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1579704651159" />
     <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1579021032205">
       <screen x="0" y="23" width="1792" height="1017" />

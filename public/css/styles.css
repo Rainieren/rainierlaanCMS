@@ -1,79 +1,5 @@
-.sidebar .sidebar-item.title,
-.sidebar-slideout .sidebar-item.title{
-    text-transform: uppercase;
-    font-size: 12px;
-    color: #cbcbcb;
-}
-
-.sidebar .sidebar-item.title:hover,
-.sidebar-slideout .sidebar-item.title:hover {
-    transition: none;
-    margin: 0;
-}
-
-.sidebar .sidebar-item,
-.sidebar-slideout .sidebar-item {
-    position: relative;
-    padding: 10px;
-    text-decoration: none;
-    display: flex;
-    align-content: center;
-    transition: .3s all;
-}
-
-.sidebar .sidebar-item a,
-.sidebar-slideout .sidebar-item a {
-    color: black;
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-
-.badge.badge-pill {
-    line-height: 15px;
-    position: absolute;
-    left: 15px;
-    bottom: 17px;
-}
-
-.sub-text {
-    color: #8a8a8a;
-}
-
-.sidebar .sidebar-item:hover a i {
-    transition: .3s all;
-    margin-left: 5px;
-}
-
-.sidebar .sidebar-item:hover a,
-.sidebar-slideout .sidebar-item:hover a{
-    text-decoration: none;
-    transition: .3s all;
-}
-
 .dashboard-container {
     margin: 0 40px 40px 270px;
-}
-
-.card {
-    border: 1px solid #e6e6e6;
-    border-radius: 0px;
-}
-
-.handle {
-    cursor: pointer;
-}
-
-.slide-out-arrow {
-    position: absolute;
-    right: 0px;
-    transition: .3s all;
-}
-
-.navbar .sidebar-item .sidebar-link:hover .slide-out-arrow {
-    margin-left: 10px;
-    transition: .3s all;
 }
 
 .custom-control-input:checked ~ .custom-control-label::before {
@@ -84,41 +10,7 @@
 .custom-control-input:focus {
     outline: none;
 }
-/*
-    Main color: #FF9D45
-    Secondary color: #FFA95E
-    Secondary color-alt: #B3631E
-    Teritairy color: #0C95B3
-    Teritairy color alt: #45DEFF
-*/
 
-.color-primary {
-    color: #0052CC;
-}
-
-.color-black {
-    color: #000000;
-}
-
-
-.primary-background {
-
-}
-
-.sidebar-active {
-    transition: .3s all;
-    margin-left: .9rem;
-    position: relative;
-}
-.sidebar-active:before {
-    width: .5rem;
-    height: .5rem;
-    left: -.9rem;
-    border-radius: 50%;
-    position: absolute;
-    content: "";
-    background-color: #0052CC;
-}
 .add_address:hover {
     text-decoration: none;
 }
@@ -151,57 +43,10 @@
     background-color: #0052CC;;
 }
 
-.btn.btn-primary {
-    background-color: #0052CC;
-    border: 0;
-    border-radius: 25px;
-}
-
-.btn.btn-info {
-    background-color: #0C95B3;
-    border: 0;
-    color: #ffffff;
-    border-radius: 7px;
-}
-
-.slide-out-block {
-    height: 100vh;
-    min-width: 230px;
-    position: absolute;
-    background-color: white;
-    top: 0px;
-    left: 230px;
-    padding: 30px;
-    display: none;
-    z-index: 2;
-}
-
-.slide-out-overlay {
-
-}
-
-.btn.btn-primary:active {
-    background-color: #0052CC;
-    border: 0;
-    border-radius: 0;
-}
-
 .user-profile {
     padding: 10px;
     position: absolute;
     bottom: 10px;
-}
-
-.slide-out-overlay {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    z-index: 1;
-    background-color: rgba(9, 30, 66, 0.54);
-    top: 0;
-    right: 0;
-    display: none;
-    cursor: pointer;
 }
 
 .profile-link {
@@ -210,18 +55,6 @@
 .profile-link:hover {
     color: #161616;
     text-decoration: none;
-}
-
-.profile-image {
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.btn-primary-alt {
-    background-color: #0C95B3;
-    border: 0;
-    color: #ffffff;
-    border-radius: 0;
 }
 
 .navbar {
@@ -250,10 +83,6 @@
 
 .login-info {
     color: white;
-}
-
-.delay-05s {
-    animation-delay: 0.3s;
 }
 
 .logo-header {

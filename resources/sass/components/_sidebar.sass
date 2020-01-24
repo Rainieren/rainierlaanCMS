@@ -9,6 +9,19 @@
     z-index: 3
     display: flex
     flex-direction: column
+    transition: .3s all
+    .sidebar-collapse
+        width: 30px
+        height: 30px
+        position: fixed
+        justify-content: center
+        flex-direction: column
+        display: flex
+        align-items: center
+        border-radius: 25px
+        background: $color_white
+        left: 215px
+        color: $color_black
     .sidebar-item
         position: relative
         padding: 10px
@@ -19,13 +32,17 @@
         &:hover
             transition: .3s all
             margin-left: 5px
-        .title
-            text-transform: uppercase
-            font-size: 12px
-            color: $sidebar_title_color
-            &:hover
-                transition: none
-                margin: 0
+            .sidebar-link
+                text-decoration: none
+                transition: .3s all
+                i
+                    transition: .3s all
+                    margin-left: 5px
+        .sidebar-link
+            color: black
+            display: flex
+            align-items: center
+            width: 100%
         .sidebar-icon
             width: 25px
             height: 25px
@@ -33,5 +50,94 @@
             align-items: center
             justify-content: center
             margin-right: 5px
+    .title
+        text-transform: uppercase
+        font-size: 12px
+        color: $sidebar_title_color
+        &:hover
+            transition: none
+            margin: 0
+
+.sidebar-active
+    transition: .3s all
+    margin-left: .9rem
+    position: relative
+    &:before
+        width: .5rem
+        height: .5rem
+        left: -.9rem
+        border-radius: 50%
+        position: absolute
+        content: ""
+        background-color: $primary_main
+
+.slide-out-block
+    height: 100%
+    min-width: 250px
+    position: fixed
+    background-color: $color_white
+    top: 0
+    left: 230px
+    padding: 30px
+    display: none
+    z-index: 2
+    .sidebar-item
+        position: relative
+        padding: 10px
+        text-decoration: none
+        display: flex
+        align-content: center
+        transition: .3s all
+        .sidebar-icon
+            width: 25px
+            height: 25px
+            display: flex
+            align-items: center
+            justify-content: center
+            margin-right: 5px
+        &:hover
+            transition: .3s all
+            margin-left: 5px
+            .sidebar-link
+                text-decoration: none
+                transition: .3s all
+                i
+                    transition: .3s all
+                    margin-left: 5px
+        .sidebar-link
+            color: black
+            display: flex
+            align-items: center
+            width: 100%
+    .title
+        text-transform: uppercase
+        font-size: 12px
+        color: $sidebar_title_color
+        &:hover
+            transition: none
+            margin: 0
+
+
+
+.slide-out-overlay
+    position: fixed
+    height: 100%
+    width: 100%
+    z-index: 1
+    background-color: rgba(9, 30, 66, 0.54)
+    top: 0
+    right: 0
+    display: none
+    cursor: pointer
+
+.slide-out-arrow
+    position: absolute
+    right: 0
+    transition: .3s all
+
+
+
+
+
 
 

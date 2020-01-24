@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6 shadow-lg d-flex flex-column justify-content-center" style="background-color: #0052CC !important;">
+        <div class="d-none col-lg-6 shadow-lg d-lg-flex flex-column justify-content-center" style="background-color: #0052CC !important;">
             <div class="row align-items-center">
                 <div class="col-12 p-5">
                     <div class="login-info fadeInRight">
@@ -13,9 +13,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6" style="height: 100vh; display: flex;flex-direction: column;justify-content: center;">
+        <div class="col-xl-6 col-md-12" style="height: 100vh; display: flex;flex-direction: column;justify-content: center;">
             <div class="row justify-content-center">
-                <div class="col-8">
+                <div class="col-xl-8 col-md-12">
                     <div class="card shadow-lg border-0 fadeInUp" style="border-radius: 20px">
                         <div class="card-body p-5">
                             <div class="header mb-5">

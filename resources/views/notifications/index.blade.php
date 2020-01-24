@@ -1,7 +1,7 @@
 @extends('layouts.layouts.backend')
 
 @section('content')
-    <div class="container-fluid pt-5">
+    <div class="container-fluid pt-5 ">
         <div class="row">
             <div class="col-md-6">
                 <h3>{{ __('Notifications') }}</h3>
@@ -25,9 +25,9 @@
             </div>
             <div class="col-9">
                 <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <div class="tab-pane fade fadeInUp" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         @foreach($user->unreadNotifications as $notification)
-                            <div class="notification p-2 row">
+                            <div class="notification p-2 row ">
                                 <div class="col-1 d-flex justify-content-center align-items-center">
                                     {!! $notification->data['icon']  !!}
                                 </div>

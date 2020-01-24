@@ -1,0 +1,16 @@
+@import "../base/variables"
+
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"], input[type="file"], textarea.form-control, select.form-control
+    background-color: rgb(250, 251, 252)
+    color: $primary_main
+    border: 2px solid rgb(223, 225, 230)
+    border-radius: 3px
+    outline: none
+    font-size: 14px
+    &::placeholder
+        font-size: 14px
+    &:focus
+        border: 2px solid $primary_hover
+        box-shadow: none
+        outline: none

@@ -24,7 +24,12 @@
 </head>
 <body style="background: #ffffff">
 
-<nav class="sidebar">
+<nav class="sidebar shadow-sm">
+    <a href="#" id="sidebar-collapse">
+        <div class="sidebar-collapse shadow-sm">
+            <i class="far fa-bars"></i>
+        </div>
+    </a>
     <div class="logo-header mt-3 mb-4">
         <h4>rainierlaanCMS</h4>
     </div>
@@ -77,7 +82,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a href="{{ route('notifications') }}">
+            <a href="{{ route('notifications') }}" class="sidebar-link">
                 <div class="sidebar-icon"><i class="far fa-bell"></i></div>{{ __('Notifications') }}
                 @if(Auth::user()->unreadNotifications->count())
                     <span class="badge badge-danger" style="position:absolute; right: 0;">{{ Auth::user()->unreadNotifications->count() }}</span>
