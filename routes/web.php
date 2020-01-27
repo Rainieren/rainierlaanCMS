@@ -91,8 +91,6 @@ Route::group(['middleware' => 'auth'], function() {
     });
 });
 
-
-Route::get('/visitors', 'VisitorController@get')->name('get_visitors');
 Route::post('/dashboard/message/create', 'MessageController@store')->name('create_message');
 
 Route::get('/{url}', 'PageController@show')->name('show_page')->where('url', '([A-Za-z0-9\-\/]+)');;
