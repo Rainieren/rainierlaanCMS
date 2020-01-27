@@ -11356,6 +11356,15 @@ a.text-dark:focus {
   }
 }
 
+.badge.badge-primary {
+  background-color: #0052CC;
+}
+
+.badge-light {
+  padding: 8px 15px;
+  color: #3490dc;
+}
+
 input[type=text],
 input[type=password],
 input[type=email],

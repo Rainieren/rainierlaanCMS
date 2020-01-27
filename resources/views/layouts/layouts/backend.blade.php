@@ -159,7 +159,7 @@
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
             <li class="sidebar-item title">{{ __('Packages') }}</li>
-            <li class="sidebar-item"><a href="" class="sidebar-link">
+            <li class="sidebar-item"><a href="{{ route('packages') }}" class="sidebar-link">
                     <div class="sidebar-icon"><i class="far fa-boxes-alt"></i></div>{{ __('Browse packages') }}</a>
             </li>
             <li class="sidebar-item"><a href="" class="sidebar-link">

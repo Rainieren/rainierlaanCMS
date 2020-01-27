@@ -88,6 +88,9 @@ Route::group(['middleware' => 'auth'], function() {
 
         // Downloads
         Route::get('/dashboard/user/{token}/downloads', 'DownloadController@index')->name('downloads');
+
+        // PACKAGES
+        Route::get('/dashboard/packages', 'PackageController@index')->name('packages');
     });
 });
 
