@@ -1878,12 +1878,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Rainieren/rainierlaanCMS-visitors-package.git",
-                "reference": "53a3594c06806c013aba308589c90d4980315209"
+                "reference": "654420d318704965b1bc110636781c075dccc6a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Rainieren/rainierlaanCMS-visitors-package/zipball/53a3594c06806c013aba308589c90d4980315209",
-                "reference": "53a3594c06806c013aba308589c90d4980315209",
+                "url": "https://api.github.com/repos/Rainieren/rainierlaanCMS-visitors-package/zipball/654420d318704965b1bc110636781c075dccc6a7",
+                "reference": "654420d318704965b1bc110636781c075dccc6a7",
                 "shasum": ""
             },
             "require": {
@@ -1902,7 +1902,9 @@
             "type": "project",
             "extra": {
                 "laravel": {
-                    "dont-discover": []
+                    "providers": [
+                        "Rainieren\\Visitors\\VisitorServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -1924,7 +1926,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-01-27T19:32:48+00:00"
+            "time": "2020-01-28T10:23:15+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

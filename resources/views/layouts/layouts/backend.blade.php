@@ -115,12 +115,26 @@
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
             <li class="sidebar-item title">{{ __('Content') }}</li>
-            <li class="sidebar-item"><a href="{{ route('pages') }}" class="sidebar-link {{ Route::currentRouteNamed('pages') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon"><i class="far fa-file-alt"></i></div>{{ __('Pages') }}</a></li>
+            <li class="sidebar-item">
+                <a href="{{ route('pages') }}" class="sidebar-link {{ Route::currentRouteNamed('pages') ? 'sidebar-active' : '' }}">
+                    <div class="sidebar-icon">
+                        <i class="far fa-file-alt"></i>
+                    </div>{{ __('Pages') }}
+                </a>
+            </li>
             <li class="sidebar-item"><a href="{{ route('blocks') }}" class="sidebar-link {{ Route::currentRouteNamed('blocks') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon"><i class="far fa-cube"></i></div>{{ __('Blocks') }}</a></li>
-            <li class="sidebar-item"><a href="{{ route('layouts') }}" class="sidebar-link {{ Route::currentRouteNamed('layouts') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon"><i class="far fa-th-large"></i></div>{{ __('Layouts') }}</a></li>
+                    <div class="sidebar-icon">
+                        <i class="far fa-cube"></i>
+                    </div>{{ __('Blocks') }}
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="{{ route('layouts') }}" class="sidebar-link {{ Route::currentRouteNamed('layouts') ? 'sidebar-active' : '' }}">
+                    <div class="sidebar-icon">
+                        <i class="far fa-th-large"></i>
+                    </div>{{ __('Layouts') }}
+                </a>
+            </li>
         </ul>
     </nav>
 </div>
@@ -130,13 +144,35 @@
         <ul class="list-unstyled">
             <li class="sidebar-item title">{{ __('System') }}</li>
             <li class="sidebar-item"><a href="{{ route('users') }}"  class="sidebar-link {{ Route::currentRouteNamed('users') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon"><i class="far fa-user-friends"></i></div>{{ __('Users') }}</a></li>
+                    <div class="sidebar-icon">
+                        <i class="far fa-user-friends"></i>
+                    </div>{{ __('Users') }}
+                </a>
+            </li>
             <li class="sidebar-item"><a href="{{ route('roles') }}"  class="sidebar-link {{ Route::currentRouteNamed('roles') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon"><i class="far fa-user-shield"></i></div>{{ __('Roles') }}</a></li>
+                    <div class="sidebar-icon">
+                        <i class="far fa-user-shield"></i>
+                    </div>{{ __('Roles') }}
+                </a>
+            </li>
             <li class="sidebar-item"><a href="{{ route('messages') }}"  class="sidebar-link {{ Route::currentRouteNamed('messages') ? 'sidebar-active' : '' }}" id="messages-link">
-                    <div class="sidebar-icon"><i class="far fa-comment-lines"></i></div>{{ __('Messages') }} </a></li>
+                    <div class="sidebar-icon">
+                        <i class="far fa-comment-lines"></i>
+                    </div>{{ __('Messages') }}
+                </a>
+            </li>
             <li class="sidebar-item"><a href="{{ route('register_requests') }}" class="sidebar-link {{ Route::currentRouteNamed('register_requests') ? 'sidebar-active' : '' }}"  id="messages-link">
-                    <div class="sidebar-icon"><i class="fal fa-file-user"></i></div>{{ __('Register requests') }}</a></li>
+                    <div class="sidebar-icon">
+                        <i class="far fa-file-user"></i>
+                    </div>{{ __('Register requests') }}
+                </a>
+            </li>
+            <li class="sidebar-item"><a href="@if(Route::has('visitors')) {{ route('visitors') }} @endif" class="sidebar-link"  id="messages-link">
+                    <div class="sidebar-icon">
+                        <i class="far fa-suitcase"></i>
+                    </div>{{ __('Visitors') }}
+                </a>
+            </li>
         </ul>
     </nav>
 </div>
@@ -145,11 +181,19 @@
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
             <li class="sidebar-item title">{{ __('Account') }}</li>
-            <li class="sidebar-item"><a href="{{ route('profile', ['token' => Auth::user()->token]) }}" class="sidebar-link {{ Route::currentRouteNamed('profile') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon"><i class="far fa-user"></i></div>{{ __('Profile') }}</a>
+            <li class="sidebar-item">
+                <a href="{{ route('profile', ['token' => Auth::user()->token]) }}" class="sidebar-link {{ Route::currentRouteNamed('profile') ? 'sidebar-active' : '' }}">
+                    <div class="sidebar-icon">
+                        <i class="far fa-user"></i>
+                    </div>{{ __('Profile') }}
+                </a>
             </li>
-            <li class="sidebar-item"><a href="{{ route('downloads', ['token' => Auth::user()->token]) }}" class="sidebar-link {{ Route::currentRouteNamed('downloads') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon"><i class="far fa-download"></i></div>{{ __('My downloads') }}</a>
+            <li class="sidebar-item">
+                <a href="{{ route('downloads', ['token' => Auth::user()->token]) }}" class="sidebar-link {{ Route::currentRouteNamed('downloads') ? 'sidebar-active' : '' }}">
+                    <div class="sidebar-icon">
+                        <i class="far fa-download"></i>
+                    </div>{{ __('My downloads') }}
+                </a>
             </li>
         </ul>
     </nav>
@@ -159,11 +203,19 @@
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
             <li class="sidebar-item title">{{ __('Packages') }}</li>
-            <li class="sidebar-item"><a href="{{ route('packages') }}" class="sidebar-link">
-                    <div class="sidebar-icon"><i class="far fa-boxes-alt"></i></div>{{ __('Browse packages') }}</a>
+            <li class="sidebar-item">
+                <a href="{{ route('packages') }}" class="sidebar-link">
+                    <div class="sidebar-icon">
+                        <i class="far fa-boxes-alt"></i>
+                    </div>{{ __('Browse packages') }}
+                </a>
             </li>
-            <li class="sidebar-item"><a href="" class="sidebar-link">
-                    <div class="sidebar-icon"><i class="far fa-box-check"></i></div>{{ __('Installed packages') }}</a>
+            <li class="sidebar-item">
+                <a href="" class="sidebar-link">
+                    <div class="sidebar-icon">
+                        <i class="far fa-box-check"></i>
+                    </div>{{ __('Installed packages') }}
+                </a>
             </li>
         </ul>
     </nav>
@@ -173,8 +225,13 @@
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
             <li class="sidebar-item title">{{ __('Other') }}</li>
-            <li class="sidebar-item"><a href="{{ route('preferences') }}" class="sidebar-link  {{ Route::currentRouteNamed('preferences') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon"><i class="far fa-sliders-h"></i></div>{{ __('Preferences') }}</a></li>
+            <li class="sidebar-item">
+                <a href="{{ route('preferences') }}" class="sidebar-link  {{ Route::currentRouteNamed('preferences') ? 'sidebar-active' : '' }}">
+                    <div class="sidebar-icon">
+                        <i class="far fa-sliders-h"></i>
+                    </div>{{ __('Preferences') }}
+                </a>
+            </li>
         </ul>
     </nav>
 </div>

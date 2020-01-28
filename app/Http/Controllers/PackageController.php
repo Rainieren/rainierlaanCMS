@@ -19,6 +19,13 @@ class PackageController extends Controller
 
         $packages = $packagist->getPackagesByVendor('rainieren');
 
+        // TODO:: Alle packages ophalen vanaf de main site waar deze staan opgelagen door middel van een API call. (Maybe hier ook een package van maken)
+        // TODO:: Alle packages die opgehaald zijn in de database zetten met de juiste velden.
+        // TODO:: Lijst met packages altijd up-to-date houden. Als er een package van de main site verdwenen is. Checken de lijst ook overeen komt met de lijst in het CMS. Zoniet, update dan alle packages. (Is er een weg? een weghalen, eentje bij? doe er een bij)
+
+        // TODO:: Op een of andere manier ook checken of een package al in de composer.json zit. Zoja laat dan een andere knop zien (bijv een disabled knop met 'installed'), Zo niet kan men deze installeren.
+        // TODO:: Wanneer een user een package installeerd moet er een melding getoont worden (Een popup met meer info en wanneer de user op downloaden klikt word er een downloadbalk geshowd. ook word er een waarschuwing getoont) en moeten de commandos 'composer update' en 'php artisan migrate:refresh --seed' op de achtergrond uitgevoerd worden.
+
         return view('packages.index', compact('packages'));
     }
 
