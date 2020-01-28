@@ -167,12 +167,14 @@
                     </div>{{ __('Register requests') }}
                 </a>
             </li>
-            <li class="sidebar-item"><a href="@if(Route::has('visitors')) {{ route('visitors') }} @endif" class="sidebar-link"  id="messages-link">
-                    <div class="sidebar-icon">
-                        <i class="far fa-suitcase"></i>
-                    </div>{{ __('Visitors') }}
-                </a>
-            </li>
+            @if(Route::has('visitors'))
+                <li class="sidebar-item"><a href="@if(Route::has('visitors')) {{ route('visitors') }} @endif" class="sidebar-link"  id="messages-link">
+                        <div class="sidebar-icon">
+                            <i class="far fa-suitcase"></i>
+                        </div>{{ __('Visitors') }}
+                    </a>
+                </li>
+            @endif
         </ul>
     </nav>
 </div>

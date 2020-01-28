@@ -4,9 +4,14 @@
     <list default="true" id="64e4f1e7-9313-438d-b689-89f70e325ab3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PackageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PackageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_27_191642_create_packages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_28_103041_create_packages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layouts/backend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/packages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/packages/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,6 +303,7 @@
       <workItem from="1580206276235" duration="15000" />
       <workItem from="1580207067633" duration="133000" />
       <workItem from="1580207203074" duration="1587000" />
+      <workItem from="1580209212070" duration="1656000" />
     </task>
     <servers />
   </component>
@@ -377,11 +383,11 @@
     </state>
     <state x="771" y="272" width="276" height="518" key="com.intellij.database.view.ui.DbObjectDialog/-1920.63.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1577548070936" />
     <state x="771" y="272" key="com.intellij.database.view.ui.DbObjectDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1577534209813" />
-    <state x="544" y="143" width="858" height="777" key="find.popup" timestamp="1579898505312">
-      <screen x="0" y="23" width="1792" height="1017" />
+    <state x="777" y="181" width="1226" height="1022" key="find.popup" timestamp="1580210298874">
+      <screen x="0" y="23" width="2560" height="1337" />
     </state>
     <state x="544" y="143" width="858" height="777" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1579898505312" />
-    <state x="777" y="181" width="1226" height="1022" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1579704651159" />
+    <state x="777" y="181" width="1226" height="1022" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1580210298874" />
     <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1579021032205">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>

@@ -1,8 +1,5 @@
 $(document).ready(function(){
     let items = ['content', 'system', 'account', 'packages','other'];
-    $('.fadeInUpDirect').addClass('animated fadeInUp show');
-    $('.fadeInUp').addClass('animated fadeInUp delay-05s show');
-    $('.fadeInRight').addClass('animated fadeInRight delay-05s show');
 
     $('.showpassword').on('click', function() {
         if($('#password').attr('type') === "password") {

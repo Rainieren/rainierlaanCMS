@@ -6,7 +6,7 @@
         <div class="d-none col-lg-6 shadow-lg d-lg-flex flex-column justify-content-center" style="background-color: #0052CC !important;">
             <div class="row align-items-center">
                 <div class="col-12 p-5">
-                    <div class="login-info fadeInRight">
+                    <div class="login-info animated fadeInRight delay-05s show">
                         <h1>RainierlaanCMS</h1>
                         <h3>A simple CMS for the average user</h3>
                     </div>
@@ -16,7 +16,7 @@
         <div class="col-xl-6 col-md-12" style="height: 100vh; display: flex;flex-direction: column;justify-content: center;">
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-md-12">
-                    <div class="card shadow-lg border-0 fadeInUp" style="border-radius: 20px">
+                    <div class="card shadow-lg border-0 animated fadeInUp delay-05s show" style="border-radius: 20px">
                         <div class="card-body p-5">
                             <div class="header mb-5">
                                 <h3 class="my-3">{{ __('Login') }}</h3>

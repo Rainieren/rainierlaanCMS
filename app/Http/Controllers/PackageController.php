@@ -25,6 +25,8 @@ class PackageController extends Controller
 
         // TODO:: Op een of andere manier ook checken of een package al in de composer.json zit. Zoja laat dan een andere knop zien (bijv een disabled knop met 'installed'), Zo niet kan men deze installeren.
         // TODO:: Wanneer een user een package installeerd moet er een melding getoont worden (Een popup met meer info en wanneer de user op downloaden klikt word er een downloadbalk geshowd. ook word er een waarschuwing getoont) en moeten de commandos 'composer update' en 'php artisan migrate:refresh --seed' op de achtergrond uitgevoerd worden.
+        // TODO:: Voeg ook een handleiding toe aan de popup bijvoorbeeld "When installing this package. An extra menu item under the section Content will appear" met eventuele screenshots van de paginas
+        // TODO:: Deze data word allemaal opgehaald via een API call en in de database van de CMS gepropt (Ook eventuele fotos) met link naar die foto
 
         return view('packages.index', compact('packages'));
     }

@@ -15,7 +15,7 @@
                         foto
                     </div>
                     <div class="col-6">
-                        <h6 class="m-0">Titel van package</h6>
+                        <a href=""><h6 class="m-0">Titel van package</h6></a>
                         <p class="m-0 sub-text">Omschrijving</p>
                     </div>
                     <div class="col-4 d-flex justify-content-end align-items-center">
@@ -25,5 +25,10 @@
                 <hr>
             </div>
         </div>
+
+
+    </div>
+    <div class="package-popup">
+
     </div>
 @endsection
