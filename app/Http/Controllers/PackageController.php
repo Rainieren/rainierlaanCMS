@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Symfony\Component\Process\Process;
 
 class PackageController extends Controller
 {
@@ -95,5 +96,30 @@ class PackageController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function install()
+    {
+        $timestamp = time();
+        $package = new Process("composer require rainieren/visitors");
+        $package->setWorkingDirectory(base_path());
+        $package->run();
+
+        $timestamp2 = time();
+
+        $timestamp3 = $timestamp2 - $timestamp;
+
+        dd($timestamp3);
+
+        return redirect('/');
+    }
+
+    public function uninstall()
+    {
+        $package = new Process("composer remove rainieren/visitors");
+        $package->setWorkingDirectory(base_path());
+        $package->run();
+
+        return redirect('/');
     }
 }

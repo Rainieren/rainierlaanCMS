@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
             'firstname' => 'Rainier',
             'lastname' => 'Laan',
             'email' => 'rainier.laan@home.nl',
-            'password' => Hash::make("mooi123"),
+            'password' => Hash::make("welkom123"),
             'is_request' => 0,
             'activated' => 1,
             'created_at' => Carbon::now(),

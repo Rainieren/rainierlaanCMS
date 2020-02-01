@@ -15,7 +15,7 @@
     </div>
     <div class="row my-5">
         <div class="col-md-7">
-            <div class="card p-4 custom-card animated fadeInUp delay-05s show">
+            <div class="card p-4 custom-card fadeInUp">
                 <div class="row">
                     <div class="col-3">
 
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="col-md-5">
-            <div class="card p-4 card-purple animated fadeInUp delay-05s show">
+            <div class="card p-4 card-purple fadeInUp">
                 <div class="card-body">
                     <h5 class="card-title">{{ __('Register requests') }}</h5>
                     @if(Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() == 0)
@@ -47,14 +47,20 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card p-4 custom-card animated fadeInUp delay-05s show">
-                <div class="card-body">
-                    <h5>{{ __('Daily visitors') }}</h5>
-                </div>
-            </div>
-        </div>
+{{--    <div class="row">--}}
+{{--        <div class="col-md-6">--}}
+{{--            <div class="card p-4 custom-card fadeInUp">--}}
+{{--                <div class="card-body">--}}
+{{--                    <h5>{{ __('Daily visitors') }}</h5>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+    <a href="{{ route('install_package') }}" class="badge badge-light fa-1x">Install</a>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
+
+    <a href="{{ route('uninstall_package') }}" class="badge badge-light fa-1x">Uninstall</a>
 </div>
 @endsection

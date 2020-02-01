@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Barryvdh\DomPDF\ServiceProvider::class,
+        Fruitcake\Cors\CorsServiceProvider::class,
 
         /*
          * Application Service Providers...

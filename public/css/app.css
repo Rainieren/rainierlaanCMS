@@ -11691,6 +11691,29 @@ select.form-control:focus {
   display: block;
 }
 
+#popup-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 1px;
+  top: 1px;
+  z-index: 3;
+  background-color: rgba(9, 30, 66, 0.54);
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  display: none;
+}
+
+#popup-wrapper .package-popup {
+  min-width: 960px;
+  padding: 20px;
+  background: white;
+  border-radius: 25px;
+  display: none;
+}
+
 h1,
 h2,
 h3,

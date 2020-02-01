@@ -16,7 +16,7 @@
         <div class="col-md-6" style="height: 100vh; display: flex;flex-direction: column;justify-content: center;">
             <div class="row justify-content-center">
                 <div class="col-8">
-                    <div class="card shadow-lg border-0 animated fadeInUp delay-05s show" style="border-radius: 20px">
+                    <div class="card shadow-lg border-0 fadeInUp" style="border-radius: 20px">
                         <div class="card-body p-5">
                             <div class="header mb-3">
                                 <h3 class="my-3">{{ __('Reset Password') }}</h3>

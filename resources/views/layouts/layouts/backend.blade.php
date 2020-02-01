@@ -183,6 +183,7 @@
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
             <li class="sidebar-item title">{{ __('Account') }}</li>
+{{--            {{ auth()->user() }}--}}
             <li class="sidebar-item">
                 <a href="{{ route('profile', ['token' => Auth::user()->token]) }}" class="sidebar-link {{ Route::currentRouteNamed('profile') ? 'sidebar-active' : '' }}">
                     <div class="sidebar-icon">

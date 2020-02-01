@@ -91,6 +91,9 @@ Route::group(['middleware' => 'auth'], function() {
 
         // PACKAGES
         Route::get('/dashboard/packages', 'PackageController@index')->name('packages');
+        Route::get('package/install', 'PackageController@install')->name('install_package');
+        Route::get('package/uninstall', 'PackageController@uninstall')->name('uninstall_package');
+
     });
 });
 
