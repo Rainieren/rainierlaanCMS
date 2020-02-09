@@ -11704,14 +11704,44 @@ select.form-control:focus {
   -webkit-box-align: center;
           align-items: center;
   display: none;
+  cursor: pointer;
 }
 
-#popup-wrapper .package-popup {
-  min-width: 960px;
-  padding: 20px;
+#popup-wrapper.show {
+  display: -webkit-box !important;
+  display: flex !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.show {
+  display: block !important;
+}
+
+.package-popup {
+  max-width: 960px;
+  padding: 3rem;
   background: white;
   border-radius: 25px;
   display: none;
+  z-index: 4;
+}
+
+.popup-list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  left: 0;
+  top: 0;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  visibility: hidden;
 }
 
 h1,
@@ -11727,5 +11757,13 @@ h6 {
 
 p {
   color: #091E42;
+}
+
+.fa-star.yellow {
+  color: #E7711A;
+}
+
+.fa-star.grey {
+  color: #D1D1D1;
 }
 

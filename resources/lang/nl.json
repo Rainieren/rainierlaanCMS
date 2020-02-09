@@ -111,6 +111,11 @@
     "Choose a country...": "Kies een land...",
     "Unread": "Ongelezen",
     "Read": "Gelezen",
-    "Your inbox is empty. Come back another time": "Je inbox is leeg. Kom op een later moment terug."
-
+    "Your inbox is empty. Come back another time": "Je inbox is leeg. Kom op een later moment terug.",
+    "Packages": "Paketten",
+    "Browse packages": "Paketten lijst",
+    "Installed packages": "Geinstalleerde paketten",
+    "You haven't downloaded anything yet. Download something and it will display here.": "Je hebt nog niks gedownload, Download iets en het word hier getoond",
+    "There are no register request at this time. Please come back later.": "Er zijn nog geen registreer verzoeken op het moment. Kom terug op een later moment",
+    "Logout": "Uitloggen"
 }

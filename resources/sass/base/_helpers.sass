@@ -41,12 +41,35 @@
     justify-content: center
     align-items: center
     display: none
-    .package-popup
-        min-width: 960px
-        padding: 20px
-        background: white
-        border-radius: 25px
-        display: none
+    cursor: pointer
 
+#popup-wrapper.show
+    display: flex !important
+    position: absolute
+    left: 0
+    top: 0
+    cursor: pointer
+
+.show
+    display: block !important
+
+.package-popup
+    max-width: 960px
+    padding: 3rem
+    background: white
+    border-radius: 25px
+    display: none
+    z-index: 4
+
+.popup-list
+    position: absolute
+    width: 100%
+    height: 100%
+    display: flex
+    left: 0
+    top: 0
+    align-items: center
+    justify-content: center
+    visibility: hidden
 
 
