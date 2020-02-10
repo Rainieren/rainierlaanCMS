@@ -100,8 +100,10 @@ class PageController extends Controller
         $page = Page::where('url', $id)->firstOrFail();
         $page = Page::find($page->id);
         $blocks = Block::where('page_id', $page->id)->get();
+        $pages = Page::all();
+        $layouts = Layout::all();
 
-        return view('pages.edit', compact('page', 'blocks'));
+        return view('pages.edit', compact('page', 'blocks', 'pages', 'layouts'));
     }
 
     /**
@@ -113,7 +115,24 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $page = Page::where('url', $id)->firstOrFail();
+
+        if ($request->sub_page == 0) {
+            $url = Str::slug($request->name);
+        } else {
+            $parent_page = Page::find($request->sub_page);
+            $url = $parent_page->url . '/' . Str::slug($request->name);
+        }
+
+        $page->name = $request->name;
+        $page->identifier = str_replace(' ', '_', strtolower($request->name));
+        $page->url = $url;
+        $page->status = $request->status;
+        $page->layout_id = $request->layout;
+
+        $page->save();
+
+        return redirect('/');
     }
 
     /**
