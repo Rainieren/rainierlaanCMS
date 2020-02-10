@@ -9,8 +9,9 @@
         </div>
         <div class="row my-5">
             <div class="col-md-6">
-                <form method="POST" action="{{ route('store_page') }}">
-                    @csrf
+                <form method="POST" action="{{ route('update_post', ['url' => $page->url]) }}">
+                    {{ csrf_field() }}
+                    {{ method_field('PATCH') }}
                     <div class="form-group">
                         <label for="name">{{ __('Name') }}</label>
                         <input type="text" name="name" class="form-control" value="{{$page->name}}">
@@ -22,24 +23,34 @@
                     <div class="form-group">
                         <label for="status">Status</label>
                         <select class="form-control" name="status" id="page-select">
-                            <option value="1" selected>{{ __('Enabled') }}</option>
-                            <option value="0">{{ __('Disabled') }}</option>
+                            <option value="1" {{ $page->status == 1 ? "selected" : "" }}>{{ __('Enabled') }}</option>
+                            <option value="0" {{ $page->status == 0 ? "selected" : "" }}>{{ __('Disabled') }}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="layout">{{ __('Layout') }}</label>
                         <select name="layout" id="" class="form-control">
-                            <option value="" selected>{{ __('Default') }}</option>
-                            <?php
-                            $dir = "../resources/views/layouts/layouts";
-                            $list = scandir($dir,1);
-                            $newlist = array_splice($list, -2);
-
-                            foreach ($list as $item)
-                                print "<option value='" . strtok($item, '.') ."'>" . strtok($item, '.') . "</option>";
-                            ?>
+                            <option value="0" selected>{{ __('Default') }}</option>
+                            @foreach($layouts as $layout)
+                                <option value="{{ $layout->id }}"  {{ $page->layout_id == $layout->id ? "selected" : "" }}>{{ $layout->name }}</option>
+                            @endforeach
                         </select>
-
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            <input type="checkbox" class="custom-control-input" id="customControlAutosizing" {{ $page->page_id != 0 ? "checked" : "" }}>
+                            <label class="custom-control-label" for="customControlAutosizing">{{ __('Has parent page') }}</label>
+                        </div>
+                    </div>
+                    <div id="sub-page-select" class="form-group" style="{{ $page->page_id != 0 ? "display: block" : "display: none" }}">
+                        <label for="sub_page">{{ __('Page') }}</label>
+                        <select name="sub_page" id="" class="form-control">
+                            <option value="0" selected>{{ __('No page') }}</option>
+                            <?php $cur_page = $page->id; ?>
+                            @foreach($pages as $page)
+                                <option value="{{ $page->id }}" {{ $cur_page == $page->id ? "selected" : "" }}>{{ $page->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">{{ __('Save page') }}</button>

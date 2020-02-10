@@ -57,6 +57,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/dashboard/page/create', 'PageController@create')->name('create_page');
         Route::post('/dashboard/page/store', 'PageController@store')->name('store_page');
         Route::get('/dashboard/page/{url}/edit', 'PageController@edit')->name('edit_page')->where('url', '([A-Za-z0-9\-\/]+)');
+        Route::patch('/dashboard/page/{url}/update', 'PageController@update')->name('update_post')->where('url', '([A-Za-z0-9\-\/]+)');
         Route::delete('/dashboard/page/{url}/delete', 'PageController@destroy')->name('delete_page')->where('url', '([A-Za-z0-9\-\/]+)');
         Route::post('/dashboard/pages/order/{url}', 'PageController@changeOrder')->name('change_order')->where('url', '([A-Za-z0-9\-\/]+)');
 // All routes related to preferences
