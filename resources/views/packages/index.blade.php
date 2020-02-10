@@ -10,7 +10,7 @@
         <div class="row my-5">
             <div class="col-md-4">
                 <div id="package-loading" class="text-center">
-                    <i class="fas fa-spinner fa-spin fa-2x"></i>
+                    <i class="fas fa-spinner fa-pulse fa-2x color-primary"></i>
                 </div>
                 <p id="package-error" class="text-danger" style="display: none"></p>
                 <div id="packages-wrapper"></div>
@@ -20,8 +20,7 @@
     <div class="popup-list">
 
     </div>
-
-
+    <div class="popup-overlay"></div>
 
 
     <script>
@@ -40,27 +39,27 @@
                     let el = data[index];
                     wrapper.append(
                         '<div class="row my-4" data-id='+ el.id +'>' +
-                            '<div class="col-2"> icon </div>' +
+                            '<div class="col-2 d-flex justify-content-center"><i class="far fa-archive fa-2x"></i></div>' +
                             '<div class="col-6">' +
                                 '<a href="#" class="popup" data-popup-id="'+ el.id +'"><h6 class="m-0">'+ el.name +'</h6></a>' +
                                 '<p class="m-0 sub-text">'+ el.description +'</p>' +
                             '</div>' +
                             '<div class="col-4 d-flex justify-content-end align-items-center">' +
-                                '<a href="#" id="download_package" class="badge badge-pill badge-light popup" style="font-size: 14px;" data-popup-id="'+ el.id +'">$'+ el.price +'</a>' +
+                                '<a href="#" id="download_package" class="badge badge-pill badge-light popup '+ (el.price == 0 ? 'badge-primary': 'badge-light') +'" style="font-size: 14px;" data-popup-id="'+ el.id +'">' + (el.price == 0 ? 'Download': '$ ' + el.price) +'</a>' +
                             '</div>' +
                         '</div>' + '<hr>'
                     );
                     popup_list.append(
-                        '<div class="package-popup shadow popup-'+ el.id +'">' +
+                        '<div class="package-popup shadow popup-'+ el.id +' animated fadeInUp faster">' +
                             '<div class="row">' +
                                 '<div class="col-2">' +
                                     '<div class="row">' +
-                                        '<div class="col-12">' +
-                                            'logo-icon' +
+                                        '<div class="col-12 d-flex justify-content-center">' +
+                                            '<i class="far fa-archive fa-3x"></i>' +
                                         '</div>' +
                                     '</div>' +
                                 '</div>' +
-                                '<div class="col-8">' +
+                                '<div class="col-7">' +
                                     '<div class="row">' +
                                         '<div class="col-12">' +
                                             '<h4 class="m-0">' + el.name + '</h4>' +
@@ -68,10 +67,12 @@
                                         '</div>' +
                                     '</div>' +
                                 '</div>' +
-                                '<div class="col-2 text-center">' +
-                                    '<h4><a href="#" id="download_package" class="badge badge-pill badge-light">$ ' + el.price + '</a></h4>' +
+                                '<div class="col-3 text-center">' +
+                                    '<h4><a href="#" id="download_package" class="badge badge-pill '+ (el.price == 0 ? 'badge-primary': 'badge-light') +'">' +
+                                        (el.price == 0 ? 'Download': '$ ' + el.price) +
+                                    '</a></h4>' +
                                 '</div>' +
-                                '<div class="offset-2 col-8">\n' +
+                                '<div class="offset-2 col-7">\n' +
                                     '<div class="rating">\n' +
                                         '<span><i class="fas fa-star yellow"></i></span>' +
                                         '<span><i class="fas fa-star yellow"></i></span>' +
@@ -82,7 +83,7 @@
                                     '</div>' +
                                     '<small>Nog geen beoordelingen</small>' +
                                 '</div>' +
-                                '<div class="col-2 text-center">'+
+                                '<div class="col-3 text-center">'+
                                     '<i class="far fa-download"></i> ' + el.downloads +
                                 '</div>' +
                             '</div>' +
@@ -113,17 +114,9 @@
                 });
 
                 $('.popup').on('click', function () {
-                    let overlay = $('.slide-out-overlay');
                     if($(this).data(popup)) {
                         let item = $('.popup-' + $(this).data(popup));
-                        item.addClass('animated fadeInUp faster').css('display', 'block');
-                        overlay.fadeIn().addClass('overlay-active').css('z-index', 3);
-                        $('.popup-list').css('visibility', 'initial');
-                        overlay.on('click', function(){
-                            if($(this).hasClass('overlay-active')) {
-                                alert('Heeft klasse active')
-                            }
-                        });
+                        item.fadeIn().css('display', 'block');
                     }
                 });
             },

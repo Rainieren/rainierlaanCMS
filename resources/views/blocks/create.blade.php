@@ -54,6 +54,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">{{ __('Create block') }}</button>
+                        <button type="button" onclick="history.back();" class="btn btn-light">{{ __('Cancel') }}</button>
                     </div>
                 </form>
             </div>

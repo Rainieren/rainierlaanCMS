@@ -43,6 +43,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">{{ __('Save page') }}</button>
+                        <button type="button" onclick="history.back();" class="btn btn-light">{{ __('Cancel') }}</button>
                     </div>
                 </form>
             </div>
@@ -56,7 +57,7 @@
                         <p>{{ __('To rearrange the order of the blocks as they appear on the page, simply drag and drop them in the desired order.') }}</p>
                         <div class="block-order-list">
                             @foreach($blocks->sortBy('order') as $block)
-                                <div class="list-group-item" data-id="{{ $block->id }}"><i class="far fa-arrows handle mr-3"></i> {{$block->name}}</div>
+                                <div class="list-group-item" data-id="{{ $block->id }}"><i class="far fa-arrows handle mr-3"></i> {{$block->name}} @if($block->status == 0) <small class="text-danger">{{ __('Disabled') }}</small> @endif</div>
                             @endforeach
                         </div>
                         <input type="text" value="{{ $page->url }}" hidden id="page-url">

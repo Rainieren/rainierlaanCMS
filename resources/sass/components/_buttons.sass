@@ -1,16 +1,50 @@
 @import "../base/variables"
+@import "../base/mixins"
+
+// Main buttons
 
 .btn.btn-primary
-    background-color: $primary_main
-    border: 0
-    border-radius: 25px
-    transition: .3s all
-    padding-left: 20px
-    padding-right: 20px
-    &:hover
-        background-color: $primary_hover
-        transition: .3s all
-    &:active
-        background-color: $primary_main
-        border: 0
-        border-radius: 0
+    @include button-solid($primary_main, $primary_hover)
+
+.btn.btn-success
+    @include button-solid($primary_green, $primary_green_dark)
+
+.btn.btn-danger
+    @include button-solid($primary_red, $primary_red_dark)
+
+.btn.btn-warning
+    @include button-solid($primary_yellow, $primary_yellow_dark)
+
+.btn.btn-info
+    @include button-solid($primary_lightblue, $primary_lightblue_dark)
+
+.btn.btn-light
+    @include button-solid($primary_grey, $primary_grey_light_dark)
+
+.btn.btn-dark
+    @include button-solid($primary_black, $primary_black_dark)
+
+// Outline buttons
+
+.btn.btn-outline-primary
+    @include button-outline($primary_main, $primary_hover)
+
+.btn.btn-outline-success
+    @include button-outline($primary_green, $primary_green_dark)
+
+.btn.btn-outline-danger
+    @include button-outline($primary_red, $primary_red_dark)
+
+.btn.btn-outline-warning
+    @include button-outline($primary_yellow, $primary_yellow_dark)
+
+.btn.btn-outline-info
+    @include button-outline($primary_lightblue, $primary_lightblue_dark)
+
+.btn.btn-outline-light
+    @include button-outline($primary_grey, $primary_grey_light_dark)
+
+.btn.btn-outline-dark
+    @include button-outline($primary_black, $primary_black_dark)
+
+

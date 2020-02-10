@@ -1,12 +1,5 @@
 @import "../base/variables"
 
-.card-purple
-    background-color: #5761c2
-    border-radius: 15px
-    border: 0
-    .card-body
-        .card-title
-            color: $color_white
 
 .sub-text
     color: $sub_text_color
@@ -27,30 +20,6 @@
     display: none
 
 .show
-    display: block
-
-#popup-wrapper
-    position: absolute
-    width: 100%
-    height: 100%
-    left: 1px
-    top: 1px
-    z-index: 3
-    //display: flex
-    background-color: $primary_background_transparent
-    justify-content: center
-    align-items: center
-    display: none
-    cursor: pointer
-
-#popup-wrapper.show
-    display: flex !important
-    position: absolute
-    left: 0
-    top: 0
-    cursor: pointer
-
-.show
     display: block !important
 
 .package-popup
@@ -59,17 +28,18 @@
     background: white
     border-radius: 25px
     display: none
-    z-index: 4
 
-.popup-list
+.popup-overlay
     position: absolute
+    top: 0
+    left: 0
+    background: rgba(9, 30, 66, 0.54)
+    display: block
     width: 100%
     height: 100%
-    display: flex
-    left: 0
-    top: 0
-    align-items: center
-    justify-content: center
+    z-index: 3
     visibility: hidden
+
+
 
 

@@ -1,5 +1,6 @@
 .dashboard-container {
     margin: 0 40px 40px 270px;
+    transition: .3s all;
 }
 
 .custom-control-input:checked ~ .custom-control-label::before {
@@ -69,12 +70,6 @@
 .active-border {
     border: 2px solid #0052CC;
     border-radius: 5px;
-}
-
-.custom-card {
-    background: rgb(246, 245, 250);
-    border-radius: 15px;
-    border: 0;;
 }
 
 .br-5 {

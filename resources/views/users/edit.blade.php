@@ -55,6 +55,7 @@
                     @endif
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">{{ __('Save changes') }}</button>
+                        <button type="button" onclick="history.back();" class="btn btn-light">{{ __('Cancel') }}</button>
                     </div>
                 </div>
             </form>

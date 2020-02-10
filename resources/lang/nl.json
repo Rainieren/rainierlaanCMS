@@ -117,5 +117,6 @@
     "Installed packages": "Geinstalleerde paketten",
     "You haven't downloaded anything yet. Download something and it will display here.": "Je hebt nog niks gedownload, Download iets en het word hier getoond",
     "There are no register request at this time. Please come back later.": "Er zijn nog geen registreer verzoeken op het moment. Kom terug op een later moment",
-    "Logout": "Uitloggen"
+    "Logout": "Uitloggen",
+    "Cancel": "Annuleren"
 }

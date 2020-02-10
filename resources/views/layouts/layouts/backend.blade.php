@@ -31,21 +31,21 @@
         </div>
     </a>
     <div class="logo-header mt-3 mb-4">
-        <h4>rainierlaanCMS</h4>
+        <a href="/"><h4>rainierlaanCMS</h4></a>
     </div>
     <ul class="list-unstyled">
         <li class="sidebar-item title">{{ __('Information') }}</li>
         <li class="sidebar-item"><a href="{{ route('home') }}" class="sidebar-link {{ Route::currentRouteNamed('home') ? 'sidebar-active' : '' }}">
             <div class="sidebar-icon">
                 <i class="far fa-tachometer-alt-slowest"></i>
-            </div>{{ __('Dashboard') }}</a>
+            </div><span class="sidebar-text">{{ __('Dashboard') }}</span></a>
         </li>
         <li class="sidebar-item title">{{ __('System') }}</li>
         <li class="sidebar-item">
             <a href="#" class="sidebar-link slide-out" data-slideout-item="content">
                 <div class="sidebar-icon">
                     <i class="far fa-layer-group"></i>
-                </div>{{ __('Content') }}
+                </div><span class="sidebar-text"> {{ __('Content') }}</span>
                 <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
             </a>
         </li>
@@ -53,7 +53,7 @@
             <a href="#" class="sidebar-link slide-out" data-slideout-item="system">
                 <div class="sidebar-icon">
                     <i class="far fa-cog"></i>
-                </div>{{ __('System') }}
+                </div><span class="sidebar-text"> {{ __('System') }}</span>
                 <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
             </a>
         </li>
@@ -61,7 +61,7 @@
             <a href="#" class="sidebar-link slide-out" data-slideout-item="account">
                 <div class="sidebar-icon">
                     <i class="far fa-user"></i>
-                </div> {{ __('Account') }}
+                </div><span class="sidebar-text"> {{ __('Account') }}</span>
                 <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
             </a>
         </li>
@@ -69,7 +69,7 @@
             <a href="#" class="sidebar-link slide-out" data-slideout-item="packages">
                 <div class="sidebar-icon">
                     <i class="far fa-box-alt"></i>
-                </div> {{ __('Packages') }}
+                </div><span class="sidebar-text"> {{ __('Packages') }}</span>
                 <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
             </a>
         </li>
@@ -77,13 +77,13 @@
             <a href="#" class="sidebar-link slide-out" data-slideout-item="other">
                 <div class="sidebar-icon">
                     <i class="far fa-wrench"></i>
-                </div>{{ __('Other') }}
+                </div><span class="sidebar-text"> {{ __('Other') }} </span>
                 <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
             </a>
         </li>
         <li class="sidebar-item">
             <a href="{{ route('notifications') }}" class="sidebar-link">
-                <div class="sidebar-icon"><i class="far fa-bell"></i></div>{{ __('Notifications') }}
+                <div class="sidebar-icon"><i class="far fa-bell"></i></div><span class="sidebar-text"> {{ __('Notifications') }}</span>
                 @if(Auth::user()->unreadNotifications->count())
                     <span class="badge badge-danger" style="position:absolute; right: 0;">{{ Auth::user()->unreadNotifications->count() }}</span>
                 @endif
@@ -95,7 +95,7 @@
             <a href="{{ route('logout') }}" class="sidebar-link text-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <div class="sidebar-icon">
                     <i class="fas fa-power-off"></i>
-                </div>{{ __('Logout') }}
+                </div><span class="sidebar-text">{{ __('Logout') }}</span>
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

@@ -22,6 +22,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary" name="edit" value="edit">{{ __('Edit layout') }}</button>
+                        <button type="button" onclick="history.back();" class="btn btn-light">{{ __('Cancel') }}</button>
                         <button type="submit" class="btn btn-link" name="edit" value="continue">Save and continue editing</button>
                     </div>
                 </form>

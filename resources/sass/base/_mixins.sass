@@ -1,0 +1,64 @@
+@import "../base/variables"
+
+@mixin button-solid($main_color, $dark_color)
+    background-color: $main_color
+    border: 0
+    border-radius: 25px
+    transition: .3s all
+    padding-left: 20px
+    padding-right: 20px
+    &:hover
+        background-color: $dark_color
+        transition: .3s all
+    &:active
+        background-color: $main_color
+        border: 0
+        border-radius: 25px
+
+@mixin button-outline($main_color, $dark_color)
+    border-color: $main_color
+    color: $main_color
+    border-radius: 25px
+    transition: .3s all
+    padding-left: 20px
+    padding-right: 20px
+    &:hover
+        background-color: $dark_color
+        transition: .3s all
+        color: $color_white
+    &:active
+        background-color: $main_color
+        border: 0
+        border-radius: 25px
+
+@mixin sidebar-collapse
+    width: 75px
+    padding: 20px
+    .sidebar-collapse
+        left: 55px
+    .logo-header
+        display: none
+    .sidebar-item
+        position: relative
+        padding: 10px
+        text-decoration: none
+        display: flex
+        align-content: center
+        transition: .3s all
+        .sidebar-link
+            margin: 0
+            .sidebar-text
+                display: none
+            .fa-chevron-right
+                display: none
+        &:hover
+            transition: .3s all
+            margin-right: 0
+            margin-left: 0
+    .sidebar-item.title
+        display: none
+
+
+
+
+

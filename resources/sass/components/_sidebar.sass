@@ -1,4 +1,5 @@
 @import "../base/variables"
+@import "../base/mixins"
 
 .sidebar
     background-color: $color_white
@@ -117,8 +118,6 @@
             transition: none
             margin: 0
 
-
-
 .slide-out-overlay
     position: fixed
     height: 100%
@@ -136,6 +135,31 @@
     transition: .3s all
 
 
+.sidebar-collapse
+    @include sidebar-collapse
+
+@include media-breakpoint-down(md)
+    .sidebar
+        @include sidebar-collapse
+
+    .slide-out-block
+        left: 75px
+        .sidebar-item
+            .sidebar-link
+                margin: 0
+
+    .dashboard-container
+        margin: 0 40px 40px 115px !important
+        transition: .3s all
+
+    .sidebar-active
+        transition: .3s all
+        margin-left: .9rem
+        position: relative
+        &:before
+            display: none
+        .sidebar-icon
+            color: $primary_main
 
 
 

@@ -18,6 +18,7 @@
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary">Edit Role</button>
+                        <button type="button" onclick="history.back();" class="btn btn-light">{{ __('Cancel') }}</button>
                     </div>
                 </form>
             </div>
