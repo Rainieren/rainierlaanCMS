@@ -1,5 +1,9 @@
 $(document).ready(function(){
+<<<<<<< develop
     let items = ['content', 'system', 'account', 'packages', 'settings', 'other'];
+=======
+    let items = ['content', 'system', 'account', 'packages','settings', 'other'];
+>>>>>>> RLCMS-17
 
     $('.fadeInUp').addClass('animated fadeInUp delay-05s show');
     $('.fadeInRight').addClass('animated fadeInRight delay-05s show');

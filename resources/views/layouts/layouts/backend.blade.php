@@ -77,7 +77,11 @@
             <a href="#" class="sidebar-link slide-out" data-slideout-item="settings">
                 <div class="sidebar-icon">
                     <i class="far fa-cog"></i>
+<<<<<<< develop
                 </div><span class="sidebar-text"> {{ __('Settings') }}</span>
+=======
+                </div><span class="sidebar-text"> {{ __('Settings') }} </span>
+>>>>>>> RLCMS-17
                 <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
             </a>
         </li>
@@ -246,8 +250,20 @@
             <li class="sidebar-item">
                 <a href="" class="sidebar-link">
                     <div class="sidebar-icon">
+<<<<<<< develop
                         <i class="far fa-pencil-paintbrush"></i>
                     </div>{{ __('Configuration') }}
+=======
+                        <i class="far fa-users"></i>
+                    </div>{{ __('Visitors') }}
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="" class="sidebar-link">
+                    <div class="sidebar-icon">
+                        <i class="far fa-clipboard-check"></i>
+                    </div>{{ __('Tasks') }}
+>>>>>>> RLCMS-17
                 </a>
             </li>
         </ul>
