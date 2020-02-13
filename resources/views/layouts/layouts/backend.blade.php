@@ -52,7 +52,7 @@
         <li class="sidebar-item">
             <a href="#" class="sidebar-link slide-out" data-slideout-item="system">
                 <div class="sidebar-icon">
-                    <i class="far fa-desktop"></i>
+                    <i class="far fa-cog"></i>
                 </div><span class="sidebar-text"> {{ __('System') }}</span>
                 <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
             </a>
@@ -74,6 +74,7 @@
             </a>
         </li>
         <li class="sidebar-item">
+<<<<<<< develop
             <a href="#" class="sidebar-link slide-out" data-slideout-item="settings">
                 <div class="sidebar-icon">
                     <i class="far fa-cog"></i>
@@ -86,6 +87,8 @@
             </a>
         </li>
         <li class="sidebar-item">
+=======
+>>>>>>> Revert "RLCMS-17"
             <a href="#" class="sidebar-link slide-out" data-slideout-item="other">
                 <div class="sidebar-icon">
                     <i class="far fa-wrench"></i>
@@ -243,6 +246,7 @@
     </nav>
 </div>
 
+<<<<<<< develop
 <div class="slide-out-block shadow slide-out-settings" id="slide-out">
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
@@ -270,6 +274,8 @@
     </nav>
 </div>
 
+=======
+>>>>>>> Revert "RLCMS-17"
 <div class="slide-out-block shadow slide-out-other" id="slide-out">
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
