@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    let items = ['content', 'system', 'account', 'packages','other'];
+    let items = ['content', 'system', 'account', 'packages', 'settings', 'other'];
 
     $('.fadeInUp').addClass('animated fadeInUp delay-05s show');
     $('.fadeInRight').addClass('animated fadeInRight delay-05s show');

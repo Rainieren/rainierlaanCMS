@@ -52,7 +52,7 @@
         <li class="sidebar-item">
             <a href="#" class="sidebar-link slide-out" data-slideout-item="system">
                 <div class="sidebar-icon">
-                    <i class="far fa-cog"></i>
+                    <i class="far fa-desktop"></i>
                 </div><span class="sidebar-text"> {{ __('System') }}</span>
                 <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
             </a>
@@ -70,6 +70,14 @@
                 <div class="sidebar-icon">
                     <i class="far fa-box-alt"></i>
                 </div><span class="sidebar-text"> {{ __('Packages') }}</span>
+                <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="#" class="sidebar-link slide-out" data-slideout-item="settings">
+                <div class="sidebar-icon">
+                    <i class="far fa-cog"></i>
+                </div><span class="sidebar-text"> {{ __('Settings') }}</span>
                 <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
             </a>
         </li>
@@ -133,6 +141,13 @@
                     <div class="sidebar-icon">
                         <i class="far fa-th-large"></i>
                     </div>{{ __('Layouts') }}
+                </a>
+            </li>
+            <li class="sidebar-item title">{{ __('Design') }}</li>
+            <li class="sidebar-item"><a href="" class="sidebar-link"  id="messages-link">
+                    <div class="sidebar-icon">
+                        <i class="far fa-pencil-paintbrush"></i>
+                    </div>{{ __('Configuration') }}
                 </a>
             </li>
         </ul>
@@ -218,6 +233,21 @@
                     <div class="sidebar-icon">
                         <i class="far fa-box-check"></i>
                     </div>{{ __('Installed packages') }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="slide-out-block shadow slide-out-settings" id="slide-out">
+    <nav class="sidebar-slideout">
+        <ul class="list-unstyled">
+            <li class="sidebar-item title">{{ __('Settings') }}</li>
+            <li class="sidebar-item">
+                <a href="" class="sidebar-link">
+                    <div class="sidebar-icon">
+                        <i class="far fa-pencil-paintbrush"></i>
+                    </div>{{ __('Configuration') }}
                 </a>
             </li>
         </ul>
