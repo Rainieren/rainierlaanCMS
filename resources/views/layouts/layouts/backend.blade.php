@@ -74,21 +74,14 @@
             </a>
         </li>
         <li class="sidebar-item">
-<<<<<<< develop
             <a href="#" class="sidebar-link slide-out" data-slideout-item="settings">
                 <div class="sidebar-icon">
                     <i class="far fa-cog"></i>
-<<<<<<< develop
                 </div><span class="sidebar-text"> {{ __('Settings') }}</span>
-=======
-                </div><span class="sidebar-text"> {{ __('Settings') }} </span>
->>>>>>> RLCMS-17
                 <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
             </a>
         </li>
         <li class="sidebar-item">
-=======
->>>>>>> Revert "RLCMS-17"
             <a href="#" class="sidebar-link slide-out" data-slideout-item="other">
                 <div class="sidebar-icon">
                     <i class="far fa-wrench"></i>
@@ -246,7 +239,7 @@
     </nav>
 </div>
 
-<<<<<<< develop
+
 <div class="slide-out-block shadow slide-out-settings" id="slide-out">
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
@@ -254,12 +247,8 @@
             <li class="sidebar-item">
                 <a href="" class="sidebar-link">
                     <div class="sidebar-icon">
-<<<<<<< develop
                         <i class="far fa-pencil-paintbrush"></i>
                     </div>{{ __('Configuration') }}
-=======
-                        <i class="far fa-users"></i>
-                    </div>{{ __('Visitors') }}
                 </a>
             </li>
             <li class="sidebar-item">
@@ -267,15 +256,12 @@
                     <div class="sidebar-icon">
                         <i class="far fa-clipboard-check"></i>
                     </div>{{ __('Tasks') }}
->>>>>>> RLCMS-17
                 </a>
             </li>
         </ul>
     </nav>
 </div>
 
-=======
->>>>>>> Revert "RLCMS-17"
 <div class="slide-out-block shadow slide-out-other" id="slide-out">
     <nav class="sidebar-slideout">
         <ul class="list-unstyled">
