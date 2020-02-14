@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< develop
+<<<<<<< develop
     <list default="true" id="64e4f1e7-9313-438d-b689-89f70e325ab3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< develop
@@ -31,6 +32,12 @@
 =======
     <list default="true" id="b277126f-d011-4a6f-89e3-41f544f0b0e6" name="Default Changelist" comment="" />
 >>>>>>> change
+=======
+    <list default="true" id="cbef1630-691e-4254-b85c-088067b2996b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> again changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -420,6 +427,7 @@
     <state x="771" y="272" width="276" height="518" key="com.intellij.database.view.ui.DbObjectDialog/-1920.63.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1577548070936" />
     <state x="771" y="272" key="com.intellij.database.view.ui.DbObjectDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1577534209813" />
 <<<<<<< develop
+<<<<<<< develop
     <state x="544" y="143" width="858" height="777" key="find.popup" timestamp="1581586161235">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -430,6 +438,12 @@
     </state>
     <state x="544" y="143" width="858" height="777" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1581369710255" />
 >>>>>>> Small changes
+=======
+    <state x="467" y="258" width="858" height="546" key="find.popup" timestamp="1581688424959">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="467" y="258" width="858" height="546" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1581688424959" />
+>>>>>>> again changes
     <state x="777" y="181" width="1226" height="1022" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1580210298874" />
     <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1581280699535">
       <screen x="0" y="23" width="1792" height="1017" />
