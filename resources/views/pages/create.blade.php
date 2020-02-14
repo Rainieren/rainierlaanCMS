@@ -34,7 +34,7 @@
                     <div class="form-group">
                         <label for="layout">{{ __('Layout') }}</label>
                         <select name="layout" id="layout" class="form-control @error('layout') is-invalid @enderror" value="{{ old('layout') }}">
-                            <option value="" selected>{{ __('Choose a layout...') }}</option>
+                            <option value="3" selected>{{ __('Choose a layout...') }}</option>
                             @foreach($layouts as $layout)
                                 <option value="{{ $layout->id }}">{{ $layout->name }}</option>
                             @endforeach

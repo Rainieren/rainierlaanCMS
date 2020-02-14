@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <label for="layout">{{ __('Layout') }}</label>
                         <select name="layout" id="" class="form-control">
-                            <option value="0" selected>{{ __('Default') }}</option>
+                            <option value="3" selected>{{ __('Default') }}</option>
                             @foreach($layouts as $layout)
                                 <option value="{{ $layout->id }}"  {{ $page->layout_id == $layout->id ? "selected" : "" }}>{{ $layout->name }}</option>
                             @endforeach
