@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     <list default="true" id="64e4f1e7-9313-438d-b689-89f70e325ab3" name="Default Changelist" comment="">
@@ -36,6 +37,11 @@
     <list default="true" id="cbef1630-691e-4254-b85c-088067b2996b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+    <list default="true" id="cbef1630-691e-4254-b85c-088067b2996b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> page-edit
     </list>
 >>>>>>> again changes
     <option name="SHOW_DIALOG" value="false" />
@@ -426,6 +432,7 @@
     </state>
     <state x="771" y="272" width="276" height="518" key="com.intellij.database.view.ui.DbObjectDialog/-1920.63.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1577548070936" />
     <state x="771" y="272" key="com.intellij.database.view.ui.DbObjectDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1577534209813" />
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
     <state x="544" y="143" width="858" height="777" key="find.popup" timestamp="1581586161235">
@@ -439,11 +446,16 @@
     <state x="544" y="143" width="858" height="777" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1581369710255" />
 >>>>>>> Small changes
 =======
+=======
+>>>>>>> page-edit
     <state x="467" y="258" width="858" height="546" key="find.popup" timestamp="1581688424959">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="467" y="258" width="858" height="546" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1581688424959" />
+<<<<<<< HEAD
 >>>>>>> again changes
+=======
+>>>>>>> page-edit
     <state x="777" y="181" width="1226" height="1022" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1580210298874" />
     <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1581280699535">
       <screen x="0" y="23" width="1792" height="1017" />
