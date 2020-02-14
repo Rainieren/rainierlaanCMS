@@ -43,12 +43,13 @@
                         </div>
                     </div>
                     <div id="sub-page-select" class="form-group" style="{{ $page->page_id != 0 ? "display: block" : "display: none" }}">
+                        <input type="hidden" name="page_id" id="page_id" value="{{ $page->page_id }}">
                         <label for="sub_page">{{ __('Page') }}</label>
-                        <select name="sub_page" id="" class="form-control">
-                            <option value="0" selected>{{ __('No page') }}</option>
-                            <?php $cur_page = $page->id; ?>
-                            @foreach($pages as $page)
-                                <option value="{{ $page->id }}" {{ $cur_page == $page->id ? "selected" : "" }}>{{ $page->name }}</option>
+                        <select name="sub_page" id="sub_page" class="form-control">
+                            <option name="no_page" id="no_page" value="0">{{ __('No page') }}</option>
+                            {{ $cur_page = $page }}
+                            @foreach($pages as $sub_page)
+                                <option value="{{ $sub_page->id }}" {{ $cur_page->page_id == $sub_page->id ? "selected" : "" }}>{{ $sub_page->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -76,7 +77,6 @@
                     <small class="saved-message text-success" style="display: none">The order has been saved!</small>
                 @endif
             </div>
-
         </div>
     </div>
 @endsection

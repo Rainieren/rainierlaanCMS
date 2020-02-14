@@ -59,7 +59,7 @@ class PageController extends Controller
             'name' => $request->name,
             'identifier' => $identifier,
             'url' => $url,
-            'status' => 1,
+            'status' => $request->status,
             'layout_id' => $request->layout,
             'page_id' => $request->sub_page,
             'created_at' => Carbon::now(),
@@ -129,10 +129,11 @@ class PageController extends Controller
         $page->url = $url;
         $page->status = $request->status;
         $page->layout_id = $request->layout;
+        $page->page_id = $request->sub_page;
 
         $page->save();
 
-        return redirect('/');
+        return redirect('dashboard/pages');
     }
 
     /**
