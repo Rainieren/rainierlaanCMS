@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< HEAD
 <<<<<<< develop
@@ -46,12 +47,19 @@
 =======
     <list default="true" id="2b683766-1442-4a8e-8633-9dc0f5a61d43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+    <list default="true" id="2b683766-1442-4a8e-8633-9dc0f5a61d43" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> remove-messages
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/messages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/messages/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+<<<<<<< HEAD
 >>>>>>> RLCMS-3
+=======
+>>>>>>> remove-messages
     </list>
 >>>>>>> again changes
     <option name="SHOW_DIALOG" value="false" />
@@ -442,6 +450,7 @@
     </state>
     <state x="771" y="272" width="276" height="518" key="com.intellij.database.view.ui.DbObjectDialog/-1920.63.1920.1057/0.23.1792.1017@0.23.1792.1017" timestamp="1577548070936" />
     <state x="771" y="272" key="com.intellij.database.view.ui.DbObjectDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1577534209813" />
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< HEAD
 <<<<<<< develop
@@ -473,6 +482,12 @@
     </state>
     <state x="544" y="143" width="858" height="777" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1581689966170" />
 >>>>>>> RLCMS-3
+=======
+    <state x="544" y="143" width="858" height="777" key="find.popup" timestamp="1581689966170">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="544" y="143" width="858" height="777" key="find.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1581689966170" />
+>>>>>>> remove-messages
     <state x="777" y="181" width="1226" height="1022" key="find.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1580210298874" />
     <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1581691022258">
       <screen x="0" y="23" width="1792" height="1017" />
