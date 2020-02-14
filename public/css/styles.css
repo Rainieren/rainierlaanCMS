@@ -27,10 +27,16 @@
     color: black;
 }
 
+.line {
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    margin: 5px 0 5px 0;
+}
+
 .nav-pills .nav-link.message.active {
     color: white;
     background-color: #186aff;
-    border-radius: 0;
+    border-radius: 8px;
 }
 
 .nav-pills .nav-link.message.active .sub-text {

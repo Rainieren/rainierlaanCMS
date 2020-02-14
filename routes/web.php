@@ -64,6 +64,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::patch('/dashboard/user/{id}/language', 'PreferencesController@changeLanguage')->name('change_language');
 // All routes related to messages
         Route::get('/dashboard/messages', 'MessageController@index')->name('messages');
+        Route::delete('/dashboard/message/{id}/delete', 'MessageController@destroy')->name('delete_message');
 
 //    Register requests
         Route::get('/dashboard/register/requests', 'RegisterController@index')->name('register_requests');
