@@ -51,8 +51,16 @@
                                     <small>{{ $notification->data['created_at'] }}</small>
                                 </div>
                                 <div class="col-1 d-flex justify-content-center">
-                                    <input type="hidden" class="notification-id" name="id" value="{{ $notification->id }}">
-                                    <a href="#" id="delete-notification"><i class="far fa-times-circle fa-lg"></i></a>
+                                    <a class="" href="{{ route('delete_notification', ['id' => $notification->id]) }}"
+                                       onclick="event.preventDefault(); document.getElementById('delete-form{{$notification->id}}').submit();">
+                                        <i class="fal fa-trash-alt text-danger"></i>
+                                        <form id="delete-form{{$notification->id}}" action="{{ route('delete_notification', ['id' => $notification->id]) }}"
+                                              method="POST"
+                                              class="d-none">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                        </form>
+                                    </a>
                                 </div>
                             </div>
                             <hr>
@@ -62,24 +70,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        $('#delete-notification').on('click', function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: 'dashbboard/notification/' + $('.notification-id').val() + '/delete',
-                type: 'DELETE',
-                data: [],
-                success: function(data){
-
-                }
-            })
-        });
-
-
-    </script>
 @endsection
