@@ -7,6 +7,7 @@ use App\Role;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -18,7 +19,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('role')->paginate(15);
+        $users = User::whereNotIn('id', [Auth::id()])->with('role')->paginate(15);
 
         return view('users.index', compact('users'));
     }
