@@ -51,8 +51,15 @@
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                             <a class="dropdown-item" href=""><i class="fal fa-edit"></i> {{ __('Edit') }}</a>
                                             <h6 class="dropdown-header">{{ __('Danger zone') }}</h6>
-                                            <a class="dropdown-item text-danger" href="#">
+                                            <a class="dropdown-item text-danger" href="{{ route('delete_user', ['token' => $user->token]) }}"
+                                               onclick="event.preventDefault(); document.getElementById('delete-form{{$user->token}}').submit();">
                                                 <i class="fal fa-trash-alt"></i> {{ __('Delete') }}
+                                                <form id="delete-form{{$user->token}}" action="{{ route('delete_user', ['token' => $user->token]) }}"
+                                                      method="POST"
+                                                      class="d-none">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                </form>
                                             </a>
                                         </div>
                                     </div>

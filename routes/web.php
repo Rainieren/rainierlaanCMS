@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/dashboard/user/{token}', 'UserController@show')->name('profile');
         Route::get('/dashboard/user/create', 'UserController@create')->name('create_user');
         Route::get('/dashboard/user/{token}/edit', 'UserController@edit')->name('edit_user');
+        Route::delete('/dashboard/user/{token}/delete', 'UserController@destroy')->name('delete_user');
 
 // All routes related to roles
         Route::get('/dashboard/roles', 'RoleController@index')->name('roles');

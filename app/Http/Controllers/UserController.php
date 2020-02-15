@@ -88,10 +88,14 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
+        $user = User::where('token', $id)->firstOrFail();
+
+        $user->delete();
+
+        return back();
     }
 }
