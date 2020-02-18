@@ -37,7 +37,7 @@
                             <td>{{ $layout->name }}</td>
                             <td>{{ $layout->filename }}</td>
                             <td>{{ $layout->created_at->toFormattedDateString() }}</td>
-                            <td>{{ $layout->updated_at->toFormattedDateString() }}</td>
+                            <td>{{ $layout->updated_at->diffForHumans() }}</td>
                             <td>
                                 <div class="dropdown show">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

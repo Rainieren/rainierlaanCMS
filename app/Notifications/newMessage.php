@@ -57,10 +57,10 @@ class newMessage extends Notification
     public function toArray($notifiable)
     {
         return [
-            "icon" => "<i class=\"far fa-comment-alt-dots fa-lg\"></i>",
+            "icon" => "<i class=\"far fa-comment-alt-dots fa-lg text-success\"></i>",
             "author" => $this->message->firstname . " " . $this->message->lastname,
-            "message" => "has created a <a href='/dashboard/messages'>new message</a> on your website",
-            "created_at" => $this->message->created_at->toFormattedDateString(),
+            "message" => "has left a <a href='/dashboard/messages'>new message</a>.",
+            "created_at" => $this->message->created_at->diffForHumans(),
         ];
     }
 }

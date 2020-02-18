@@ -55,6 +55,7 @@
                     <i class="far fa-cog"></i>
                 </div><span class="sidebar-text"> {{ __('System') }}</span>
                 <i class="far fa-chevron-right" style="position:absolute; right: 0;"></i>
+
             </a>
         </li>
         <li class="sidebar-item">
@@ -170,16 +171,24 @@
                     </div>{{ __('Roles') }}
                 </a>
             </li>
-            <li class="sidebar-item"><a href="{{ route('messages') }}"  class="sidebar-link {{ Route::currentRouteNamed('messages') ? 'sidebar-active' : '' }}" id="messages-link">
+            <li class="sidebar-item">
+                <a href="{{ route('messages') }}"  class="sidebar-link {{ Route::currentRouteNamed('messages') ? 'sidebar-active' : '' }}" id="messages-link">
                     <div class="sidebar-icon">
                         <i class="far fa-comment-lines"></i>
                     </div>{{ __('Messages') }}
+{{--                    @if(Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\newMessage'])->count() > 0)--}}
+{{--                        <div class="notification-dot"></div>--}}
+{{--                    @endif--}}
                 </a>
             </li>
-            <li class="sidebar-item"><a href="{{ route('register_requests') }}" class="sidebar-link {{ Route::currentRouteNamed('register_requests') ? 'sidebar-active' : '' }}"  id="messages-link">
+            <li class="sidebar-item">
+                <a href="{{ route('register_requests') }}" class="sidebar-link {{ Route::currentRouteNamed('register_requests') ? 'sidebar-active' : '' }}"  id="messages-link">
                     <div class="sidebar-icon">
                         <i class="far fa-file-user"></i>
                     </div>{{ __('Register requests') }}
+{{--                    @if(Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() > 0)--}}
+{{--                        <div class="notification-dot"></div>--}}
+{{--                    @endif--}}
                 </a>
             </li>
             @if(Route::has('visitors'))

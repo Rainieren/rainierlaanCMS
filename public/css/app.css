@@ -12165,3 +12165,14 @@ p {
   color: #D1D1D1;
 }
 
+.notification-dot {
+  display: block;
+  height: 7px;
+  top: 15px;
+  left: 25px;
+  width: 7px;
+  position: absolute;
+  border-radius: 25px;
+  background: #ff3b30;
+}
+

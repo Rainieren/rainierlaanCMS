@@ -47,7 +47,7 @@
                                 @endif
                             </td>
                             <td>{{ $block->created_at->toFormattedDateString() }}</td>
-                            <td>{{ $block->updated_at->toFormattedDateString() }}</td>
+                            <td>{{ $block->updated_at->diffForHumans() }}</td>
                             <td>
                                 <div class="dropdown show">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

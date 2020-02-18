@@ -26,7 +26,7 @@
                             @if($count = Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\newMessage'])->count() == 0)
                                 <h1>{{ __('No messages') }}</h1>
                             @else
-                                <h1>{{ $count }}</h1>
+                                <h1>{{ Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\newMessage'])->count() }}</h1>
                             @endif
                         </div>
                     </div>

@@ -35,7 +35,7 @@
                                 <td>{{ $role->id }}</td>
                                 <td>{{ $role->name }}</td>
                                 <td>{{ $role->created_at->toFormattedDateString() }}</td>
-                                <td>{{ $role->updated_at->toFormattedDateString() }}</td>
+                                <td>{{ $role->updated_at->diffForHumans() }}</td>
                                 <td>
                                     <div class="dropdown show">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

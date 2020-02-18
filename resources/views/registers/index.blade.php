@@ -35,7 +35,7 @@
                                 <td>{{ $user->firstname }}</td>
                                 <td>{{ $user->lastname }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ $user->created_at->toDayDateTimeString() }}</td>
+                                <td>{{ $user->created_at->diffForHumans() }}</td>
                                 <td>
                                     <a href="{{ route('accept_request', ['id' => $user->id]) }}" class="btn btn-success btn-sm"
                                         onclick="event.preventDefault(); document.getElementById('patch-form{{$user->id}}').submit();">

@@ -27,7 +27,7 @@
                                             <h5 class="m-0">{{ $message->firstname }} {{ $message->lastname }}</h5>
                                         </div>
                                         <div class="col-4">
-                                            <small class="m-0 sub-text">{{ $message->created_at->toFormattedDateString() }}</small>
+                                            <small class="m-0 sub-text">{{ $message->created_at->diffForHumans() }}</small>
                                         </div>
                                         <div class="col-12">
                                             <p class="m-0">{{ $message->title }}</p>

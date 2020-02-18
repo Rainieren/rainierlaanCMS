@@ -8,66 +8,108 @@
             </div>
         </div>
         <div class="row my-5">
-            <div class="col-3">
-                <div class="nav flex-column nav-pills border p-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link position-relative" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                        {{ __('Unread') }}
-                        @if($user->unreadNotifications->count() == 0)
-                            <span class="badge badge-light" style="position: absolute; right: 10px">{{ $user->unreadNotifications->count() }}</span>
-                        @else
-                            <span class="badge badge-danger" style="position: absolute; right: 10px">{{ $user->unreadNotifications->count() }}</span>
-                        @endif
-                    </a>
-                    <a class="nav-link position-relative" id="v-pills-profile-tab read" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                        {{ __('Read') }} <span class="badge badge-light" style="position: absolute; right: 10px">{{ $user->readNotifications->count() }}</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-9">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade fadeInUp" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                        @foreach($user->unreadNotifications as $notification)
-                            <div class="notification p-2 row ">
-                                <div class="col-1 d-flex justify-content-center align-items-center">
-                                    {!! $notification->data['icon']  !!}
-                                </div>
-                                <div class="col-10">
-                                    <p class="m-0"><span class="font-weight-bold">{{ $notification->data['author']}}</span> {!! __($notification->data['message']) !!}</p>
-                                    <small>{{ $notification->data['created_at'] }}</small>
-                                </div>
+            <div class="col-4">
+                @forelse($user->notifications as $notification)
+{{--                    <a href="">--}}
+                    <div class="row my-4">
+                        <div class="col-2">
 
-                            </div>
-                            <hr>
-                        @endforeach
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                        @foreach($user->readNotifications as $notification)
-                            <div class="notification p-2 row">
-                                <div class="col-1 d-flex justify-content-center align-items-center">
-                                    {!! $notification->data['icon']  !!}
+                        </div>
+                        <div class="col-9">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p class="mb-1">{{ $notification->data['author']}} {!! __($notification->data['message']) !!}</p>
                                 </div>
-                                <div class="col-10">
-                                    <p class="m-0"><span class="font-weight-bold">{{ $notification->data['author']}}</span> {!! __($notification->data['message']) !!}</p>
-                                    <small>{{ $notification->data['created_at'] }}</small>
-                                </div>
-                                <div class="col-1 d-flex justify-content-center">
-                                    <a class="" href="{{ route('delete_notification', ['id' => $notification->id]) }}"
-                                       onclick="event.preventDefault(); document.getElementById('delete-form{{$notification->id}}').submit();">
-                                        <i class="fal fa-trash-alt text-danger"></i>
-                                        <form id="delete-form{{$notification->id}}" action="{{ route('delete_notification', ['id' => $notification->id]) }}"
-                                              method="POST"
-                                              class="d-none">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                        </form>
-                                    </a>
+                                <div class="col-12">
+                                    {!! $notification->data['icon']  !!} <span class=" ml-2 sub-text">{{ $notification->data['created_at'] }}</span>
                                 </div>
                             </div>
-                            <hr>
-                        @endforeach
+                        </div>
+                        <div class="col-1">
+
+                        </div>
                     </div>
-                </div>
+{{--                    </a>--}}
+                @empty
+                    <p>{{ __('You don\'t have any notifications yet. Come back another time.') }}</p>
+
+                @endforelse
             </div>
         </div>
+
+{{--        <div class="row my-5">--}}
+{{--            <div class="col-3">--}}
+{{--                <div class="nav flex-column nav-pills border p-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">--}}
+{{--                    <a class="nav-link position-relative" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">--}}
+{{--                        {{ __('Unread') }}--}}
+{{--                        @if($user->unreadNotifications->count() == 0)--}}
+{{--                            <span class="badge badge-light" style="position: absolute; right: 10px">{{ $user->unreadNotifications->count() }}</span>--}}
+{{--                        @else--}}
+{{--                            <span class="badge badge-danger" style="position: absolute; right: 10px">{{ $user->unreadNotifications->count() }}</span>--}}
+{{--                        @endif--}}
+{{--                    </a>--}}
+{{--                    <a class="nav-link position-relative" id="v-pills-profile-tab read" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">--}}
+{{--                        {{ __('Read') }} <span class="badge badge-light" style="position: absolute; right: 10px">{{ $user->readNotifications->count() }}</span>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-5">--}}
+{{--                <div class="tab-content" id="v-pills-tabContent">--}}
+{{--                    <div class="tab-pane fade fadeInUp" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">--}}
+{{--                        @foreach($user->unreadNotifications as $notification)--}}
+{{--                            <div class="notification p-2 row ">--}}
+{{--                                <div class="col-1 d-flex justify-content-center align-items-center">--}}
+{{--                                    {!! $notification->data['icon']  !!}--}}
+{{--                                </div>--}}
+{{--                                <div class="col-10">--}}
+{{--                                    <p class="m-0"><span class="font-weight-bold">{{ $notification->data['author']}}</span> {!! __($notification->data['message']) !!}</p>--}}
+{{--                                    <small>{{ $notification->data['created_at'] }}</small>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                            <hr>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">--}}
+{{--                        @foreach($user->readNotifications as $notification)--}}
+{{--                            <div class="notification p-2 row">--}}
+{{--                                <div class="col-1 d-flex justify-content-center align-items-center">--}}
+{{--                                    {!! $notification->data['icon']  !!}--}}
+{{--                                </div>--}}
+{{--                                <div class="col-8">--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-12">--}}
+{{--                                            <p class="m-0"><span class="font-weight-bold">{{ $notification->data['author']}}</span> {!! __($notification->data['message']) !!}</p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-2 d-flex justify-content-center">--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-12 text-right">--}}
+{{--                                            <a class="" href="{{ route('delete_notification', ['id' => $notification->id]) }}"--}}
+{{--                                               onclick="event.preventDefault(); document.getElementById('delete-form{{$notification->id}}').submit();">--}}
+{{--                                                <i class="fal fa-times sub-text"></i>--}}
+{{--                                                <form id="delete-form{{$notification->id}}" action="{{ route('delete_notification', ['id' => $notification->id]) }}"--}}
+{{--                                                      method="POST"--}}
+{{--                                                      class="d-none">--}}
+{{--                                                    {{ csrf_field() }}--}}
+{{--                                                    {{ method_field('DELETE') }}--}}
+{{--                                                </form>--}}
+{{--                                            </a>--}}
+{{--                                        </div>--}}
+
+{{--                                        <div class="col-12 text-right">--}}
+{{--                                            <small>{{ $notification->data['created_at'] }}</small>--}}
+{{--                                            {{ Carbon::parse($p->created_at)->diffForHumans() }}--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 @endsection

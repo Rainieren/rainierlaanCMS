@@ -55,10 +55,10 @@ class registerRequest extends Notification
     public function toArray($notifiable)
     {
         return [
-            "icon" => "<i class=\"far fa-file-user fa-lg\"></i>",
+            "icon" => "<i class=\"far fa-user fa-lg color-primary\"></i>",
             "author" => $this->user->firstname . " " . $this->user->lastname,
-            "message" => "has created a <a href='/dashboard/register/requests'>register request</a> on your website",
-            "created_at" => $this->user->created_at->toFormattedDateString(),
+            "message" => "has created a <a href='/dashboard/register/requests'>register request</a>",
+            "created_at" => $this->user->created_at->diffForHumans(),
         ];
     }
 }
