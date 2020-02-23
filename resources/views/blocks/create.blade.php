@@ -53,9 +53,16 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                            <input type="checkbox" class="custom-control-input" name="full_width" id="full-width-checkbox">
+                            <label class="custom-control-label" for="full-width-checkbox">Full width</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <button type="submit" class="btn btn-primary">{{ __('Create block') }}</button>
                         <button type="button" onclick="history.back();" class="btn btn-light">{{ __('Cancel') }}</button>
                     </div>
+
                 </form>
             </div>
 

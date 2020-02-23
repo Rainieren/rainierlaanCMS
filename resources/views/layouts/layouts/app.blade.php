@@ -37,10 +37,10 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            <div class="container mt-5" id="app">
+        <main class="">
+
                 @yield('content')
-            </div>
+
         </main>
     </div>
 

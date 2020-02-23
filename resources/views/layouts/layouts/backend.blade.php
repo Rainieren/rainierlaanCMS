@@ -93,9 +93,9 @@
         <li class="sidebar-item">
             <a href="{{ route('notifications') }}" class="sidebar-link">
                 <div class="sidebar-icon"><i class="far fa-bell"></i></div><span class="sidebar-text"> {{ __('Notifications') }}</span>
-                @if(Auth::user()->unreadNotifications->count())
-                    <span class="badge badge-danger" style="position:absolute; right: 0;">{{ Auth::user()->unreadNotifications->count() }}</span>
-                @endif
+{{--                @if(Auth::user()->unreadNotifications->count())--}}
+{{--                    <span class="badge badge-danger" style="position:absolute; right: 0;">{{ Auth::user()->unreadNotifications->count() }}</span>--}}
+{{--                @endif--}}
             </a>
         </li>
     </ul>
@@ -209,18 +209,19 @@
             <li class="sidebar-item title">{{ __('Account') }}</li>
 {{--            {{ auth()->user() }}--}}
             <li class="sidebar-item">
-                <a href="{{ route('profile', ['token' => Auth::user()->token]) }}" class="sidebar-link {{ Route::currentRouteNamed('profile') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon">
-                        <i class="far fa-user"></i>
-                    </div>{{ __('Profile') }}
-                </a>
+{{--                <a href="{{ route('profile', ['token' => Auth::user()->token]) }}" class="sidebar-link {{ Route::currentRouteNamed('profile') ? 'sidebar-active' : '' }}">--}}
+{{--                    <div class="sidebar-icon">--}}
+{{--                        <i class="far fa-user"></i>--}}
+{{--                    </div>{{ __('Profile') }}--}}
+{{--                </a>--}}
             </li>
+            {{ Auth::user()->name }}
             <li class="sidebar-item">
-                <a href="{{ route('downloads', ['token' => Auth::user()->token]) }}" class="sidebar-link {{ Route::currentRouteNamed('downloads') ? 'sidebar-active' : '' }}">
-                    <div class="sidebar-icon">
-                        <i class="far fa-download"></i>
-                    </div>{{ __('My downloads') }}
-                </a>
+{{--                <a href="{{ route('downloads', ['token' => Auth::user()->token]) }}" class="sidebar-link {{ Route::currentRouteNamed('downloads') ? 'sidebar-active' : '' }}">--}}
+{{--                    <div class="sidebar-icon">--}}
+{{--                        <i class="far fa-download"></i>--}}
+{{--                    </div>{{ __('My downloads') }}--}}
+{{--                </a>--}}
             </li>
         </ul>
     </nav>

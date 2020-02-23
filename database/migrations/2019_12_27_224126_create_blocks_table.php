@@ -21,6 +21,7 @@ class CreateBlocksTable extends Migration
             $table->boolean('status');
             $table->longText('content');
             $table->integer('order');
+            $table->boolean('full_width')->default(0);
             $table->timestamps();
         });
     }

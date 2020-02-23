@@ -10,7 +10,7 @@ class Block extends Model
      * @var array
      */
     protected $fillable = [
-        'page_id', 'name', 'identifier', 'status', 'content', 'order'
+        'page_id', 'name', 'identifier', 'status', 'content', 'order', 'full_width'
     ];
     /**
      *

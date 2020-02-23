@@ -54,7 +54,6 @@ class BlockController extends Controller
         } else {
             $order = $blocks->max('order') + 1;
         }
-
         $block = Block::create([
             'name' => $request->name,
             'page_id' => $request->page,
@@ -62,6 +61,7 @@ class BlockController extends Controller
             'status' => $request->status,
             'content' => $request->content,
             'order' => $order,
+            'full_width' => $request->full_width ? 1 : 0,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -113,6 +113,7 @@ class BlockController extends Controller
         $block->identifier = $identifier;
         $block->status = $request->status;
         $block->content = $request->content;
+        $block->full_width = $request->full_width ? 1 : 0;
 
         $block->save();
 
