@@ -11792,7 +11792,6 @@ select.form-control:focus {
 .sidebar .sidebar-item:hover {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
-  margin-left: 5px;
 }
 
 .sidebar .sidebar-item:hover .sidebar-link {
@@ -11804,7 +11803,6 @@ select.form-control:focus {
 .sidebar .sidebar-item:hover .sidebar-link i {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
-  margin-left: 5px;
 }
 
 .sidebar .sidebar-item .sidebar-link {
@@ -11895,7 +11893,6 @@ select.form-control:focus {
 .slide-out-block .sidebar-item:hover {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
-  margin-left: 5px;
 }
 
 .slide-out-block .sidebar-item:hover .sidebar-link {
@@ -11907,7 +11904,6 @@ select.form-control:focus {
 .slide-out-block .sidebar-item:hover .sidebar-link i {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
-  margin-left: 5px;
 }
 
 .slide-out-block .sidebar-item .sidebar-link {
@@ -12176,6 +12172,15 @@ p {
   color: #091E42;
   line-height: 25px;
   font-size: 15px;
+}
+
+a.main-link {
+  color: #091E42;
+}
+
+a.main-link:hover {
+  color: #091E42;
+  text-decoration: none;
 }
 
 .fa-star.yellow {
