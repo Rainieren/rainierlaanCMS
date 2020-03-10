@@ -11,3 +11,7 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .idea/*
+
+resources/.DS_Store
+
+.DS_Store

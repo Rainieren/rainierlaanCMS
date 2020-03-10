@@ -1,11 +1,24 @@
 @import "../base/variables"
 
+@font-face
+    font-family: 'Muli Regular'
+    src: url("../fonts/Muli-Regular.ttf")
+
+@font-face
+    font-family: 'Muli Bold'
+    src: url("../fonts/Muli-Bold.ttf")
+
+body
+    font-family: 'Muli Regular'
+
 h1,h2,h3,h4,h5,h6
     transition: .3s all
     color: $text_color
 
 p
     color: $text_color
+    line-height: 25px
+    font-size: 15px
 
 
 .fa-star.yellow

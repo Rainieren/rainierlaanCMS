@@ -31,31 +31,34 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="card p-4 card-grey fadeInUp">
+                <div class="row">
+                    <div class="d-none d-lg-block col-md-3">
 
+                    </div>
+                    <div class="col-9">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ __('Register requests') }}</h5>
+                            @if(Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() == 0)
+                                <h1>{{ __('No requests') }}</h1>
+                            @else
+                                <h1>{{ Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() }}</h1>
+                            @endif
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-12 col-lg-12 col-xl-5">
-            <div class="card p-4 card-purple fadeInUp mb-3">
+            <div class="card p-4 card-purple fadeInUp">
                 <div class="card-body">
-                    <h5 class="card-title">{{ __('Register requests') }}</h5>
-                    @if(Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() == 0)
-                        <h1>{{ __('No requests') }}</h1>
-                    @else
-                        <h1>{{ Auth::user()->unreadNotifications->whereIn('type', ['App\Notifications\registerRequest'])->count() }}</h1>
-                    @endif
+                    <h5 class="mb-3 text-white">{{ __('Daily visitors') }}</h5>
+                    <canvas id="visitors_chart" width="400" height="250"></canvas>
                 </div>
             </div>
         </div>
     </div>
-{{--    <div class="row">--}}
-{{--        <div class="col-md-6">--}}
-{{--            <div class="card p-4 custom-card fadeInUp">--}}
-{{--                <div class="card-body">--}}
-{{--                    <h5>{{ __('Daily visitors') }}</h5>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
     <div class="fadeInUp">
         <a href="{{ route('install_package') }}" class="badge badge-light fa-1x">Install</a>
         <div class="progress my-3">

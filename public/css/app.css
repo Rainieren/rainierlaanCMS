@@ -11381,7 +11381,7 @@ input[type=file],
 textarea.form-control,
 select.form-control {
   background-color: #fafbfc;
-  color: #027aff;
+  color: #091E42;
   border: 2px solid #dfe1e6;
   border-radius: 3px;
   outline: none;
@@ -11431,7 +11431,7 @@ select.form-control:focus {
 .btn.btn-primary {
   background-color: #027aff;
   border: 0;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11453,7 +11453,7 @@ select.form-control:focus {
 .btn.btn-success {
   background-color: #34c759;
   border: 0;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11475,7 +11475,7 @@ select.form-control:focus {
 .btn.btn-danger {
   background-color: #ff3b30;
   border: 0;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11497,7 +11497,7 @@ select.form-control:focus {
 .btn.btn-warning {
   background-color: #ffcc00;
   border: 0;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11519,7 +11519,7 @@ select.form-control:focus {
 .btn.btn-info {
   background-color: #5ac8fa;
   border: 0;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11541,7 +11541,7 @@ select.form-control:focus {
 .btn.btn-light {
   background-color: #f2f2f7;
   border: 0;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11563,7 +11563,7 @@ select.form-control:focus {
 .btn.btn-dark {
   background-color: #48484a;
   border: 0;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11585,7 +11585,7 @@ select.form-control:focus {
 .btn.btn-outline-primary {
   border-color: #027aff;
   color: #027aff;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11608,7 +11608,7 @@ select.form-control:focus {
 .btn.btn-outline-success {
   border-color: #34c759;
   color: #34c759;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11631,7 +11631,7 @@ select.form-control:focus {
 .btn.btn-outline-danger {
   border-color: #ff3b30;
   color: #ff3b30;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11654,7 +11654,7 @@ select.form-control:focus {
 .btn.btn-outline-warning {
   border-color: #ffcc00;
   color: #ffcc00;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11677,7 +11677,7 @@ select.form-control:focus {
 .btn.btn-outline-info {
   border-color: #5ac8fa;
   color: #5ac8fa;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11700,7 +11700,7 @@ select.form-control:focus {
 .btn.btn-outline-light {
   border-color: #f2f2f7;
   color: #f2f2f7;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -11723,7 +11723,7 @@ select.form-control:focus {
 .btn.btn-outline-dark {
   border-color: #48484a;
   color: #48484a;
-  border-radius: 25px;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   padding-left: 20px;
@@ -12142,6 +12142,25 @@ select.form-control:focus {
   visibility: hidden;
 }
 
+.title-bold {
+  font-family: "Muli Bold";
+  color: #091E42;
+}
+
+@font-face {
+  font-family: "Muli Regular";
+  src: url(/fonts/Muli-Regular.ttf?328d557958b18b54b3bddb3a4a36215a);
+}
+
+@font-face {
+  font-family: "Muli Bold";
+  src: url(/fonts/Muli-Bold.ttf?077ceb9111e90dea3fc3923fe71805a1);
+}
+
+body {
+  font-family: "Muli Regular";
+}
+
 h1,
 h2,
 h3,
@@ -12155,6 +12174,8 @@ h6 {
 
 p {
   color: #091E42;
+  line-height: 25px;
+  font-size: 15px;
 }
 
 .fa-star.yellow {

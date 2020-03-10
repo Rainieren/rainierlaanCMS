@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     let items = ['content', 'system', 'account', 'packages','settings', 'other'];
+    let visitors = [];
 
     $('.fadeInUp').addClass('animated fadeInUp delay-05s show');
     $('.fadeInRight').addClass('animated fadeInRight delay-05s show');
@@ -142,6 +143,8 @@ $(document).ready(function(){
             }
         })
     });
+
+
 });
 
 
