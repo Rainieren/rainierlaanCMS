@@ -1,0 +1,29 @@
+@import '../variables'
+
+
+.package-popup
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    display: none
+    overflow: hidden
+    background-color: $primary_background_transparent
+    z-index: 3
+    .package-popup-dialog
+        max-width: 960px
+        position: relative
+        margin: auto
+        top: 100px
+        background-color: $color-white
+        border-radius: 16px
+        padding: 3rem
+        z-index: 4
+        pointer-events: none
+        .package-popup-content
+            position: relative
+            pointer-events: auto
+            display: flex
+            flex-direction: column
+

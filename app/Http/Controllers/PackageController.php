@@ -29,6 +29,8 @@ class PackageController extends Controller
         // TODO:: Voeg ook een handleiding toe aan de popup bijvoorbeeld "When installing this package. An extra menu item under the section Content will appear" met eventuele screenshots van de paginas
         // TODO:: Deze data word allemaal opgehaald via een API call en in de database van de CMS gepropt (Ook eventuele fotos) met link naar die foto
 
+        // TODO:: Wanneer er een package is gekocht moet er ook een post request verstuurd worden naar rainierlaansite en de aankoop daat opgeslagen worden
+
         return view('packages.index', compact('packages'));
     }
 

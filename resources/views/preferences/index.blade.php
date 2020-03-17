@@ -5,7 +5,6 @@
         <div class="row">
             <div class="col-md-6">
                 <h3>{{ __('Preferences') }}</h3>
-                <hr>
             </div>
         </div>
         <div class="row my-3">

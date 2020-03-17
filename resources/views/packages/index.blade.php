@@ -20,8 +20,6 @@
     <div class="popup-list">
 
     </div>
-    <div class="popup-overlay"></div>
-
 
     <script>
         $.ajax({
@@ -35,6 +33,9 @@
                 let popup_list = $('.popup-list');
                 let popup = 'popup-id';
 
+                if(data == null) {
+                    console.log('lol')
+                }
                 $.each(data, function(index, value) {
                     let el = data[index];
                     wrapper.append(
@@ -50,61 +51,65 @@
                         '</div>' + '<hr>'
                     );
                     popup_list.append(
-                        '<div class="package-popup shadow popup-'+ el.id +' animated fadeInUp faster">' +
-                            '<div class="row">' +
-                                '<div class="col-2">' +
+                        '<div class="package-popup shadow popup-'+ el.id +'">' +
+                            '<div class="package-popup-dialog animated zoomIn show faster">' +
+                                '<div class="package-popup-content">' +
                                     '<div class="row">' +
-                                        '<div class="col-12 d-flex justify-content-center">' +
-                                            '<i class="far fa-archive fa-3x"></i>' +
+                                        '<div class="col-2">' +
+                                            '<div class="row">' +
+                                                '<div class="col-12 d-flex justify-content-center">' +
+                                                    '<i class="far fa-archive fa-3x"></i>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>' +
+                                        '<div class="col-7">' +
+                                            '<div class="row">' +
+                                                '<div class="col-12">' +
+                                                    '<h4 class="m-0">' + el.name + '</h4>' +
+                                                    '<p class="sub-text">' + el.creator + '</p>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>' +
+                                        '<div class="col-3 text-center">' +
+                                            '<h4><a href="#" id="download_package" class="badge badge-pill '+ (el.price == 0 ? 'badge-primary': 'badge-light') +'">' +
+                                                (el.price == 0 ? 'Download': '$ ' + el.price) +
+                                            '</a></h4>' +
+                                        '</div>' +
+                                        '<div class="offset-2 col-7">\n' +
+                                            '<div class="rating">\n' +
+                                                '<span><i class="fas fa-star yellow"></i></span>' +
+                                                '<span><i class="fas fa-star yellow"></i></span>' +
+                                                '<span><i class="fas fa-star yellow"></i></span>' +
+                                                '<span><i class="fas fa-star yellow"></i></span>' +
+                                                '<span><i class="fas fa-star grey"></i></span>' +
+                                                '<small><a href="">· Uit 300 beoordelingen</a></small>' +
+                                            '</div>' +
+                                            '<small>Nog geen beoordelingen</small>' +
+                                        '</div>' +
+                                        '<div class="col-3 text-center">'+
+                                            '<i class="far fa-download"></i> ' + el.downloads +
                                         '</div>' +
                                     '</div>' +
-                                '</div>' +
-                                '<div class="col-7">' +
-                                    '<div class="row">' +
+                                    '<div class="row my-5">' +
                                         '<div class="col-12">' +
-                                            '<h4 class="m-0">' + el.name + '</h4>' +
-                                            '<p class="sub-text">' + el.creator + '</p>' +
-                                        '</div>' +
-                                    '</div>' +
-                                '</div>' +
-                                '<div class="col-3 text-center">' +
-                                    '<h4><a href="#" id="download_package" class="badge badge-pill '+ (el.price == 0 ? 'badge-primary': 'badge-light') +'">' +
-                                        (el.price == 0 ? 'Download': '$ ' + el.price) +
-                                    '</a></h4>' +
-                                '</div>' +
-                                '<div class="offset-2 col-7">\n' +
-                                    '<div class="rating">\n' +
-                                        '<span><i class="fas fa-star yellow"></i></span>' +
-                                        '<span><i class="fas fa-star yellow"></i></span>' +
-                                        '<span><i class="fas fa-star yellow"></i></span>' +
-                                        '<span><i class="fas fa-star yellow"></i></span>' +
-                                        '<span><i class="fas fa-star grey"></i></span>' +
-                                        '<small><a href="">· Uit 300 beoordelingen</a></small>' +
-                                    '</div>' +
-                                    '<small>Nog geen beoordelingen</small>' +
-                                '</div>' +
-                                '<div class="col-3 text-center">'+
-                                    '<i class="far fa-download"></i> ' + el.downloads +
-                                '</div>' +
-                            '</div>' +
-                            '<div class="row my-5">' +
-                                '<div class="col-12">' +
-                                    '<nav>' +
-                                        '<div class="nav nav-tabs" id="nav-tab" role="tablist">' +
-                                            '<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Details</a>' +
-                                            '<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>' +
-                                            '<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Version history</a>' +
-                                        '</div>' +
-                                    '</nav>' +
-                                    '<div class="tab-content" id="nav-tabContent">' +
-                                        '<div class="tab-pane fade show active py-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">' +
-                                            '<p>' + el.description + '</p>' +
-                                        '</div>' +
-                                        '<div class="tab-pane fade py-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">' +
-                                            'Dit is twee tekst' +
-                                        '</div>' +
-                                        '<div class="tab-pane fade py-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">' +
-                                            'Dit is tekst 3' +
+                                            '<nav>' +
+                                                '<div class="nav nav-tabs" id="nav-tab" role="tablist">' +
+                                                    '<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Details</a>' +
+                                                    '<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</a>' +
+                                                    '<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Version history</a>' +
+                                                '</div>' +
+                                            '</nav>' +
+                                            '<div class="tab-content" id="nav-tabContent">' +
+                                                '<div class="tab-pane fade show active py-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">' +
+                                                    '<p>' + el.description + '</p>' +
+                                                '</div>' +
+                                                '<div class="tab-pane fade py-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">' +
+                                                    'Dit is twee tekst' +
+                                                '</div>' +
+                                                '<div class="tab-pane fade py-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">' +
+                                                    'Dit is tekst 3' +
+                                                '</div>' +
+                                            '</div>' +
                                         '</div>' +
                                     '</div>' +
                                 '</div>' +
@@ -116,7 +121,11 @@
                 $('.popup').on('click', function () {
                     if($(this).data(popup)) {
                         let item = $('.popup-' + $(this).data(popup));
-                        item.fadeIn().css('display', 'block');
+                        item.addClass('show');
+                        $(item).on('click', function() {
+                            item.removeClass('show');
+                            console.log('ik klik op de achtergrond');
+                        })
                     }
                 });
             },
