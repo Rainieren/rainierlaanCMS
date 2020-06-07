@@ -15,3 +15,5 @@ yarn-error.log
 resources/.DS_Store
 
 .DS_Store
+
+.idea/

@@ -7,7 +7,7 @@
         <div class="col-md-6 shadow-lg d-flex flex-column justify-content-center" style="background-color: #0052CC !important;">
             <div class="row align-items-center">
                 <div class="col-12 p-5">
-                    <div class="login-infon fadeInRight">
+                    <div class="login-info fadeInRight">
                         <h1>RainierlaanCMS</h1>
                         <h3>A simple CMS for the average user</h3>
                     </div>
