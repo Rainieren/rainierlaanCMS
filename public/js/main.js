@@ -144,6 +144,10 @@ $(document).ready(function(){
         })
     });
 
+    $("#editLayout").on('click', function() {
+        $("#editLayoutForm").submit();
+    });
+
 
 });
 

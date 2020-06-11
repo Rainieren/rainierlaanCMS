@@ -78,13 +78,14 @@ class PageController extends Controller
     public function show($id)
     {
         $page = Page::where('url', $id)->firstOrFail();
+        $header = $page->layout->layoutHeader;
         if($page->status == 0) {
             return back();
         } else {
             $blocks = Block::where('page_id', $page->id)->where('status', 1)->get();
             $pages = Page::where('page_id', $page->id)->get();
 
-            return view('pages.show', compact('page', 'blocks', 'pages'));
+            return view('pages.show', compact('page', 'blocks', 'pages', 'header'));
         }
 
     }

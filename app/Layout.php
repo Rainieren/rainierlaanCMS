@@ -21,4 +21,12 @@ class Layout extends Model
     {
         return $this->hasMany(Page::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function layoutHeader()
+    {
+        return $this->hasOne(LayoutHeader::class);
+    }
 }

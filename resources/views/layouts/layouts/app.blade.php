@@ -17,32 +17,37 @@
 </head>
 <body style="background: #ffffff">
     <div id="">
-        <nav class="navbar navbar-expand-md navbar-light bg-white">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+{{--        HEADER CONTENT          --}}
+        <section class="header">
+            <nav class="navbar navbar-expand-md {{ $header->placement }} navbar-light {{ $header->shadow }}" style="background-color: {{ $header->color }}">
+                <div class="container">
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="">About me</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Experiences</a></li>
-                    </ul>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="">About me</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Experiences</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </section>
+
 
         <main class="">
-
-                @yield('content')
-
+            @yield('content')
         </main>
     </div>
+
+{{--    FOOTER CONTENT      --}}
+    <section class="footer"></section>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

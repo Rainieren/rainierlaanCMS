@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidateLayout;
 use App\Layout;
+use App\LayoutHeader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -90,7 +91,6 @@ class LayoutController extends Controller
      */
     public function update(ValidateLayout $request, $id)
     {
-
         $layout = Layout::find($request->id);
         $file = resource_path('views/layouts/layouts/' . $layout->filename);
         file_put_contents($file, $request->content, FILE_IGNORE_NEW_LINES);
@@ -102,6 +102,15 @@ class LayoutController extends Controller
         $layout->content = $request->content;
 
         $layout->save();
+
+        $header = LayoutHeader::where('layout_id', $layout->id)->firstOrFail();
+
+        $header->color = $request->color;
+        $header->placement = $request->placement;
+        $header->shadow = $request->shadow;
+
+        $header->save();
+
         if($request->edit == "edit") {
             return redirect('/dashboard/layouts');
         } else {
