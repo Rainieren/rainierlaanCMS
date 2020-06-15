@@ -148,7 +148,14 @@ $(document).ready(function(){
         $("#editLayoutForm").submit();
     });
 
-
+    $(".switch-theme").on('click', function() {
+        // alert($('body').getAttribute('data-theme'));
+        if($(this).data('theme-mode') == 'light') {
+            $('.app').attr('data-theme', 'false');
+        } else {
+            $('.app').attr('data-theme', 'true');
+        }
+    });
 });
 
 

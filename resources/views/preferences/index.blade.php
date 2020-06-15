@@ -41,8 +41,8 @@
                     </div>
                     <div class="form-group col-4 d-flex justify-content-end align-items-center">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-primary"><i class="fas fa-sun"></i></button>
-                            <button type="button" class="btn btn-primary"><i class="fas fa-moon"></i></button>
+                            <button type="button" data-theme-mode="light" class="btn btn-primary switch-theme"><i class="fas fa-sun"></i></button>
+                            <button type="button" data-theme-mode="dark" class="btn btn-primary switch-theme"><i class="fas fa-moon"></i></button>
                         </div>
                     </div>
                 </form>
