@@ -22,7 +22,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
 </head>
-<body style="background: #ffffff">
+<body data-theme="false" class="app">
 
 <nav class="sidebar shadow-sm">
     <a href="#" id="sidebar-collapse">

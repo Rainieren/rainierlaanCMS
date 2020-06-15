@@ -28480,7 +28480,7 @@ select.form-control:focus {
 }
 
 .sidebar {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   position: fixed;
   height: 100%;
   width: 230px;
@@ -28919,7 +28919,13 @@ select.form-control:focus {
   src: url(/fonts/Muli-SemiBold.ttf?2f64b5b99b8dc9d36387f334a6921da7);
 }
 
-body {
+body[data-theme=true] {
+  background-color: #1D1D1F;
+  font-family: "Muli Regular";
+}
+
+body[data-theme=false] {
+  background-color: #ffffff;
   font-family: "Muli Regular";
 }
 
