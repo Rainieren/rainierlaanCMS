@@ -14,8 +14,6 @@
 
 use Illuminate\Support\Facades\Request;
 
-Route::get('/', 'HomeController@home')->name('welcome');
-
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() {
@@ -102,6 +100,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 Route::post('/dashboard/message/create', 'MessageController@store')->name('create_message');
 
+Route::get('/', 'PageController@show')->name('welcome');
 Route::get('/{url}', 'PageController@show')->name('show_page')->where('url', '([A-Za-z0-9\-\/]+)');;
 
 

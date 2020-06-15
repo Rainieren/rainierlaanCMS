@@ -15,6 +15,14 @@
     </div>
     <div class="row my-5">
         <div class="col-md-12 col-lg-12 col-xl-7">
+            <div class="card p-4 card-purple fadeInUp">
+                <div class="card-body">
+                    <h5 class="mb-3 text-white">{{ __('Daily visitors') }}</h5>
+                    <canvas id="visitors_chart" width="400" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-12 col-xl-5">
             <div class="card p-4 card-grey fadeInUp mb-3">
                 <div class="row">
                     <div class="d-none d-lg-block col-md-3">
@@ -50,23 +58,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12 col-lg-12 col-xl-5">
-            <div class="card p-4 card-purple fadeInUp">
-                <div class="card-body">
-                    <h5 class="mb-3 text-white">{{ __('Daily visitors') }}</h5>
-                    <canvas id="visitors_chart" width="400" height="250"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="fadeInUp">
-        <a href="{{ route('install_package') }}" class="badge badge-light fa-1x">Install</a>
-        <div class="progress my-3">
-            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
 
-        <a href="{{ route('uninstall_package') }}" class="badge badge-light fa-1x">Uninstall</a>
     </div>
+{{--    <div class="fadeInUp">--}}
+{{--        <a href="{{ route('install_package') }}" class="badge badge-light fa-1x">Install</a>--}}
+{{--        <div class="progress my-3">--}}
+{{--            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>--}}
+{{--        </div>--}}
+
+{{--        <a href="{{ route('uninstall_package') }}" class="badge badge-light fa-1x">Uninstall</a>--}}
+{{--    </div>--}}
 
 
 </div>

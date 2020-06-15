@@ -32,7 +32,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        $pages = Page::all();
+        $pages = Page::where('id', '!=', 1)->get();
         $layouts = Layout::all();
 
         return view('pages.create', compact('pages', 'layouts'));
@@ -75,10 +75,17 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show($id = null)
     {
-        $page = Page::where('url', $id)->firstOrFail();
+        $page = null;
+
+        if(!$id) {
+            $page = Page::where('name', 'Home')->firstOrFail();
+        } else {
+            $page = Page::where('url', $id)->firstOrFail();
+        }
         $header = $page->layout->layoutHeader;
+
         if($page->status == 0) {
             return back();
         } else {
@@ -87,7 +94,6 @@ class PageController extends Controller
 
             return view('pages.show', compact('page', 'blocks', 'pages', 'header'));
         }
-
     }
 
     /**

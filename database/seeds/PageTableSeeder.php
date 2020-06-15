@@ -14,11 +14,12 @@ class PageTableSeeder extends Seeder
     public function run()
     {
         DB::table('pages')->insert([
-            'name' => '/',
+            'name' => 'Home',
             'identifier' => '/',
             'url' => '/',
             'status' => 1,
-            'layout' => 'app',
+            'layout_id' => 3,
+            'page_id' => 0,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

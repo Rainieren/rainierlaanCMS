@@ -36,7 +36,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="{{ $page->id == 1 ? "display: none" : "display: block" }}">
                         <div class="custom-control custom-checkbox mr-sm-2">
                             <input type="checkbox" class="custom-control-input" id="customControlAutosizing" {{ $page->page_id != 0 ? "checked" : "" }}>
                             <label class="custom-control-label" for="customControlAutosizing">{{ __('Has parent page') }}</label>
