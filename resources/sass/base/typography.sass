@@ -12,13 +12,8 @@
     font-family: 'Muli Semi-bold'
     src: url("../fonts/Muli-SemiBold.ttf")
 
-body[data-theme="true"]
-    @include theme-colors($light_theme: true)
-    font-family: 'Muli Regular'
-
-body[data-theme="false"]
-    @include theme-colors($light_theme: false)
-    font-family: 'Muli Regular'
+body
+    background-color: #ffffff
 
 h1,h2,h3,h4,h5,h6
     transition: .3s all
@@ -53,5 +48,6 @@ a.main-link
     position: absolute
     border-radius: 25px
     background: $primary_red
+
 
 
